@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dinner planner</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheet.css">
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+  </head>
+
+  <body>
+
+    <div class="container-fluid" id="header">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="header-text">Dinner Planner</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-2" id="sidebar">
+         <div class="row">
+          <div class="col-12">
+            <h4>My Dinner</h4>
+          </div>
+         </div>
+
+        <div class="row">
+          <div class="col-6">
+            <h5>People</h5>
+          </div>  
+          <div class="col-6">
+            <form>
+            <div class="form-group">
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+              </select>
+            </div>
+            </form>
+          </div>
+        </div>
+
+          <div class="row" id="dish-name">
+            <div class="col-6">
+              <p>Dish name</p>
+            </div>
+            <div class="col-6">
+              <p id="cost">Cost</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <p id="price">SEK 0.00</p>
+            </div>
+         </div>
+        
+
+        <div class="row">
+          <div class="col-12" id="sidebarButton">
+            <a href="index2.html"><button type="button" class="btn" id="button2" disabled>Confirm Dinner</button></a>
+          </div>
+        </div>
+        </div>
+<!-- -----------------------HÄR KOMMER NYTT -------------------------------- -->
+        <div class="row">
+        <div class="col-12" id="main-content">
+          <div class="row">
+
+          <div class="col-6">
+            <h3>MEATBALLS</h3>
+              <img src="C:\Users\tyrab\Desktop\KTH\Iprogg\dinnerplanner-html-master\images\meatballs.jpg" style="width:398px;height:298px;"/>
+                <p id="img-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <a id="GoBackButton" href="index2" class="previous">&laquo; Go back to search</a>   
+          </div>
+  
+          <div class="col-6" id="TotIngredients">
+            <div class="box">INGREDIENTS FOR 3 PEOPLE <!-- GLÖM EJ ATT ÄNDRA SÅ DEN INTEGRERAR MED ANTALET VALDA PERSONER!!!!!! -->
+            <hr>
+            <div class="row" id="Overview">
+              <div class="col-2">
+                <p>5l</p>
+                <p>2dl</p>
+                <p>1 spoon</p>
+              </div>
+              <div class="col-2">
+                <p>Meat</p>
+                <p>Peppar</p>
+                <p>Butter</p>
+              </div> 
+              <div class="col-2">
+                <p>SEK</p>
+                <p>SEK</p>
+                <p>SEK</p>
+              </div>
+              <div class="col-2">
+                <p>40</p>
+                <p>5</p>
+                <p>15</p>
+              </div>
+            </div>
+
+              <div class="row">
+                <div class="col-12">
+                  <hr>                   
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-4">
+                  <button type="button" class="btn" id="buttonAdd">Add to menu</button>
+                </div>
+                <div class="col-2" id="boxSum">
+                  <p>SEK</p>
+                </div>
+                <div class="col-2" id="boxSum">
+                  <p>summan från JS</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+         
+
+          </div>
+        </div>
+        </div>
+
+       </div> <!-- cointainer-fluid -->
+      </div> 
+
+  </body>     
+
+
