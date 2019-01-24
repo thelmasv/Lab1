@@ -4,187 +4,6 @@
 	padding-bottom: 1em;
 }
 
-.header-text {
-	text-align: center;
-}
-
-#first-page-paragraph {
-	text-align: center;
-}
-
-#first-page-col {
-	margin-top: 5em;
-	padding-left: 25em;
-	padding-right: 25em;
-}
-
-#button1 {
-	background-color: orange;
-	color: black;
-	font-family: futura; 
-	border-color: black;
-	box-shadow: 2pt 2pt;
-	padding: 2pt 6pt;
-	cursor: pointer;
-}
-#button1:hover {
-	background-color: #ffdb9a;
-}
-
-#sidebarButton {
-	text-align: center;
-}
-
-#button2 {
-	background-color: lightgrey;
-	color: black;
-	font-family: futura; 
-	border-color: black;
-	box-shadow: 2pt 2pt;
-	padding: 2pt 6pt;
-	cursor: pointer;
-}
-
-#sidebar {
-	border: 1px solid black;
-	padding-bottom: 100%;
-	padding-top: 1%;
-}
-
-@media only screen and (max-width: 768px) {
-	#sidebar {
-		display: none;
-	}
-	#hamburgerMenu {
-		display: block;
-	}
-}
-
-@media only screen and (min-width: 769px) {
-	#sidebar {
-		display: block;
-	}
-	#hamburgerMenu {
-		display: none;
-	}
-}
-
-#mydinner {
-	margin-left: 2%;
-}
-
-#people {
-	margin-left: 2%;
-	border-bottom-width: 1px;
-	border-bottom-color: black;
-
-}
-
-#dish-name {
-	height: 2em;
-	border-top: 1px solid black;
-	border-bottom: 1px solid black;
-	background-color: lightgrey;
-}
-
-#cost {
-	text-align: right;
-}
-
-#price {
-	margin-top: 1em;
-	text-align: right;
-	color: red;
-}
-
-#main-content {
-	border: 1px solid black;
-	border-top: none;
-	margin-left: 10%;
-	padding-bottom: 100%;
-	border-right: 100%;
-
-}
-
-
-* {
-	box-sizing: border-box;
-}
-.column {
-	margin-left: 2%;
-	width: 50%;
-	padding: 10px;
-}
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-#search {
-	border: solid;
-}
-
-#img-text {
-	text-align: justify;
-	width: 398px;
-}
-
-#GoBackButton {
-  text-decoration: none;
-  display: inline-block;
-  padding: 8px 16px;
-  color: black;
-  background-color: orange;
-  border: double;
-  border-color: black;
-  margin-left: 2%;
-}
-
-.box {
-	width: 500px;
-	height: 400px;
-	border: 2px solid;
-	border-color: black;
-	background-color: orange;
-	font-size: 20pt;
-}
-
-hr {
-	border-width: 3px;
-	border-color: black;
-
-}
-
-#Overview {
-	font-size: 12pt;
-}
-
-#boxSum {
-	font-size: 16pt;
-	color: red;
-}
-
-#buttonAdd {
-	background-color: yellow;
-	color: black;
-	font-family: futura; 
-	border-color: black;
-	box-shadow: 2pt 2pt;
-	padding: 2pt 6pt;
-	cursor: pointer;
-
-}
-
-hr #hr2 {
-	margin-top: 50%;
-}
-
-#header {
-	background-color: lightgrey;
-	padding-top: 1em;
-	padding-bottom: 1em;
-}
-
 #header a {
 	text-decoration: none;
 }
@@ -242,14 +61,14 @@ a {
 	cursor: pointer;
 }
 
-#sidebar {
+#sidebar, #sidebar2 {
 	border: 1px solid black;
 	padding-bottom: 20em;
 	padding-top: 1%;
 }
 
 @media only screen and (max-width: 768px) {
-	#sidebar {
+	#sidebar, #sidebar2 {
 		display: block;
 		width: 100vw;
 	}
@@ -260,7 +79,7 @@ a {
 }
 
 @media only screen and (min-width: 769px) {
-	#sidebar {
+	#sidebar, #sidebar2 {
 		display: block;
 	}
 	#hamburgerMenu {
@@ -311,7 +130,7 @@ a {
 	color: darkred;
 }
 
-#main-content {
+#main-content, #main-content2, #main-content3 {
 	border: 1px solid black;
 }
 
@@ -339,13 +158,13 @@ hr {
 	border-bottom: 2px solid black;
 }*/
 
-#foodCol {
+#foodCol, #foodCol2 {
 	border: 3px solid black;
 	margin: auto;
 	padding: 0px;
 }
 
-#foodCol > p {
+#foodCol > p, #foodCol2 > p {
 	text-align: center;
 	background-color: lightgrey;
 	margin-bottom: 0px;
@@ -353,13 +172,14 @@ hr {
 	padding: 0.5em;
 }
 
-#foodCol > img {
+#foodCol > img, #foodCol2 > img {
 	width: 100%;
 	max-width: 100%;
 }
 
+
 @media only screen and (max-width: 768px) {
-	#foodCol {
+	#foodCol, #foodCol2 {
 		margin-bottom: 1em;
 	}
 }
@@ -378,20 +198,72 @@ hr {
 	text-align: center;
 }
 
-#dishtext-title{
+/* THELMA */
+
+* {
+	box-sizing: border-box;
+}
+.column {
+	margin-left: 2%;
+	width: 50%;
+	padding: 10px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+#search {
+	border: solid;
+}
+
+#img-text {
+	text-align: justify;
+	width: 398px;
+}
+
+#GoBackButton {
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 16px;
+  color: black;
+  background-color: orange;
+  border: double;
+  border-color: black;
+  margin-left: 2%;
+}
+
+.box {
+	width: 500px;
+	height: 400px;
+	border: 2px solid;
+	border-color: black;
+	background-color: orange;
+	font-size: 20pt;
+}
+
+#Overview {
+	font-size: 12pt;
+}
+
+#boxSum {
 	font-size: 16pt;
-	font-weight: bold;
+	color: red;
 }
 
-#dishtext-text{
-	font-size: 12pt;
+#buttonAdd {
+	background-color: yellow;
+	color: black;
+	font-family: futura; 
+	border-color: black;
+	box-shadow: 2pt 2pt;
+	padding: 2pt 6pt;
+	cursor: pointer;
+
 }
 
-#preperation-title {
-	font-size: 14pt;
-
-}
-
-#preperation-text {
-	font-size: 12pt;
+@media only screen and (max-width: 768px) {
+	#button5, #finalPeople {
+		text-align: center;
+	}
 }
