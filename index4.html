@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Dinner planner</title>
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+		<link rel="stylesheet" href="stylesheet.css">
+
+		<!-- Bootstrap JS -->
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+	</head>
+
+	<body>
+
+		<div class="container-fluid" id="header">
+			<div class="row">
+				<div class="col-12">
+					<a href="index.html"><h1 class="header-text">Dinner Planner</h1></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-2" id="sidebar2">
+<!-- 				<div class="row">
+					<div class="col-12">
+						<h4>My Dinner</h4>
+					</div>
+				 </div>
+				 <div class="row">
+					<div class="col-6">
+						<h5>People</h5>
+					</div>
+					<div class="col-6">
+						<form>
+						<div class="form-group">
+							<select class="form-control" id="exampleFormControlSelect1">
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+								<option>6</option>
+							</select>
+						</div>
+					</form>
+					</div>
+					</div>
+					<div class="row" id="dish-name">
+						<div class="col-8">
+							<p>Dish name</p>
+						</div>
+						<div class="col-4">
+							<p id="cost">Cost</p>
+						</div>
+					</div>
+
+	 				<div class="row" id="dinnerNamePriceChosen">
+						<div class="col-6">
+							<p id="dinnerNameChosen">Meatballs</p>
+						</div>
+						<div class="col-6">
+							<p id="price">92.05</p>
+						</div>
+					</div>
+
+					<div class="row">
+						<div class="col-12">
+							<p id="price">SEK 92.05</p>
+						</div>
+				 </div>
+				 <div class="row">
+					<div class="col-md-12" id="sidebarButton">
+						<a href="index5.html"><button type="button" class="btn" id="button1">Confirm Dinner</button></a>
+					</div>
+				</div> -->
+
+				</div>
+				<div class="col-12 col-md-10" id="main-content2">
+<!-- 					<div class="row">
+						<div class="col-12" id="findDish">
+							<h3>ADD ANOTHER ONE</h3>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<form class="form-inline">
+								<div class="search">
+								  <input type="text" placeholder="Enter keywords">
+							   </div>
+							  <div class="form-group">
+							  	<select class="form-control" id="exampleFormControlSelect1">
+									<option>All</option>
+									<option>Main Course</option>
+									<option>Side Dish</option>
+									<option>Dessert</option>
+									<option>Appetizer</option>
+								</select>
+							  </div>
+							  <button type="submit" id="button1">Search</button>
+							</form>
+						</div>
+					</div>
+					<div class="row">
+						
+					</div>
+					<hr align="center">
+					<div class="row">
+						<div class="col-8 col-md-2" id="foodCol">
+							<img src="meatballs.jpg" id="imgMain"/>
+							<p id="imgMeat">Meatballs</p>
+						</div>
+						<div class="col-8 col-md-2" id="foodCol">
+							<img src="toast.jpg"/>
+							<p id="imgToast">Toast</p>
+						</div>
+						<div class="col-8 col-md-2" id="foodCol">
+							<img src="bakedbrie.jpg"/>
+							<p id="imgBrie">Baked brie</p>
+						</div>
+						<div class="col-8 col-md-2" id="foodCol">
+							<img src="icecream.jpg"/>
+							<p id="imgIce">Icecream</p>
+						</div>
+						<div class="col-8 col-md-2" id="foodCol">
+							<img src="sourdough.jpg"/>
+							<p id="imgSour">Sourdough</p>
+						</div>
+					</div>
+					<br><br><br><br><br> -->
+				</div>
+			</div>
+		</div>
+		<script src="js/app.js"></script>
+		<script src="js/model/dinnerModel.js"></script>
+		<script src="js/view/exampleView.js"></script>
+		<script src="js/view/view1.js"></script>
+		<script src="js/view/sidebarview2.js"></script>
+		<script src="js/view/dishsearchview.js"></script>
+		<script src="js/view/dishSearchView2.js"></script>
+		<script src="js/view/dishItemView.js"></script>
+	    <script src="js/view/dishDetailsView.js"></script>
+
+
+
+	</body>
+
+
+
+
+
+
