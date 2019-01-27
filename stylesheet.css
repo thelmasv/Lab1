@@ -149,6 +149,16 @@ a {
 	color: darkred;
 }
 
+#button4 {
+	background-color: orange;
+	color: black;
+	font-family: futura; 
+	border-color: black;
+	box-shadow: 2pt 2pt;
+	padding: 2pt 6pt;
+	cursor: pointer;
+}
+
 #main-content, #main-content2, #main-content3 {
 	border: 1px solid black;
 }

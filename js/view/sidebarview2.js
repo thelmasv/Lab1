@@ -44,7 +44,7 @@ var SidebarView2 = function (container, model) {
 				 <br>\
 				 <div class="row"> \
 					<div class="col-md-12" id="sidebarButton"> \
-						<a href="index5.html"><button type="button" class="btn" id="button2" >Confirm Dinner</button></a> \
+						<a href="index5.html"><button type="button" class="btn" id="button4" >Confirm Dinner</button></a> \
 					</div> \
 				</div>');
 	
