@@ -35,7 +35,7 @@ var SidebarView2 = function (container, model) {
 					</div> \
 					<div class="row" id="dinnerNamePriceChosen"> \
 						<div class col-6>\
-							<p id="price">Meatballs</p>\
+							<p id="dinnerNameChosen">Meatballs</p>\
 						</div>\
 						<div class="col-6"> \
 							<p id="price">SEK 92.00</p> \
