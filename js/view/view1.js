@@ -26,10 +26,10 @@ var SidebarView = function (container, model) {
 					</div> \
 				 </div> \
 					<div class="row" id="dish-name"> \
-						<div class="col-s-6"> \
+						<div class="col-6"> \
 							<p>Dish name</p> \
 						</div> \
-						<div class="col-s-6"> \
+						<div class="col-6"> \
 							<p id="cost">Cost</p> \
 						</div> \
 					</div> \

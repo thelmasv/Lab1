@@ -71,20 +71,20 @@ a {
 	#sidebar, #sidebar2 {
 		display: block;
 		width: 100vw;
+		padding-bottom: 2em;
 	}
-
-	#hamburgerMenu {
+/*	#hamburgerMenu {
 		display: block;
-	}
+	}*/
 }
 
 @media only screen and (min-width: 769px) {
 	#sidebar, #sidebar2 {
 		display: block;
 	}
-	#hamburgerMenu {
+/*	#hamburgerMenu {
 		display: none;
-	}
+	}*/
 }
 
 #mydinner {
@@ -98,16 +98,34 @@ a {
 
 }
 
-#dish-name {
+/*#dish-name {
 	height: 2em;
 	border-top: 1px solid black;
 	border-bottom: 1px solid black;
 	background-color: lightgrey;
+}*/
+
+@media only screen and (min-width: 1294px) {
+	#dish-name {
+		height: 2em;
+		border-top: 1px solid black;
+		border-bottom: 1px solid black;
+		background-color: lightgrey;
+	}
 }
 
 #cost {
-/*	text-align: right;
-*/	margin-right: 0px;
+	text-align: right;
+	margin-right: 0px;
+}
+
+@media only screen and (max-width: 1293px) {
+	#dish-name {
+		height: 3em;
+		border-top: 1px solid black;
+		border-bottom: 1px solid black;
+		background-color: lightgrey;
+	}
 }
 
 #price {
