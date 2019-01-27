@@ -10,7 +10,7 @@ $(function() {
 	var dishItemView = new DishItemView($("#foodCol"));
 	var dishSearchView2 = new DishSearch2($("#main-content2"));
 	var dishDetailsView = new DishDetailsView($("#main-content3"));
-	var dishConfirmedView = new DishConfirmedView($("#main-content3")); 
+	var dishConfirmedView = new DishConfirmedView($("#main-content4")); 
 
 
 
