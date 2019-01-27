@@ -255,7 +255,7 @@ hr {
 @media only screen and (max-width: 1000px) {
 	#dishDetailPic {
 		display: block;
-		
+
 	}
 }
 
@@ -312,3 +312,37 @@ hr {
 		text-align: center;
 	}
 }
+
+
+/*@media only screen and (max-width: 1200px) {
+	#firstPicLastPage {
+		width: 100%;
+		height: 100%;
+	}
+}*/
+
+#firstPicLastPage {
+	text-align: center;
+
+}
+
+/*#Pic6 {
+	border: 3px solid black;
+	margin: auto;
+	padding: 0px;
+
+}*/
+
+/*#firstPicLastPage {
+	width: 100%;
+	max-width: 100%;
+}
+
+@media only screen and (min-width:768px) {
+	#firstPicLastPage {
+		width: 50%;
+		max-width: 50%;
+	}
+
+}
+*/
