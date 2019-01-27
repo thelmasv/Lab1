@@ -26,18 +26,22 @@ var SidebarView2 = function (container, model) {
 					</div> \
 				 </div> \
 					<div class="row" id="dish-name"> \
-						<div class="col-s-6"> \
+						<div class="col-6"> \
 							<p>Dish name</p> \
 						</div> \
-						<div class="col-s-6"> \
+						<div class="col-6"> \
 							<p id="cost">Cost</p> \
 						</div> \
 					</div> \
-					<div class="row"> \
-						<div class="col-12"> \
+					<div class="row" id="dinnerNamePriceChosen"> \
+						<div class col-6>\
+							<p id="price">Meatballs</p>\
+						</div>\
+						<div class="col-6"> \
 							<p id="price">SEK 92.00</p> \
 						</div> \
 				 </div> \
+				 <br>\
 				 <div class="row"> \
 					<div class="col-md-12" id="sidebarButton"> \
 						<a href="index5.html"><button type="button" class="btn" id="button2" >Confirm Dinner</button></a> \
