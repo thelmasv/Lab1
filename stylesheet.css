@@ -242,6 +242,7 @@ hr {
   display: table;
   clear: both;
 }
+
 #search {
 	border: solid;
 }
@@ -249,6 +250,13 @@ hr {
 #img-text {
 	text-align: justify;
 	width: 398px;
+}
+
+@media only screen and (max-width: 1000px) {
+	#dishDetailPic {
+		display: block;
+		
+	}
 }
 
 #GoBackButton {
@@ -263,13 +271,21 @@ hr {
 }
 
 .box {
-	width: 500px;
+	width: 400px;
 	height: 400px;
 	border: 2px solid;
 	border-color: black;
 	background-color: orange;
 	font-size: 20pt;
+	padding: 1em;
+	margin-top: 1em;
+	text-align: center;
 }
+
+/*#TotIngredients {
+	box-align: right;
+}*/
+
 
 #Overview {
 	font-size: 12pt;
