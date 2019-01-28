@@ -2,10 +2,14 @@ var SidebarView2 = function (container, model) {
 
 	container.html( 
 				 '<div class="row"> \
-					<div class="col-12"> \
+					<div class="col-6"> \
 						<h4>My Dinner</h4> \
 					</div> \
+					<div class="col-6"> \
+						<i class="fas fa-bars" id="hamburgerSymbol" data-toggle="collapse" data-target="#collapse" (MÅSTE REFERERA TLL ID></i> \
+					</div> \
 				 </div> \
+				 <div id ="collapse"> \
 				 <div class="row"> \
 					<div class="col-6"> \
 						<h5>People</h5> \
@@ -46,6 +50,7 @@ var SidebarView2 = function (container, model) {
 					<div class="col-md-12" id="sidebarButton"> \
 						<a href="index5.html"><button type="button" class="btn" id="button4" >Confirm Dinner</button></a> \
 					</div> \
+				</div> \
 				</div>');
 	
 }

@@ -4,13 +4,13 @@ $(function() {
 	
 	// And create the instance of ExampleView
 	var exampleView = new ExampleView($("#welcomeView"));
-	var sidebarView = new SidebarView($("#sidebar"));
+	var sidebarView = new SidebarView($("#sidebar"), model);
 	var dishSearchView = new DishSearchView($("#main-content"));
 	var sidebarView2 = new SidebarView2($("#sidebar2"));
 	var dishItemView = new DishItemView($("#foodCol"));
 	var dishSearchView2 = new DishSearch2($("#main-content2"));
 	var dishDetailsView = new DishDetailsView($("#main-content3"));
-	var dishConfirmedView = new DishConfirmedView($("#main-content3")); 
+	var dishConfirmedView = new DishConfirmedView($("#main-content4")); 
 
 
 

@@ -243,6 +243,7 @@ hr {
   display: table;
   clear: both;
 }
+
 #search {
 	border: solid;
 }
@@ -250,6 +251,13 @@ hr {
 #img-text {
 	text-align: justify;
 	width: 398px;
+}
+
+@media only screen and (max-width: 1000px) {
+	#dishDetailPic {
+		display: block;
+
+	}
 }
 
 #GoBackButton {
@@ -264,13 +272,25 @@ hr {
 }
 
 .box {
+<<<<<<< HEAD
 	width: 420px;
+=======
+	width: 400px;
+>>>>>>> 3a7a419430237c5332f354f7937dcf531d638902
 	height: 400px;
 	border: 2px solid;
 	border-color: black;
 	background-color: orange;
 	font-size: 20pt;
+	padding: 1em;
+	margin-top: 1em;
+	text-align: center;
 }
+
+/*#TotIngredients {
+	box-align: right;
+}*/
+
 
 #Overview {
 	font-size: 12pt;
@@ -296,4 +316,42 @@ hr {
 	#button5, #finalPeople {
 		text-align: center;
 	}
+}
+
+
+/*@media only screen and (max-width: 1200px) {
+	#firstPicLastPage {
+		width: 100%;
+		height: 100%;
+	}
+}*/
+
+#firstPicLastPage {
+	text-align: center;
+
+}
+
+/*#Pic6 {
+	border: 3px solid black;
+	margin: auto;
+	padding: 0px;
+
+}*/
+
+/*#firstPicLastPage {
+	width: 100%;
+	max-width: 100%;
+}
+
+@media only screen and (min-width:768px) {
+	#firstPicLastPage {
+		width: 50%;
+		max-width: 50%;
+	}
+
+}
+*/
+
+.fas fa-bars, #hamburgerSymbol {
+	float: right;
 }
