@@ -219,6 +219,7 @@ hr {
 	padding-left: 3em;
 }
 
+
 #button5 {
 	text-align: right;
 }
@@ -263,7 +264,7 @@ hr {
 }
 
 .box {
-	width: 500px;
+	width: 420px;
 	height: 400px;
 	border: 2px solid;
 	border-color: black;
