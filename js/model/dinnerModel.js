@@ -12,7 +12,7 @@ var DinnerModel = function() {
 	//TODO Lab 1 implement the data structure that will hold number of guest
 	// and selected dishes for the dinner menu
 
-	var numberOfGuest = 0;
+	var numberOfGuest = 6;
 	var menu = [];
 
 	//* local variables to store the number of guests and dishes added to the dinner menu
@@ -24,7 +24,7 @@ var DinnerModel = function() {
 	this.getNumberOfGuests = function() {
 		//TODO Lab 1
 		//return numberOfGuest
-		return this.numerOfGuest;
+		return numberOfGuest;
 	}
 
 	// * implement the empty methods (getSelectedDish, getFullMenu, etc.)
@@ -125,6 +125,7 @@ var DinnerModel = function() {
 					found = true;
 				}
 			});
+
 			if(dish.name.indexOf(filter) != -1)
 			{
 				found = true;
