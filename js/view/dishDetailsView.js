@@ -3,7 +3,7 @@ var DishDetailsView = function (container, model) {
 		'<div class="row">' + 
           '<div class="col-12 col-md-6" id="dishDetailPic">' + 
             '<h3>MEATBALLS</h3>' + 
-              '<img src="meatballs.jpg" style="width:398px;height:298px;"/>' + 
+              '<img src="meatballs.jpg" style="width:298px;height:298px;"/>' + 
                 '<p id="img-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>' + 
                 '<a id="GoBackButton" href="index2" class="previous">&laquo; Go back to search</a>' + 
           '</div>' + 

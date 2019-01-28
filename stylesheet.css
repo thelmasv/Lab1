@@ -346,3 +346,7 @@ hr {
 
 }
 */
+
+.fas fa-bars, #hamburgerSymbol {
+	float: right;
+}
