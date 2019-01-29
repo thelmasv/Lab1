@@ -7,7 +7,6 @@ var DinnerModel = function() {
 	// var containerTest = document.getElementById("test");
 
 	// ExampleView(containerTest);
-
  
 	//TODO Lab 1 implement the data structure that will hold number of guest
 	// and selected dishes for the dinner menu
@@ -398,30 +397,3 @@ var DinnerModel = function() {
 
 }
 
-/*
-var dinner = new DinnerModel()
-
-dinner.setNumberOfGuests(10)
-
-var guests = dinner.getNumberOfGuests()
-
-console.log(guests)
-
-var readline = require('readline');
-
-var rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
-
-var ans;
-
-rl.question("What do you think of node.js? ", function(answer) {
-  // TODO: Log the answer in a database
-  console.log("Thank you for your valuable feedback:", answer);
-  ans = answer;
-  rl.close();
-});
-
-consol
-*/
