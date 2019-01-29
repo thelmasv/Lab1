@@ -48,8 +48,6 @@ var DinnerModel = function() {
 	//Returns all the dishes on the menu.
 	this.getFullMenu = function() {
 		//TODO Lab 1
-		//return menu; 
-		//Nedan kod
 		var menuList = [];
 		for (var dish in this.menu) {
 			menuList.push(this.menu[dish]);
