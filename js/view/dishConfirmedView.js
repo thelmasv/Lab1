@@ -1,11 +1,11 @@
 var DishConfirmedView = function (container, model) {
-	container.html( 
-		'<div class="container-fluid" >' +
-        '<div class="row" id="headerConfirmDinner">' +
-          '<div class="col-md-6" id="finalPeople">' +
-            '<h2>My Dinner: 3 people</h2>' +
-          '</div>' +
-          '<div class="col-md-6" id="button5">' +
+	container.html(` 
+		<div class="container-fluid" >
+        <div class="row" id="headerConfirmDinner">
+          <div class="col-md-6" id="finalPeople">
+            <h2>My Dinner: 3 people</h2>
+          </div>
+          '<div class="col-md-6" id="button5">
             '<a href="index4.html"><button type="button" class="btnw3" id="button1">Go back and edit dinner</button></a>' +
           '</div>' +
         '</div>' +
@@ -68,6 +68,6 @@ var DishConfirmedView = function (container, model) {
         '</div>' +
       '</div>' +
       '<br><br><br><br>'
-		)
+		´)
 
 }

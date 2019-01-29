@@ -8,8 +8,8 @@ $(function() {
 	var dishSearchView = new DishSearchView($("#main-content"), model);
 	var sidebarView2 = new SidebarView2($("#sidebar2"));
 	var dishItemView = new DishItemView($("#foodCol"));
-	var dishSearchView2 = new DishSearch2($("#main-content2"));
-	var dishDetailsView = new DishDetailsView($("#main-content3"));
+	var dishSearchView2 = new DishSearch2($("#main-content2"), model);
+	var dishDetailsView = new DishDetailsView($("#main-content3"), model);
 	var dishConfirmedView = new DishConfirmedView($("#main-content4")); 
 
 
