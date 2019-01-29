@@ -17,7 +17,7 @@ var DinnerModel = function() {
 	//* local variables to store the number of guests and dishes added to the dinner menu
 	this.setNumberOfGuests = function(num) {
 		//TODO Lab 1
-		this.numberOfGuest = num;	//varför?
+		this.numberOfGuest = num;
 	}
 	
 	this.getNumberOfGuests = function() {
