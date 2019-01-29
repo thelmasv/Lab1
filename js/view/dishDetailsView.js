@@ -12,7 +12,10 @@ var DishDetailsView = function (container, model) {
   console.log(dishIngredients.length);
 
   var outputIng = ""; 
-  var sum = 0; 
+  var obj = {
+    sum = 0,
+  };
+  //var sum = 0; 
 
 // Loopa igenom alla ingredienser och dess värden för vald dish
   for (i = 0; i < dishIngredients.length; i++) { 
@@ -35,6 +38,8 @@ var DishDetailsView = function (container, model) {
               sum += dishIngredients[i].price * model.getNumberOfGuests(); 
 
   }
+
+var key = 'sum';
 
   container.html(`
 

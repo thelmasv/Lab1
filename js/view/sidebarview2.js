@@ -1,30 +1,12 @@
 var SidebarView2 = function (container, model) { //SIDEBAR MED PRISET
 
-	var getFullMenu = container.find("#getFullMenu");
-
-
-	var allDishes = model.getAllDishes("main dish");
-
-	var output = ""
-
-	for (i in allDishes) {
-		console.log(allDishes[i].name);
-
-		output +=  `<div class="col-8 col-md-2" id="foodCol2"> 
-						<img src="` + allDishes[i].image + `"/>
-						<p> ` + allDishes[i].name + `</p>
-					</div>`;
-
-	}
-
-var SidebarView = function (container, model) { //VANLIGA SIDEBAR
-
 	// Gör en variabel som letar upp taggen med id:t numberOfGuests
 	var numberOfGuests = container.find("#numberOfGuests");
 
 	//Skapar ett element av typ h5 (header 5) och lägger in texten "people: " + hämtar siffran från dinnerModel.
 	var guestText = document.createElement("H5");
 	guestText.innerHTML = "People: " + model.getNumberOfGuests();
+
 
 	//Lägger till hela elementet i numberOfGuests-taggen
 	numberOfGuests.append(guestText);
@@ -68,21 +50,9 @@ var SidebarView = function (container, model) { //VANLIGA SIDEBAR
 	
 }
  
+ 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-	 container.html( 
+	 /*container.html( 
 				 '<div class="row"> \
 					<div class="col-6"> \
 						<h4>My Dinner</h4> \
@@ -133,8 +103,8 @@ var SidebarView = function (container, model) { //VANLIGA SIDEBAR
 						<a href="index5.html"><button type="button" class="btn" id="button4" >Confirm Dinner</button></a> \
 					</div> \
 				</div> \
-				</div>'); 
+				</div>'); */ 
 
-	
-}
+
+
  
