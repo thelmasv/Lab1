@@ -172,7 +172,7 @@ hr {
 	border-width: 2px;
 }
 
-#imgMain {
+#fMain {
 	/*border: 3px solid black;
 	margin: auto;
 	padding: 0px;*/
@@ -218,7 +218,6 @@ hr {
 	padding: 1em;
 	padding-left: 3em;
 }
-
 
 #button5 {
 	text-align: right;
@@ -272,16 +271,13 @@ hr {
 }
 
 .box {
-<<<<<<< HEAD
-	width: 420px;
-=======
-	width: 400px;
->>>>>>> 3a7a419430237c5332f354f7937dcf531d638902
-	height: 400px;
+	width: auto;
+	height: auto;
 	border: 2px solid;
 	border-color: black;
 	background-color: orange;
-	font-size: 20pt;
+	font-size: 12pt;
+	font-weight: : bold;
 	padding: 1em;
 	margin-top: 1em;
 	text-align: center;
@@ -297,7 +293,7 @@ hr {
 }
 
 #boxSum {
-	font-size: 16pt;
+	font-size: 12pt;
 	color: red;
 }
 

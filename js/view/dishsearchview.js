@@ -24,11 +24,7 @@ var DishSearchView = function (container, model) {
 						<img src="` + allDishes[i].image + `"/>
 						<p> ` + allDishes[i].name + `</p>
 					</div>`;
-
 	}
-
-	console.log(allDishes);
-
 
 		container.html(`
 		<div class="row">
@@ -61,9 +57,7 @@ var DishSearchView = function (container, model) {
 
 		<div class="row">
 
-
 			` + output +`
-
 			
 		</div>`);
 
