@@ -11,6 +11,8 @@ $(function() {
 	var dishSearchView2 = new DishSearch2($("#main-content2"), model);
 	var dishDetailsView = new DishDetailsView($("#main-content3"), model);
 	var dishConfirmedView = new DishConfirmedView($("#main-content4"), model); 
+	var confirmHeader = new ConfirmHeader($("#confirmHead"), model); 
+
 
 
 

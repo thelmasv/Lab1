@@ -151,7 +151,7 @@ var DinnerModel = function() {
 		for (i = 0; i < dishIngredients.length; i++ ) {
 			sum += dishIngredients[i].price; 
 		}
-		console.log(sum);
+		// console.log(sum);
 		return sum; 
 	}
 

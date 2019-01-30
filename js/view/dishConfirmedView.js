@@ -1,14 +1,4 @@
 var DishConfirmedView = function (container, model) {
-	
-// getTotalMenuPrice
-// getFullMenu
-
-  // this.addDishToMenu = function(id) {
-  //   //TODO Lab 1 
-  //   //kod
-  //   var dish = this.getDish(id);
-  //   this.menu.push(dish);
-  // }
 
   var menuList = []; 
   var chosenMenu = model.getFullMenu(); 
@@ -24,7 +14,6 @@ var DishConfirmedView = function (container, model) {
 
   for (i in chosenMenu) {
     confirmedDishes = model.getDish(chosenMenu[i]); 
-// HOW GET THE PRICE???
     outputConfirmed += `<div class="col-8 col-md-2">
                         <div id="foodCol">
                           <img src="` + confirmedDishes.image + `" id="imgMain"/> 
@@ -36,9 +25,7 @@ var DishConfirmedView = function (container, model) {
                         </div>
                       </div>` 
   }
-  console.log(outputConfirmed)
-
-  // 
+  // console.log(outputConfirmed)
 
   container.html( `
       <div class="row">
