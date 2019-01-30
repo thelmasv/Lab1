@@ -36,10 +36,10 @@ var SidebarView = function (container, model) {
 	paragraph.id = "price";
 
 	//hämtar priset från dinnermodel
-	var price = model.getTotalMenuPrice();
+	// var price = model.getTotalMenuPrice();
 
 	// kriver ut SEK: price i <p>-taggen
-	paragraph.innerHTML = "SEK: " + price + ".00";
+	paragraph.innerHTML = "SEK: 0.00";
 
 	// lägger in p-taggen i div-taggen
 	divCol12.appendChild(paragraph);
