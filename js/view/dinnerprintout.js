@@ -1,32 +1,30 @@
 var DinnerPrintout = function (container, model) {
 
-var dishDetails = model.getDish(100);
- 
-  var outputIng = " "; 
+ var menuList = [];
+ var chosenMenu = model.getFullMenu(); 
+ var confirmedDishes = ""
+
+ var outputConfirmed = ""
 
 // Loopa igenom alla ingredienser och dess värden för vald dish
-  for (i = 0; i < getDish.length; i++) { 
-    // console.log(dishIngredients[i].name);
+  for (i in chosenMenu) {
+    confirmedDishes = model.getDish(chosenMenu[i]); 
+    outputConfirmed += `<div class="col-8 col-md-2">
+	                        <div id="foodCol">
+	                          <img src="` + confirmedDishes.image + `" id="imgMain"/> 
+	                          <p>` + confirmedDishes.name + `</p>
+	                        </div>
 
-    outputIng += `<div class="row" id="Overview">
-	                  <div class="col-12 col-md-3">
-	                    <p>`+ getDish[i].name +`</p>
-	                  </div>
-	                  <div class="col-2">
-	                    <p>`+ (getDish[i]) +`</p>  
-	                  </div>
-                  </div>`
-                  // sumDish += dishIngredients[i].price * model.getNumberOfGuests(); 
-
+                      </div>` 
   }
 
 
 
 	container.html (`
 	<div class="row">
-		<h3> ` + dishDetails.name + ` </h3>
-	        <img src="` + dishDetails.image + `" style="width:248px;height:248px class="center"/>
-	           	<p id="img-text">` + dishDetails.description + ` </p> 
+		<h3> ` + confirmedDishes.name + ` </h3>
+	        <img src="` + confirmedDishes.image + `" style="width:248px;height:248px class="center"/>
+	           	<p id="img-text">` + confirmedDishes.description + ` </p> 
         <div class="col-12 col-md-3" id="firstPicLastPage">
           <img src="meatballs.jpg" style="width:198px;height:198px" id="Pic6"><br><br>
           <!-- <img src="icecream.jpg">   
