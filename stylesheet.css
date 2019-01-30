@@ -149,6 +149,13 @@ a {
 	color: darkred;
 }
 
+#buttonConfirm {
+	background-color: orange;
+	box-shadow: 2pt 2pt;
+	padding: 2pt 6pt;
+	border-color: black;
+}
+
 #button4 {
 	background-color: orange;
 	color: black;
