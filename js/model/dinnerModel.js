@@ -12,7 +12,7 @@ var DinnerModel = function() {
 	// and selected dishes for the dinner menu
 
 	var numberOfGuest = 6;
-	var menu = [];
+	var menu = [100, 2];
 
 	//* local variables to store the number of guests and dishes added to the dinner menu
 	this.setNumberOfGuests = function(num) {
@@ -49,9 +49,10 @@ var DinnerModel = function() {
 	this.getFullMenu = function() {
 		//TODO Lab 1
 		var menuList = [];
-		for (var dish in this.menu) {
-			menuList.push(this.menu[dish]);
+		for (var dish in menu) {
+			menuList.push(menu[dish]);
 		}
+		console.log(menuList);
 		return menuList;
 	}
 
@@ -155,25 +156,6 @@ var DinnerModel = function() {
 	}
 
 
-
-// eget försök till att skapa lista ingredienser (+ senare summera allt)
-	// this.getIngredients = function() {
-	// 	var ingredientDishList = [];
-	// 	for (dish in this.dishes) {
-	// 		for (var ingredient in this.dishes[dish].ingredients) {
-	// 			ingredientDishList.push(this.dishes[dish].ingredients[ingredient]);
-	// 		}
-	// 	}
-	// 	return ingredientDishList;
-	// }
-
-	// this.getDishPrice = function (ingredientDishList) {
-	// 	var sum = 0;
-	// 	for ( i = 0; i < ingredientDishList.length; i++ ) {
-	// 		sum += ingredientDishList[i].price * model.getNumberOfGuests(); 
-	// 	}
-	// 	console.log(sum);
-	// }
 
 	// the dishes variable contains an array of all the 
 	// dishes in the database. each dish has id, name, type,
