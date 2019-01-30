@@ -52,18 +52,17 @@ var DinnerModel = function() {
 		for (var dish in menu) {
 			menuList.push(menu[dish]);
 		}
-		console.log(menuList);
+		// console.log(menuList);
 		return menuList;
 	}
 
 	//Returns all ingredients for all the dishes on the menu.
 	this.getAllIngredients = function() {
 		//TODO Lab 1
-
 		var ingredientList = [];
-		for (dish in this.menu) {
-			for (var ingredient in this.menu[dish].ingredients) {
-				ingredientList.push(this.menu[dish].ingredients[ingredient]);
+		for (dish in menu) {
+			for (var ingredient in menu[dish].ingredients) {
+				ingredientList.push(menu[dish].ingredients[ingredient]);
 			}
 		}
 		return ingredientList;
@@ -79,17 +78,27 @@ var DinnerModel = function() {
 	}
 
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
-	this.getTotalMenuPrice = function() {
+	this.getTotalMenuPrice = function(id) {
 		//TODO Lab 1
 		//kod
-		var totalCost = 0;
-		var ingredientList = this.getAllIngredients();
-		for (ing in ingredientList) {
-			totalCost += ingredientList[ing].price * this.numberOfGuests;
+
+		var totalCost = 0; 
+		for (var i = 0; i < menu.length; ++i) {
+			totalCost += this.getDishPrice(this.getDish(menu[i]).ingredients); 
 		}
-		return totalCost;
-		console.log(obj[key]);
+		return totalCost; 
+
+		// var totalCost = 0;
+		// var ingredientList = this.getAllIngredients();
+		// for (ing in ingredientList) {
+		// 	totalCost += ingredientList[ing].price * this.numberOfGuests;
+		// }
+		// return totalCost;
+		// console.log(totalCost); 
+		// console.log(obj[key]);
 	}
+
+
 
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
@@ -135,6 +144,7 @@ var DinnerModel = function() {
 	  	return dish.type == type && found;
 	  });	
 	}
+
 
 	//function that returns a dish of specific ID
 	this.getDish = function (id) {

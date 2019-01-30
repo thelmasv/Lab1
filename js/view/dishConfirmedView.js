@@ -10,7 +10,7 @@ var DishConfirmedView = function (container, model) {
 
   var sumDish = 0; 
   var outputConfirmed = ""
-
+  var totalMenuPrice = model.getTotalMenuPrice(chosenMenu[i]); 
 
   for (i in chosenMenu) {
     confirmedDishes = model.getDish(chosenMenu[i]); 
@@ -27,6 +27,8 @@ var DishConfirmedView = function (container, model) {
   }
   // console.log(outputConfirmed)
 
+
+
   container.html( `
       <div class="row">
 
@@ -35,12 +37,10 @@ var DishConfirmedView = function (container, model) {
 
         ` + outputConfirmed + ` 
 
-
-
         <div class="col-md-2">
           <br><br><br><br>
           <p id="price">TOTAL:</p>
-          <p id="price">SEK 189.45</p>
+          <p id="price">SEK `+ totalMenuPrice * model.getNumberOfGuests() +`</p>
         </div>
       </div>
 
