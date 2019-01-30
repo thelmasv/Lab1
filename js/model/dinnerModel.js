@@ -87,6 +87,7 @@ var DinnerModel = function() {
 			totalCost += ingredientList[ing].price * this.numberOfGuests;
 		}
 		return totalCost;
+		console.log(obj[key]);
 	}
 
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
@@ -96,6 +97,8 @@ var DinnerModel = function() {
 		//kod
 		var dish = this.getDish(id);
 		this.menu.push(dish);
+
+
 	}
 
 	//Removes dish from menu
