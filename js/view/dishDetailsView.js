@@ -12,31 +12,34 @@ var DishDetailsView = function (container, model) {
   // console.log(dishIngredients.length);
 
   var outputIng = ""; 
+  var sumDish = 0; 
 
-
-  var sum = 0; 
+  // model.getDishPrice(ingredientDishList);
 
 // Loopa igenom alla ingredienser och dess värden för vald dish
   for (i = 0; i < dishIngredients.length; i++) { 
     // console.log(dishIngredients[i].name);
 
-    outputIng += `
-            <div class="row" id="Overview">
-              <div class="col-2">
-                <p>`+ Math.round(dishIngredients[i].quantity * model.getNumberOfGuests()) + dishIngredients[i].unit +`</p>
-              </div>
-              <div class="col-7">
-                <p>`+ dishIngredients[i].name +`</p>
-              </div>
-              <div class="col-1">
-                <p>SEK</p>
-              </div>
-              <div class="col-2">
-                <p>`+ Math.round(dishIngredients[i].price * model.getNumberOfGuests()) +`</p> 
-              </div>`
-              sum += dishIngredients[i].price * model.getNumberOfGuests(); 
+    outputIng += `<div class="row" id="Overview">
+                  <div class="col-2">
+                    <p>`+ Math.round(dishIngredients[i].quantity * model.getNumberOfGuests()) + dishIngredients[i].unit +`</p>
+                  </div>
+                  <div class="col-6">
+                    <p>`+ dishIngredients[i].name +`</p>
+                  </div>
+                  <div class="col-1">
+                    <p>SEK</p>
+                  </div>
+                  <div class="col-2">
+                    <p>`+ Math.round(dishIngredients[i].price * model.getNumberOfGuests()) +`</p> 
+                  </div>
+                  </div>`
+                  // sumDish += dishIngredients[i].price * model.getNumberOfGuests(); 
 
   }
+
+sumDish = model.getDishPrice(dishIngredients) * model.getNumberOfGuests();
+
 
   container.html(`
 
@@ -53,7 +56,6 @@ var DishDetailsView = function (container, model) {
 
             <hr>
 
-            <div class="row" id="Overview"> 
             ` + outputIng + `   
 
               <div class="row">
@@ -64,20 +66,22 @@ var DishDetailsView = function (container, model) {
 
               <div class="row">
 
-                <div class="col-4">
+                <div class="col-6">
                   <button type="button" class="btn" id="buttonAdd">Add to menu</button>
                 </div>
 
-                <div class="col-2" id="boxSum">
+                <div class="col-3" id="boxSum">
                   <p>SEK</p>
                 </div>
 
-                <div class="col-2" id="boxSum">
-                  <p>JS ` + sum + ` </p>  
+                <div class="col-3" id="boxSum">
+                  <p> ` + sumDish + ` </p>  
                 </div>
 
               </div>  
             </div> 
+            <br> 
+
           </div> 
           </div>`);
 

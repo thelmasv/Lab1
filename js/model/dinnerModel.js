@@ -84,7 +84,7 @@ var DinnerModel = function() {
 		var totalCost = 0;
 		var ingredientList = this.getAllIngredients();
 		for (ing in ingredientList) {
-			totalCost += ingredientList[ing].price * this.numerOfGuests;
+			totalCost += ingredientList[ing].price * this.numberOfGuests;
 		}
 		return totalCost;
 	}
@@ -141,6 +141,36 @@ var DinnerModel = function() {
 		}
 	}
 
+// Get dish price for one dish and all people
+	this.getDishPrice = function (dishIngredients) {
+		var sum = 0;
+		for (i = 0; i < dishIngredients.length; i++ ) {
+			sum += dishIngredients[i].price; 
+		}
+		console.log(sum);
+		return sum; 
+	}
+
+
+
+// eget försök till att skapa lista ingredienser (+ senare summera allt)
+	// this.getIngredients = function() {
+	// 	var ingredientDishList = [];
+	// 	for (dish in this.dishes) {
+	// 		for (var ingredient in this.dishes[dish].ingredients) {
+	// 			ingredientDishList.push(this.dishes[dish].ingredients[ingredient]);
+	// 		}
+	// 	}
+	// 	return ingredientDishList;
+	// }
+
+	// this.getDishPrice = function (ingredientDishList) {
+	// 	var sum = 0;
+	// 	for ( i = 0; i < ingredientDishList.length; i++ ) {
+	// 		sum += ingredientDishList[i].price * model.getNumberOfGuests(); 
+	// 	}
+	// 	console.log(sum);
+	// }
 
 	// the dishes variable contains an array of all the 
 	// dishes in the database. each dish has id, name, type,
