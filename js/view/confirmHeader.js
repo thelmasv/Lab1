@@ -12,8 +12,8 @@ var ConfirmHeader = function (container, model) {
           </div>
 
         </div>
-    <br><br>`
-	)
+    <br><br>
+	`)
 
 
 }
