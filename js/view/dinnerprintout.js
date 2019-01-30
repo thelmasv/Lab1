@@ -4,34 +4,33 @@ var DinnerPrintout = function (container, model) {
  var chosenMenu = model.getFullMenu(); 
  var confirmedDishes = ""
 
- var outputConfirmed = ""
+ var outputPrintout = ""
 
 // Loopa igenom alla ingredienser och dess värden för vald dish
   for (i in chosenMenu) {
     confirmedDishes = model.getDish(chosenMenu[i]); 
-    outputConfirmed += `<div class="col-8 col-md-2">
-	                        <div id="foodCol">
-	                          <img src="` + confirmedDishes.image + `" id="imgMain"/> 
-	                        </div>
-		                    <div class="col-8 col-md-2">
-		                        <p>` + confirmedDishes.name + `</p>
-		                    </div>
-		                    <div class="col-8 col-md-2">
-		                    	<p ` + confirmedDishes.description + `</p>
+    outputPrintout += `
+	                 <div class="col-12 col-md-3">
+						<img src="` + confirmedDishes.image + `" id="firstPicLastPage" />
+					</div>
+					<div class="col-12 col-md-4" id="dishtext">
+						<h3> ` + confirmedDishes.name + ` </h3>
+					</div>
+					<div class="col-12 col-md-5" >
+						<p id="preperation-title">PREPERATION</p>
+						<p id="img-text">` + confirmedDishes.description + ` </p> 
+					</div>` 
 
-                      	</div>` 
+
   }
-
 
 
 	container.html (`
 	<div class="row">
-		<img src="` + confirmedDishes.image + `" />
-			<h3> ` + confirmedDishes.name + ` </h3>
-	        	<p id="img-text">` + confirmedDishes.description + ` </p> 
-        <div class="col-12 col-md-3" id="firstPicLastPage">
-        </div>
-
+ 		` + outputPrintout + `
+	</div>
+			
+	        
         <div class="col-md-2">
         </div>
         <!-- + Add vertical line and total prize -->
