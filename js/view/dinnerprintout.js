@@ -10,13 +10,13 @@ var DinnerPrintout = function (container, model) {
   for (i in chosenMenu) {
     confirmedDishes = model.getDish(chosenMenu[i]); 
     outputPrintout += `
-	                 <div class="col-12 col-md-3">
+	                 <div class="col-12 col-md-4">
 						<img src="` + confirmedDishes.image + `" id="firstPicLastPage" />
 					</div>
 					<div class="col-12 col-md-4" id="dishtext">
 						<h3> ` + confirmedDishes.name + ` </h3>
 					</div>
-					<div class="col-12 col-md-5" >
+					<div class="col-12 col-md-4" >
 						<p id="preperation-title">PREPERATION</p>
 						<p id="img-text">` + confirmedDishes.description + ` </p> 
 					</div>` 
@@ -29,18 +29,12 @@ var DinnerPrintout = function (container, model) {
 	<div class="row">
  		` + outputPrintout + `
 	</div>
-			
-	        
-        <div class="col-md-2">
-        </div>
-
-    </div>
 
       <div class="row">
       </div>
 
-      <br><br><hr>
-    </div>
+      <br><br>
+      <hr>
 
     <div class="container-fluid">
       <div class="row" id="buttonPrint">
