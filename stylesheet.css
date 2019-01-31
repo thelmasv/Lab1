@@ -130,7 +130,7 @@ a {
 
 #price {
 	margin-top: 1em;
-	text-align: right;
+	text-align: center;
 	color: darkred;
 }
 
@@ -342,3 +342,8 @@ hr {
 	font-style: bold;
 
 }
+
+#priceBox {
+	background-color: lightgrey; 
+}
+

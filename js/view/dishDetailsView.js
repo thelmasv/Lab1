@@ -5,20 +5,12 @@ var DishDetailsView = function (container, model) {
 
   let dishIngredients = dishDetails.ingredients;
 
-  // console.log(dishIngredients);
-  // console.log(dishIngredients[i]);
-  // console.log(dishIngredients[0].name);
-
-  // console.log(dishIngredients.length);
-
   var outputIng = ""; 
   var sumDish = 0; 
 
-  // model.getDishPrice(ingredientDishList);
 
 // Loopa igenom alla ingredienser och dess värden för vald dish
   for (i = 0; i < dishIngredients.length; i++) { 
-    // console.log(dishIngredients[i].name);
 
     outputIng += `<div class="row" id="Overview">
                   <div class="col-2">
@@ -34,7 +26,6 @@ var DishDetailsView = function (container, model) {
                     <p>`+ Math.round(dishIngredients[i].price * model.getNumberOfGuests()) +`</p> 
                   </div>
                   </div>`
-                  // sumDish += dishIngredients[i].price * model.getNumberOfGuests(); 
 
   }
 

@@ -1,28 +1,16 @@
 
 //DinnerModel Object constructor
 
-
 var DinnerModel = function() {
-
-	// var containerTest = document.getElementById("test");
-
-	// ExampleView(containerTest);
- 
-	//TODO Lab 1 implement the data structure that will hold number of guest
-	// and selected dishes for the dinner menu
-
 	var numberOfGuest = 6;
 	var menu = [100, 2];
 
 	//* local variables to store the number of guests and dishes added to the dinner menu
 	this.setNumberOfGuests = function(num) {
-		//TODO Lab 1
 		this.numberOfGuest = num;
 	}
 	
 	this.getNumberOfGuests = function() {
-		//TODO Lab 1
-		//return numberOfGuest
 		return numberOfGuest;
 	}
 
@@ -36,13 +24,6 @@ var DinnerModel = function() {
 				return this.menu[dish].name;
 			}
 		}
-
-/*
-		for (dish in this.getFullMenu){
-			if (dishes.type == type)
-			return dishes.type;
-		}
-*/
 	}
 
 	//Returns all the dishes on the menu.
@@ -66,15 +47,6 @@ var DinnerModel = function() {
 			}
 		}
 		return ingredientList;
-
-		/*
-		var ingredients = []; 
-		for (dish in this.getFullMenu) {
-			for (ingredient in dishes.ingredients) {
-				ingredients.push(ingredient);
-			}
-		}
-		*/
 	}
 
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
@@ -87,15 +59,6 @@ var DinnerModel = function() {
 			totalCost += this.getDishPrice(this.getDish(menu[i]).ingredients); 
 		}
 		return totalCost; 
-
-		// var totalCost = 0;
-		// var ingredientList = this.getAllIngredients();
-		// for (ing in ingredientList) {
-		// 	totalCost += ingredientList[ing].price * this.numberOfGuests;
-		// }
-		// return totalCost;
-		// console.log(totalCost); 
-		// console.log(obj[key]);
 	}
 
 
@@ -103,8 +66,6 @@ var DinnerModel = function() {
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
 	this.addDishToMenu = function(id) {
-		//TODO Lab 1 
-		//kod
 		var dish = this.getDish(id);
 		this.menu.push(dish);
 
@@ -113,8 +74,6 @@ var DinnerModel = function() {
 
 	//Removes dish from menu
 	this.removeDishFromMenu = function(id) {
-		//TODO Lab 1
-		//kod
 		for (dish in this.menu) {
 			if (this.menu[dish].id == id) {
 				delete this.menu[dish];
