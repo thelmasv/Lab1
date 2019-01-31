@@ -1,5 +1,7 @@
 var SidebarView2 = function (container, model) { //SIDEBAR MED PRISET
 
+
+
 	// Gör en variabel som letar upp taggen med id:t numberOfGuests
 	var numberOfGuests = container.find("#numberOfGuests");
 
