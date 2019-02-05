@@ -53,20 +53,20 @@ var ExampleView = function (container, model) {
 	 */
 
 	container.html( 
-	'<div class="container-fluid" id="first-page-paragraph"> \
-  		<div class="row"> \
-  			<div class="col-md-12" id="first-page-col"> \
-  				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> \
-  			</div> \
-  		</div> \
-  	</div> \
-  	<div class="container-fluid" id="first-page-paragraph"> \
-  		<div class="row"> \
-  			<div class="col-md-12" id="first-page-col"> \
- 				<a href="index2.html"><button type="button" class="btnw3" id="button1">Create new dinner</button></a> \
-  			</div> \
-  		</div> \
-  	</div>');
+	`<div class="container-fluid" id="first-page-paragraph">
+  		<div class="row">
+  			<div class="col-md-12" id="first-page-col">
+  				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  			</div>
+  		</div>
+  	</div>
+  	<div class="container-fluid" id="first-page-paragraph">
+  		<div class="row">
+  			<div class="col-md-12" id="first-page-col">
+ 				<a href="index2.html"><button type="button" class="btnw3" id="button1">Create new dinner</button></a>
+  			</div>
+  		</div>
+  	</div>`);
 
 
 
