@@ -56,19 +56,20 @@ var ExampleView = function (container, model) {
 	`<div class="container-fluid" id="first-page-paragraph">
   		<div class="row">
   			<div class="col-md-12" id="first-page-col">
-  				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  				<h3>Let's plan your dinner!</h3>
   			</div>
   		</div>
   	</div>
   	<div class="container-fluid" id="first-page-paragraph">
   		<div class="row">
   			<div class="col-md-12" id="first-page-col">
- 				<a href="index2.html"><button type="button" class="btnw3" id="button1">Create new dinner</button></a>
+ 				<button type="button" class="btnw3" id="button1">Create new dinner</button>
   			</div>
   		</div>
   	</div>`);
 
 
+	this.welcomeButton = container.find("#button1"); 
 
 	/**
 	 * When we want references to some view elements to be available from outside of view, we 

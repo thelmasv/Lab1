@@ -14,9 +14,12 @@ $(function() {
 	var dinnerprintout = new DinnerPrintout($("#main-content5"), model);
 	var confirmHeader = new ConfirmHeader($("#confirmHead"), model); 
 
+	var welcomeController = new WelcomeController(exampleView, model, this); 
+	console.log(welcomeController); 
+
 	// General state controller 
 	var hideAllViews = function() {
-		exampleView.hide(); //eller kan ändra från ("#main-content") till t ex dishSearchView
+		$("#main-content").hide(); // kan ändra från ("#main-content") till t ex dishSearchView
 		$("#sidebar").hide();
 		$("#main-content").hide(); 
 		$("#sidebar2").hide(); 
@@ -28,10 +31,15 @@ $(function() {
 		$("#confirmHead").hide(); 
 	}
 
+	hideAllViews();
+
 	this.showWelcomeScreen = function(){
 		hideAllViews(); 
 		$("#welcomeView").show();
+
 	}
+
+	this.showWelcomeScreen(); 
 
 	this.showDishSelectScreen = function() { 
 		hideAllViews(); 
