@@ -18,7 +18,6 @@ var DinnerModel = function() {
 	//Returns the dish that is on the menu for selected type 
 	this.getSelectedDish = function(type) {
 		//TODO Lab 1
-		//kod
 		for (dish in this.menu) {
 			if (this.menu[dish].type == type) {
 				return this.menu[dish].name;
@@ -33,7 +32,6 @@ var DinnerModel = function() {
 		for (var dish in menu) {
 			menuList.push(menu[dish]);
 		}
-		// console.log(menuList);
 		return menuList;
 	}
 
@@ -52,8 +50,6 @@ var DinnerModel = function() {
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
 	this.getTotalMenuPrice = function(id) {
 		//TODO Lab 1
-		//kod
-
 		var totalCost = 0; 
 		for (var i = 0; i < menu.length; ++i) {
 			totalCost += this.getDishPrice(this.getDish(menu[i]).ingredients); 
@@ -120,7 +116,6 @@ var DinnerModel = function() {
 		for (i = 0; i < dishIngredients.length; i++ ) {
 			sum += dishIngredients[i].price; 
 		}
-		// console.log(sum);
 		return sum; 
 	}
 

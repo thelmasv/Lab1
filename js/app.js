@@ -13,6 +13,68 @@ $(function() {
 	var dinnerprintout = new DinnerPrintout($("#main-content5"), model);
 	var confirmHeader = new ConfirmHeader($("#confirmHead"), model); 
 
+
+	var welcomeController = new WelcomeController(exampleView, model, this); 
+	var mainContentController = new MainContentController(exampleView, model, this); 
+ 
+
+	// General state controller 
+	var hideAllViews = function() {
+		$("#main-content").hide(); // kan ändra från ("#main-content") till t ex dishSearchView
+		$("#sidebar").hide();
+		$("#main-content").hide(); 
+		$("#sidebar2").hide(); 
+		$("#foodCol").hide(); 
+		$("#main-content2").hide(); 
+		$("#main-content3").hide(); 
+		$("#main-content4").hide(); 
+		$("#main-content5").hide(); 
+		$("#confirmHead").hide(); 
+	}
+
+	hideAllViews();
+
+	this.showWelcomeScreen = function(){
+		hideAllViews(); 
+		$("#welcomeView").show();
+
+	}
+
+	this.showWelcomeScreen(); 
+
+	this.showDishSelectScreen = function() { 
+		hideAllViews(); 
+		$("#sidebar").show();
+		$("#main-content").show();
+	}
+
+	this.showDishDetailsScreen = function() {
+		hideAllViews(); 
+		$("#sidebar").show();
+		$("#main-content3").show(); 
+	}
+
+	this.showSelectAgainScreen = function() {
+		hideAllViews(); 
+		$("#sidebar2").show(); 
+		$("#main-content3").show(); 
+	}
+
+	this.showOverviewScreen = function() {
+		hideAllViews(); 
+		$("#confirmHead").show(); 
+		$("#main-content4").show(); 
+	}
+
+	this.showPrintoutScreen = function() {
+		hideAllViews(); 
+		$("#confirmHead").show(); 
+		$("#main-content5").show(); 	
+	}
+
+
+
+>>>>>>> d89c8a3a70303003d71b731ff5c81c7b1e88a608
 	/**
 	 * IMPORTANT: app.js is the only place where you are allowed to
 	 * use the $('someSelector') to search for elements in the whole HTML.
