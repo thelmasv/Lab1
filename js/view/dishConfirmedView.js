@@ -44,6 +44,15 @@ var DishConfirmedView = function (container, model) {
         </div>
       </div>
 
+      <hr>
+      <div class="container-fluid">
+        <div class="row" id="buttonPrint">
+          <div class="col-md-12" id="first-page-col">
+          <a href="index6.html"><button type="button" class="btnw3" id="button1">Print Full Recipe</button></a>
+          </div>
+        </div>
+      </div>
+
 `
 		)
 

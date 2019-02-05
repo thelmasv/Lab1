@@ -36,7 +36,6 @@ $(function() {
 	this.showWelcomeScreen = function(){
 		hideAllViews(); 
 		$("#welcomeView").show();
-
 	}
 
 	this.showWelcomeScreen(); 
