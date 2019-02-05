@@ -29,18 +29,12 @@ var DinnerPrintout = function (container, model) {
 	<div class="row" class="col-12">
  		` + outputPrintout + `
 	</div>
-			
-	        
-        <div class="col-md-2">
-        </div>
-
-    </div>
 
       <div class="row">
       </div>
 
-      <br><br><hr>
-    </div>
+      <br><br>
+      <hr>
 
     <div class="container-fluid">
       <div class="row" id="buttonPrint">
