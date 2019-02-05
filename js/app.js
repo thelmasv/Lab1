@@ -28,34 +28,41 @@ $(function() {
 		$("#confirmHead").hide(); 
 	}
 
-	this.showWelcomeScreen = function();
-	hideAllViews(); 
-	$("#welcomeView").show();
+	this.showWelcomeScreen = function(){
+		hideAllViews(); 
+		$("#welcomeView").show();
+	}
 
-	this.showDishSelectScreen = function(); 
-	hideAllViews(); 
-	$("#sidebar").show();
-	$("#main-content").show();
+	this.showDishSelectScreen = function() { 
+		hideAllViews(); 
+		$("#sidebar").show();
+		$("#main-content").show();
+	}
 
-	this.showDishDetailsScreen = function(); 
-	hideAllViews(); 
-	$("#sidebar").show();
-	$("#main-content3").show(); 
+	this.showDishDetailsScreen = function() {
+		hideAllViews(); 
+		$("#sidebar").show();
+		$("#main-content3").show(); 
+	}
 
-	this.showSelectAgainScreen = function(); 
-	hideAllViews(); 
-	$("#sidebar2").show(); 
-	$("#main-content3").show(); 
+	this.showSelectAgainScreen = function() {
+		hideAllViews(); 
+		$("#sidebar2").show(); 
+		$("#main-content3").show(); 
+	}
 
-	this.showOverviewScreen = function(); 
-	hideAllViews(); 
-	$("#confirmHead").show(); 
-	$("#main-content4").show(); 
+	this.showOverviewScreen = function() {
+		hideAllViews(); 
+		$("#confirmHead").show(); 
+		$("#main-content4").show(); 
+	}
 
-	this.showPrintoutScreen = function(); 
-	hideAllViews(); 
-	$("#confirmHead").show(); 
-	$("#main-content5").show(); 
+	this.showPrintoutScreen = function() {
+		hideAllViews(); 
+		$("#confirmHead").show(); 
+		$("#main-content5").show(); 	
+	}
+
 
 
 	/**
