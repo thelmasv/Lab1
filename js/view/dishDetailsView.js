@@ -76,4 +76,7 @@ sumDish = model.getDishPrice(dishIngredients) * model.getNumberOfGuests();
           </div> 
           </div>`);
 
+    this.addToMenuButton = container.find("#buttonAdd");
+
+
 }
