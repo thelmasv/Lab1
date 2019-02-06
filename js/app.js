@@ -55,7 +55,7 @@ $(function() {
 
 	this.showSelectAgainScreen = function() {
 		hideAllViews(); 
-		$("#sidebar2").show(); 
+		$("#sidebar").show(); 
 		$("#main-content2").show(); 
 	}
 

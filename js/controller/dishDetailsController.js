@@ -16,6 +16,7 @@ var DishDetailsController = function(view, model, app) {
 
 	view.addToMenuButton.click(function() {
 		app.showSelectAgainScreen(); // Ska gå tillbaka till screen 2
+		// lägg till ruta med added dish
 	}); 
 
 }
