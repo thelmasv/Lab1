@@ -13,16 +13,12 @@ $(function() {
 	var dinnerprintout = new DinnerPrintout($("#main-content5"), model);
 	var confirmHeader = new ConfirmHeader($("#confirmHead"), model); 
 
-<<<<<<< HEAD
 	var welcomeController = new WelcomeController(exampleView, model, this); 
 	var sidebarController = new SidebarController(sidebarView, model, this); 
-=======
 
 	var welcomeController = new WelcomeController(exampleView, model, this); //tar in motsvarande var, model och view
 	var mainContentController = new MainContentController(dishSearchView, model, this);  
  
->>>>>>> 4a49d0a5d700609ba5eb58df4c849784f3d4b757
-
 	// General state controller 
 	var hideAllViews = function() {
 		$("#main-content").hide(); // kan ändra från ("#main-content") till t ex dishSearchView
