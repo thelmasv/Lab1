@@ -15,7 +15,7 @@ $(function() {
 
 	var welcomeController = new WelcomeController(exampleView, model, this); 
 	var sidebarController = new SidebarController(sidebarView, model, this); 
-	var welcomeController = new WelcomeController(exampleView, model, this); //tar in motsvarande var, model och view
+	var dishDetailsController = new DishDetailsController(dishDetailsView, model, this); //tar in motsvarande var, model och view
 	var mainContentController = new MainContentController(dishSearchView, model, this);  
  
 	// General state controller 
@@ -43,7 +43,6 @@ $(function() {
 
 	this.showDishSelectScreen = function() { 
 		hideAllViews(); 
-		// behöver ta in sidebar i 
 		$("#sidebar").show();
 		$("#main-content").show();
 	}
@@ -57,7 +56,7 @@ $(function() {
 	this.showSelectAgainScreen = function() {
 		hideAllViews(); 
 		$("#sidebar2").show(); 
-		$("#main-content3").show(); 
+		$("#main-content2").show(); 
 	}
 
 	this.showOverviewScreen = function() {

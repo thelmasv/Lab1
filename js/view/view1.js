@@ -75,8 +75,10 @@ container.html(`
 	//hämtar priset från dinnermodel
 	// var price = model.getTotalMenuPrice();
 
+	// HÄR SKA DET KOMMA UPP RUTA SOM GÖMMER SIG OM INTE FINNS NÅGOT I MENY (SIDEBAR2)
+
 	// kriver ut SEK: price i <p>-taggen
-	paragraph.innerHTML = "SEK: 0.00";
+	paragraph.innerHTML = "SEK: 0.00";		//PRISET SKA VARA DYNAMISKT
 
 	// lägger in p-taggen i div-taggen
 	divCol12.appendChild(paragraph);
