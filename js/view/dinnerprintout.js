@@ -26,7 +26,7 @@ var DinnerPrintout = function (container, model) {
 
 
 	container.html (`
-	<div class="row">
+	<div class="row" class="col-12">
  		` + outputPrintout + `
 	</div>
 

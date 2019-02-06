@@ -51,6 +51,7 @@ var DishSearchView = function (container, model) {
 		</div>`);
 
 
+	this.nextPage = container.find("#foodCol2");
 
 
 }
