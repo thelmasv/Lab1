@@ -39,7 +39,7 @@ sumDish = model.getDishPrice(dishIngredients) * model.getNumberOfGuests();
             <h3> ` + dishDetails.name + ` </h3>
               <img src="` + dishDetails.image + `" style="width:248px;height:248px class="center"/>
                 <p id="img-text">` + dishDetails.description + ` </p> 
-                <a id="GoBackButton" href="index2" class="previous">&laquo; Go back to search</a>
+                <a id="GoBackButton"  class="previous">&laquo; Go back to search</a>
           </div>  
 
           <div class="col-12 col-md-6" id="TotIngredients"> 
@@ -75,5 +75,10 @@ sumDish = model.getDishPrice(dishIngredients) * model.getNumberOfGuests();
 
           </div> 
           </div>`);
+
+
+    this.goBack = container.find("#GoBackButton"); //this.vaddenkalladesicontroller = container.find("vad id:et kallas här")
+    this.addToMenu = container.find("#buttonAdd");
+
 
 }
