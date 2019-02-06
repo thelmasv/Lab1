@@ -15,7 +15,7 @@ $(function() {
 	var confirmHeader = new ConfirmHeader($("#confirmHead"), model); 
 
 	var welcomeController = new WelcomeController(exampleView, model, this); 
-	console.log(welcomeController); 
+	var sidebarController = new SidebarController(sidebarView, model, this); 
 
 	// General state controller 
 	var hideAllViews = function() {

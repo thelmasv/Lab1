@@ -2,12 +2,17 @@
 //DinnerModel Object constructor
 
 var DinnerModel = function() {
-	var numberOfGuest = 6;
+	var numberOfGuest = 1;
 	var menu = [100, 2];
+	var observers = []; 
 
 	//* local variables to store the number of guests and dishes added to the dinner menu
 	this.setNumberOfGuests = function(num) {
-		this.numberOfGuest = num;
+		if (num >= 1) {
+			numberOfGuest = num;
+			this.notifyObservers('numberOfGuests'); 
+		}
+
 	}
 	
 	this.getNumberOfGuests = function() {
@@ -57,15 +62,11 @@ var DinnerModel = function() {
 		return totalCost; 
 	}
 
-
-
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
 	this.addDishToMenu = function(id) {
 		var dish = this.getDish(id);
 		this.menu.push(dish);
-
-
 	}
 
 	//Removes dish from menu
@@ -100,7 +101,6 @@ var DinnerModel = function() {
 	  });	
 	}
 
-
 	//function that returns a dish of specific ID
 	this.getDish = function (id) {
 	  for(key in dishes){
@@ -110,7 +110,7 @@ var DinnerModel = function() {
 		}
 	}
 
-// Get dish price for one dish and all people
+	// Get dish price for one dish and all people
 	this.getDishPrice = function (dishIngredients) {
 		var sum = 0;
 		for (i = 0; i < dishIngredients.length; i++ ) {
@@ -119,6 +119,27 @@ var DinnerModel = function() {
 		return sum; 
 	}
 
+
+	//Instructions lab2 : implement addObserver() and notifyObserver() in your model
+	// ELLER SKA DET VARA this.addObserver() {} ???
+	this.addObserver = function(observer) {
+		observers.push(observer);  
+	}
+
+	// ELLER: this.notifyObserver() {} ???
+	this.notifyObservers = function(changeDetails) {
+		for(var i=0; i<observers.length; i++)
+			observers[i](this, changeDetails);
+		// we assume that observers[i] is a function, so we call it like observers[i](parameters)
+	}
+
+
+	// Remove observer from array
+    this.removeObserver = function(observer) {
+
+    }
+
+    //.... other model data and code calling notifyObservers() when the model changes
 
 
 	// the dishes variable contains an array of all the 

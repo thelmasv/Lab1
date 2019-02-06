@@ -35,7 +35,7 @@
     <!-- DISH SELECT SCREEN (2) -->
     <div class="container-fluid">
       <div class="row">
-        <!-- <div class="col-12 col-md-2" id="sidebar"> -->
+        <div class="col-12 col-md-2" id="sidebar">
 <!--           <div class="row">
           <div class="col-12">
             <h4>My Dinner</h4>
@@ -62,11 +62,10 @@
          </div>
          <div class="row">
           <div class="col-md-12" id="sidebarButton">
-            <a href="index2.html"><button type="button" class="btn" id="button2" disabled>Confirm Dinner</button></a>
+            <button type="button" class="btn" id="button2" disabled>Confirm Dinner</button>
           </div>
         </div> -->
-        <!-- </div> -->
-        <!-- View FIND A DISH -->
+        </div>
         <div class="col-12 col-md-10" id="main-content">
           <span id="getFullMenu">
           </span>
@@ -80,34 +79,34 @@
         <!-- sidebar 1 --> 
 <!--         <div class="col-12 col-md-2" id="sidebar">
           <div class="row">
-          <div class="col-12">
-            <h4>My Dinner</h4>
-          </div>
-         </div>
-         <div class="row">
-          <div class="col-4">
-            <span id="numberOfGuests">
-            </span>
-          </div>
-          <div class="col-8" id="guestButtons">
-          </div>
-         </div>
-         <br>
-          <div class="row" id="dish-name">
+            <div class="col-12">
+              <h4>My Dinner</h4>
+            </div>
+           </div>
+           <div class="row">
+            <div class="col-4">
+              <span id="numberOfGuests">
+              </span>
+            </div>
+            <div class="col-8" id="guestButtons">
+            </div>
+           </div>
+           <br>
+           <div class="row" id="dish-name">
             <div class="col-6">
               <p>Dish name</p>
             </div>
             <div class="col-6">
               <p id="cost">Cost</p>
             </div>
+           </div>
+           <div class="row" id="menuPrice">
+           </div>
+           <div class="row">
+            <div class="col-md-12" id="sidebarButton">
+              <a href="index2.html"><button type="button" class="btn" id="button2" disabled>Confirm Dinner</button></a>
+            </div>
           </div>
-          <div class="row" id="menuPrice">
-         </div>
-         <div class="row">
-          <div class="col-md-12" id="sidebarButton">
-            <a href="index2.html"><button type="button" class="btn" id="button2" disabled>Confirm Dinner</button></a>
-          </div>
-        </div>
         </div> -->
         <!-- Main content, search view -->
         <div class="col-12 col-md-10" id="main-content3">
@@ -205,6 +204,8 @@
   <script src="js/view/dinnerprintout.js"></script>	
 
   <script src="js/controller/welcomeController.js"></script>
+  <script src="js/controller/sidebarController.js"></script>
+
 
   </body>
 </html>
