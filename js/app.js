@@ -17,6 +17,7 @@ $(function() {
 	var welcomeController = new WelcomeController(exampleView, model, this); //tar in motsvarande var, model och view
 	var mainContentController = new MainContentController(dishSearchView, model, this);  
 	var dishDetailsController = new DishDetailsController(dishDetailsView, model, this);
+	var selectDishAgainController = new SelectDishAgainController(dishSearchView2, model, this);
  
 
 	// General state controller 
@@ -39,28 +40,28 @@ $(function() {
 		hideAllViews(); 
 		$("#welcomeView").show();
 	}
-	this.showWelcomeScreen(); 
+	//this.showWelcomeScreen(); 
 
 	this.showDishSelectScreen = function() { 
 		hideAllViews(); 
 		$("#sidebar").show();
 		$("#main-content").show();
 	}
-	this.showDishSelectScreen();
+	//this.showDishSelectScreen();
 
 	this.showDishDetailsScreen = function() {
 		hideAllViews(); 
 		$("#sidebar").show();
 		$("#main-content3").show(); 
 	}
-	this.showDishDetailsScreen();
+	//this.showDishDetailsScreen();
 
 	this.showSelectAgainScreen = function() {
 		hideAllViews(); 
 		$("#sidebar2").show(); 
 		$("#main-content3").show(); 
 	}
-	this.showSelectAgainScreen();
+	//this.showSelectAgainScreen();
 
 	this.showOverviewScreen = function() {
 		hideAllViews(); 

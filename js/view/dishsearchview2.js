@@ -50,6 +50,9 @@ var DishSearch2 = function (container, model) { //index 4 + search dish 2 med pr
 			
 		</div>`);
 
+		this.nextPage = container.find("#foodCol2");
+
+
 
 }
 
