@@ -14,8 +14,8 @@ $(function() {
 	var confirmHeader = new ConfirmHeader($("#confirmHead"), model); 
 
 
-	var welcomeController = new WelcomeController(exampleView, model, this); 
-	var mainContentController = new MainContentController(exampleView, model, this); 
+	var welcomeController = new WelcomeController(exampleView, model, this); //tar in motsvarande var, model och view
+	var mainContentController = new MainContentController(dishSearchView, model, this);  
  
 
 	// General state controller 
@@ -32,13 +32,12 @@ $(function() {
 		$("#confirmHead").hide(); 
 	}
 
-	hideAllViews();
+	hideAllViews(); //här kallar vi på hideAllViews
 
 	this.showWelcomeScreen = function(){
 		hideAllViews(); 
 		$("#welcomeView").show();
 	}
-
 	this.showWelcomeScreen(); 
 
 	this.showDishSelectScreen = function() { 
@@ -46,6 +45,7 @@ $(function() {
 		$("#sidebar").show();
 		$("#main-content").show();
 	}
+	this.showDishSelectScreen();
 
 	this.showDishDetailsScreen = function() {
 		hideAllViews(); 
@@ -72,8 +72,6 @@ $(function() {
 	}
 
 
-
->>>>>>> d89c8a3a70303003d71b731ff5c81c7b1e88a608
 	/**
 	 * IMPORTANT: app.js is the only place where you are allowed to
 	 * use the $('someSelector') to search for elements in the whole HTML.
