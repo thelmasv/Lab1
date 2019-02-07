@@ -19,6 +19,7 @@ $(function() {
 	var mainContentController = new MainContentController(dishSearchView, model, this);  
 	var confirmHeaderController = new ConfirmHeaderController(confirmHeader, model, this); 
 	var selectDishAgainController = new SelectDishAgainController(dishSearchView2, model, this); 
+	var overviewController = new OverviewController(dishConfirmedView, model, this); 
  
 	// General state controller 
 	var hideAllViews = function() {

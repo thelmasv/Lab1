@@ -3,10 +3,7 @@ var DishConfirmedView = function (container, model) {
   var menuList = []; 
   var chosenMenu = model.getFullMenu(); 
 
-// HOW TO GET SEVERAL DISHES???
   var confirmedDishes = ""
-  // var confirmedDishes = model.getDish(100);
-    // console.log(confirmedDishes); 
 
   var sumDish = 0; 
   var outputConfirmed = ""
@@ -48,12 +45,16 @@ var DishConfirmedView = function (container, model) {
       <div class="container-fluid">
         <div class="row" id="buttonPrint">
           <div class="col-md-12" id="first-page-col">
-          <a href="index6.html"><button type="button" class="btnw3" id="button1">Print Full Recipe</button></a>
+            <button type="button" class="btnw3" id="button1">Print Full Recipe</button>
           </div>
         </div>
       </div>
 
 `
 		)
+
+    this.printButton = container.find("#button1");
+
+
 
 }
