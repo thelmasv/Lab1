@@ -15,6 +15,7 @@ var ConfirmHeader = function (container, model) {
     <br><br>
 	`); 
 
+
     this.goBackEditButton = container.find("#button1");
 
     //SKAPA UPDATE-FUNKTION??? för att uppdatera antal personer header 

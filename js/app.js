@@ -15,7 +15,7 @@ $(function() {
 
 	var welcomeController = new WelcomeController(exampleView, model, this); 
 	var sidebarController = new SidebarController(sidebarView, model, this); 
-	var dishDetailsController = new DishDetailsController(dishDetailsView, model, this); //tar in motsvarande var, model och view
+	var dishDetailsController = new DishDetailsController(dishDetailsView, model, this);
 	var mainContentController = new MainContentController(dishSearchView, model, this);  
 	var confirmHeaderController = new ConfirmHeaderController(confirmHeader, model, this); 
 	var selectDishAgainController = new SelectDishAgainController(dishSearchView2, model, this); 
@@ -24,7 +24,7 @@ $(function() {
 	// General state controller 
 	var hideAllViews = function() {
 		$("#welcomeView").hide();
-		$("#main-content").hide(); // kan ändra från ("#main-content") till t ex dishSearchView
+		$("#main-content").hide();
 		$("#sidebar").hide();
 		$("#main-content").hide(); 
 		$("#sidebar2").hide(); 

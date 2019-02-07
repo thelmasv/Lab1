@@ -24,6 +24,11 @@ container.html(`
               <p id="cost">Cost</p>
             </div>
           </div>
+
+          <div class="row" id="addBox">
+          	
+          </div>
+
           <div class="row" id="menuPrice">
          </div>
          <div class="row">
