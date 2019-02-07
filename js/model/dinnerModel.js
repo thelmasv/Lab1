@@ -6,6 +6,25 @@ var DinnerModel = function() {
 	var menu = [100, 2];
 	var observers = []; 
 
+	//Instructions lab2 : implement addObserver() and notifyObserver() in your model
+	this.addObserver = function(observer) {
+		observers.push(observer);  
+	}
+
+	this.notifyObservers = function(changeDetails) {
+		for(var i=0; i<observers.length; i++)
+			observers[i](this, changeDetails);
+		// we assume that observers[i] is a function, so we call it like observers[i](parameters)
+	}
+
+
+	// Remove observer from array
+    this.removeObserver = function(observer) {
+
+    }
+
+    //.... other model data and code calling notifyObservers() when the model changes
+
 	//* local variables to store the number of guests and dishes added to the dinner menu
 	this.setNumberOfGuests = function(num) {
 		if (num >= 1) {
@@ -118,28 +137,6 @@ var DinnerModel = function() {
 		}
 		return sum; 
 	}
-
-
-	//Instructions lab2 : implement addObserver() and notifyObserver() in your model
-	// ELLER SKA DET VARA this.addObserver() {} ???
-	this.addObserver = function(observer) {
-		observers.push(observer);  
-	}
-
-	// ELLER: this.notifyObserver() {} ???
-	this.notifyObservers = function(changeDetails) {
-		for(var i=0; i<observers.length; i++)
-			observers[i](this, changeDetails);
-		// we assume that observers[i] is a function, so we call it like observers[i](parameters)
-	}
-
-
-	// Remove observer from array
-    this.removeObserver = function(observer) {
-
-    }
-
-    //.... other model data and code calling notifyObservers() when the model changes
 
 
 	// the dishes variable contains an array of all the 
