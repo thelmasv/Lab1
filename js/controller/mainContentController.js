@@ -5,4 +5,8 @@ var MainContentController = function(view, model, app) {
 		app.showDishDetailsScreen(); // VÄLJ VART DEN SKA GÅ
 		// console.log("hohoho"); 
 	}); 
+/*
+	view.search.click(function() {
+	app.showDishSelectScreen(); // VÄLJ VART DEN SKA GÅ
+	// console.log("hohoho"); */
 }

@@ -100,7 +100,12 @@ container.html(`
      	}
 	}
 
-	model.addObserver(this.update);
+	model.addObserver(this.update); //ska denna implementeras i varje view där antal/pris/bild/recept ändras?? Eller nedanstående kod i kommentar
+	/*this.update=function(model, changeDetails){
+     // redraw just the portion affected by the changeDetails
+     // or remove all graphics in the view, read the whole model and redraw 
+	} 
+	model.addObserver(this.update); */
 
     this.confirmButton = container.find("#button2");
 

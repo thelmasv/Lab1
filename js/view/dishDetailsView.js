@@ -80,5 +80,17 @@ sumDish = model.getDishPrice(dishIngredients) * model.getNumberOfGuests();
     this.goBackSearchButton = container.find("#GoBackButton");
     this.addToMenuButton = container.find("#buttonAdd");
 
+    this.currentDishId=1;
 
+  this.update = function(change) {
+  /*  if(change == "numberOfGuests"){
+      this.loadDishDetailView(this.currentDishId);
+    }
+  }
+
+  model.addObserver(this);
+
+  this.loadDishDetailView(this.currentDishId);
+
+*/
 }

@@ -19,4 +19,12 @@ var DishDetailsController = function(view, model, app) {
 		// lägg till ruta med added dish
 	}); 
 
+/*
+    view.container.on('click', '.buttonAdd', function(){
+    var id = $(this).attr('id');
+    view.currentDishId = id;
+    model.addDishToMenu(id);
+});
+*/
+
 }

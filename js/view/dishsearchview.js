@@ -4,6 +4,8 @@ var DishSearchView = function (container, model) {
 
 	var allDishes = model.getAllDishes("main dish");
 
+	//var getDishes = model.getAllDishes("search");
+
 	var output = ""
 
 	for (i in allDishes) {
@@ -24,7 +26,7 @@ var DishSearchView = function (container, model) {
 		<div class="row">
 			<div class="col-12">
 				<form class="form-inline">
-					<div class="search"> 
+					<div class="search" id="searchbutton"> 
 					  <input type="text" placeholder="Enter keywords">
 				   </div>
 				  <div class="form-group">
@@ -52,6 +54,7 @@ var DishSearchView = function (container, model) {
 
 
 	this.nextPage = container.find("#foodCol2");
+	//this.search = container.find("#searchbutton");
 
 
 }
