@@ -17,6 +17,7 @@ $(function() {
 	var sidebarController = new SidebarController(sidebarView, model, this); 
 	var dishDetailsController = new DishDetailsController(dishDetailsView, model, this); //tar in motsvarande var, model och view
 	var mainContentController = new MainContentController(dishSearchView, model, this);  
+	var confirmHeaderController = new ConfirmHeaderController(confirmHeader, model, this); 
  
 	// General state controller 
 	var hideAllViews = function() {

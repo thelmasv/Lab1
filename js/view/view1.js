@@ -28,7 +28,7 @@ container.html(`
          </div>
          <div class="row">
           <div class="col-md-12" id="sidebarButton">
-            <button type="button" class="btn" id="button2" disabled>Confirm Dinner</button>
+            <button type="button" class="btn" id="button2" >Confirm Dinner</button>
           </div>
         </div>`
 	)
@@ -101,6 +101,8 @@ container.html(`
 	}
 
 	model.addObserver(this.update);
+
+    this.confirmButton = container.find("#button2");
 
 	
 }
