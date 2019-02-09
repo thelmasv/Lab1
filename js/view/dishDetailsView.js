@@ -1,6 +1,6 @@
 var DishDetailsView = function (container, model) {
   
-  var dishDetails = model.getDish(100);
+  var dishDetails = model.getDish(100); //100 måste ändras --> ger meat balls varje gång då, måste vara dynamisk
  
 
   let dishIngredients = dishDetails.ingredients;
@@ -80,7 +80,7 @@ sumDish = model.getDishPrice(dishIngredients) * model.getNumberOfGuests();
     this.goBackSearchButton = container.find("#GoBackButton");
     this.addToMenuButton = container.find("#buttonAdd");
 
-    this.currentDishId=1;
+   // this.currentDishId=1;
 
   this.update = function(change) {
   /*  if(change == "numberOfGuests"){
@@ -93,4 +93,5 @@ sumDish = model.getDishPrice(dishIngredients) * model.getNumberOfGuests();
   this.loadDishDetailView(this.currentDishId);
 
 */
+}
 }

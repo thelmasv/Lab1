@@ -5,8 +5,17 @@ var MainContentController = function(view, model, app) {
 		app.showDishDetailsScreen(); // VÄLJ VART DEN SKA GÅ
 		// console.log("hohoho"); 
 	}); 
-/*
+
 	view.search.click(function() {
-	app.showDishSelectScreen(); // VÄLJ VART DEN SKA GÅ
-	// console.log("hohoho"); */
-}
+		 // HINDRAR FRÅN ATT KOMMA TILL FÖRSTASIDAN
+	// console.log("hohoho");
+		model.getAllDishes();
+	console.log("hejhej");
+
+	});
+
+
+
+
+} // FÅ SÖKRUTAN ATT FUNKA
+

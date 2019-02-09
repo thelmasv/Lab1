@@ -1,5 +1,5 @@
-//DishSelectScreen 
-var DishDetailsController = function(view, model, app) {
+//DishDetailsScreen 
+var DishDetailsController = function(view, model, app, id) {
 	// console.log(view); 
 
 	// Kan också vara ett sätt: 
