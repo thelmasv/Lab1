@@ -2,6 +2,7 @@ var DishSearchView = function (container, model) {
 
 	var getFullMenu = container.find("#getFullMenu");
 
+	// HÄR VÄLJER STATISKT VILKEN TYP
 	var allDishes = model.getAllDishes("main dish");
 
 	var output = ""
@@ -51,7 +52,16 @@ var DishSearchView = function (container, model) {
 		</div>`);
 
 
+	// this.container = container; 
 	this.nextPage = container.find("#foodCol2");
+	this.search = container.find("#button1"); 
+
+	this.update = function(model, changeDetails){
+		return changeDetails;
+	}
+
+
+    model.addObserver(this.update);
 
 
 }

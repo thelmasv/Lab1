@@ -306,7 +306,7 @@ hr {
 	color: red;
 }
 
-#buttonAdd {
+#buttonAdd, #buttonAdd1 {
 	background-color: yellow;
 	color: black;
 	font-family: futura; 

@@ -1,12 +1,14 @@
-var DishDetailsView = function (container, model) {
+var DishDetailsView = function (container, model, id) {
   
   var dishDetails = model.getDish(100);
  
-
   let dishIngredients = dishDetails.ingredients;
 
   var outputIng = ""; 
   var sumDish = 0; 
+
+  // var numberPeople = model.getNumberOfGuests(); 
+  // var id; 
 
 
 // Loopa igenom alla ingredienser och dess värden för vald dish
@@ -44,7 +46,7 @@ sumDish = model.getDishPrice(dishIngredients) * model.getNumberOfGuests();
           </div>  
 
           <div class="col-12 col-md-6" id="TotIngredients"> 
-            <div class="box">INGREDIENTS FOR ` + model.getNumberOfGuests() + ` PEOPLE
+            <div class="box" id="ingTotPeople">INGREDIENTS FOR ` + model.getNumberOfGuests() + ` PEOPLE
 
             <hr>
 
@@ -77,8 +79,66 @@ sumDish = model.getDishPrice(dishIngredients) * model.getNumberOfGuests();
           </div> 
           </div>`);
 
+
+    // just nu skapar en till box för varje adderat antal personer
+    var numberOfGuestsTextField = container.find("#TotIngredients");
+
+    var guestText = document.createElement("DIV");
+    guestText.id = "ingTotPeople"; 
+    // guestText.innerHTML = "INGREDIENTS FOR " + model.getNumberOfGuests() + " PEOPLE";
+
+    //Lägger till hela elementet i numberOfGuests-taggen
+    numberOfGuestsTextField.append(guestText);
+
+    this.update = function(model, changeDetails){
+      if (changeDetails === 'numberOfGuests') {
+        // ta in en bit html och ändra den
+
+        numberOfGuestsTextField.empty().append(`<div class="box" id="ingTotPeople">
+          INGREDIENTS FOR ` + model.getNumberOfGuests() + ` PEOPLE
+            <hr>
+
+            ` + outputIng + `   
+
+              <div class="row">
+                <div class="col-12">
+                  <hr>     
+                </div> 
+              </div>
+
+              <div class="row">
+
+                <div class="col-6">
+                  <button type="button" class="btn" id="buttonAdd">Add to menu</button>
+                </div>
+
+                <div class="col-3" id="boxSum">
+                  <p>SEK</p>
+                </div>
+
+                <div class="col-3" id="boxSum">
+                  <p> ` + sumDish * model.getNumberOfGuests() + ` </p>  
+                </div>
+
+              </div>  
+            </div> 
+            <br> `);
+        return changeDetails; 
+
+      }
+
+    }
+
+    // knappen funkar inte!!!
+    // this.addToMenuButton1 = container.find("#buttonAdd1"); 
+
     this.goBackSearchButton = container.find("#GoBackButton");
     this.addToMenuButton = container.find("#buttonAdd");
+
+    model.addObserver(this.update);
+
+    // göra så att när trycker på "add" så ska "confirm dinner" i sidebar inte längre vara disabled 
+    // och så ska en ruta komma upp
 
 
 }

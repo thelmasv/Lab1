@@ -3,10 +3,14 @@
 
 var DinnerModel = function() {
 	var numberOfGuest = 1;
-	var menu = [100, 2];
+	var menu = [];
 	var observers = []; 
+	// var dish = [100]; 
+	var selectedId = 1; 
 
-	//Instructions lab2 : implement addObserver() and notifyObserver() in your model
+
+// currentDish???
+
 	this.addObserver = function(observer) {
 		observers.push(observer);  
 	}
@@ -19,11 +23,19 @@ var DinnerModel = function() {
 
 
 	// Remove observer from array
+	// when view has done its job, hide view and/by remove itself as a model observer
     this.removeObserver = function(observer) {
+    }
+    //.... other model data and code calling notifyObservers() when the model changes
 
+    this.setId = function (id) {
+    	this.selectedId = id;
+     	this.notifyObservers();
     }
 
-    //.... other model data and code calling notifyObservers() when the model changes
+  	this.getId = function() {
+     	return this.selectedId;
+    }
 
 	//* local variables to store the number of guests and dishes added to the dinner menu
 	this.setNumberOfGuests = function(num) {
@@ -42,14 +54,15 @@ var DinnerModel = function() {
 	//Returns the dish that is on the menu for selected type 
 	this.getSelectedDish = function(type) {
 		//TODO Lab 1
-		for (dish in this.menu) {
-			if (this.menu[dish].type == type) {
-				return this.menu[dish].name;
+		for (dish in menu) {
+			if (menu[dish].type == type) {
+				return menu[dish].name;
 			}
 		}
 	}
 
 	//Returns all the dishes on the menu.
+	// ANROPA 
 	this.getFullMenu = function() {
 		//TODO Lab 1
 		var menuList = [];
@@ -57,6 +70,13 @@ var DinnerModel = function() {
 			menuList.push(menu[dish]);
 		}
 		return menuList;
+
+		// ELLER TA BORT ALLT OCH BARA SKRIVA 
+		// 	this.getFullMenu = function() {
+				// return menu; 
+				// } 
+
+
 	}
 
 	//Returns all ingredients for all the dishes on the menu.
@@ -71,28 +91,76 @@ var DinnerModel = function() {
 		return ingredientList;
 	}
 
+	// ANNAN KOD
+	  // this.getAllIngredients = function(obj) {
+	  //   var ingredients = false;
+	  //   if (typeof obj === 'object') {
+	  //     ingredients = [];
+	  //     for (var i = 0; i < obj.length; i++) {
+	  //       ingredients.push(obj[i]);
+	  //     }
+	  //   }
+	  //   return ingredients;
+	  // }
+
+
+
+
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
 	this.getTotalMenuPrice = function(id) {
 		//TODO Lab 1
 		var totalCost = 0; 
+		numberPeople = this.getNumberOfGuests(); 
 		for (var i = 0; i < menu.length; ++i) {
 			totalCost += this.getDishPrice(this.getDish(menu[i]).ingredients); 
 		}
-		return totalCost; 
+		return totalCost * numberPeople; 
 	}
 
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
 	this.addDishToMenu = function(id) {
-		var dish = this.getDish(id);
-		this.menu.push(dish);
+		var amount = 0; 
+		var doubled = false; 
+		var dishType = (this.getDish(id)).type; 
+
+		if (menu === undefined || menu.length === 0) {
+			menu[0] = this.getDish(id); 
+		}
+
+		else {
+			menu.forEach(function(dishesInMenu) {
+				if (dishesInMenu.id == id) {
+					doubled = true; 
+					return; 
+				}
+				else if (dishesInMenu.type == dishType) {
+					doubled = true; 
+					return; 
+				}
+				amount++; 
+
+			}); 
+
+			if (doubled == true) {
+				return; 
+			}
+			else {
+				menu.push(this.getDish(id));
+			}
+		}
+
+		// var dish = this.getDish(id);
+		// menu.push(dish);
+		this.notifyObservers('menu'); 
+
 	}
 
 	//Removes dish from menu
 	this.removeDishFromMenu = function(id) {
-		for (dish in this.menu) {
-			if (this.menu[dish].id == id) {
-				delete this.menu[dish];
+		for (dish in menu) {
+			if (menu[dish].id == id) {
+				delete menu[dish];
 			}
 		}
 	}
@@ -100,25 +168,60 @@ var DinnerModel = function() {
 	//function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
 	//you can use the filter argument to filter out the dish by name or ingredient (use for search)
 	//if you don't pass any filter all the dishes will be returned
-	this.getAllDishes = function (type,filter) {
-	  return dishes.filter(function(dish) {
-		var found = true;
-		if(filter){
-			found = false;
-			dish.ingredients.forEach(function(ingredient) {
-				if(ingredient.name.indexOf(filter)!=-1) {
-					found = true;
-				}
-			});
-
-			if(dish.name.indexOf(filter) != -1)
-			{
-				found = true;
-			}
+	this.getAllDishes = function(type, filter) {
+	    if (!type && !filter) {
+		    return dishes;
 		}
-	  	return dish.type == type && found;
-	  });	
-	}
+	    if (type === "starter" || type === "main" || type === "dessert") {
+	      return dishes.filter(function(dish) {
+	        var found = true;
+	        if (filter) {
+	          found = false;
+	          if (dish.name.toLowerCase().indexOf(filter) != -1) // all dish names in lower case
+	          {
+	            found = true;
+	          }
+	          return dish.type == type && found;
+	        } else {
+	          return dish.type;
+	        }
+	        if (!filter) {
+	          return dish.type;
+	        }
+	      });
+	    } 
+	    else {
+	      return dishes.filter(function(dish) {
+	        var found = true;
+	        if (filter) {
+	          if (dish.name.toLowerCase().indexOf(filter) != -1) {
+	            return dish;
+	          }
+	        }
+	      });
+	    }
+	  }
+
+	// this.getAllDishes = function (type,filter) {
+	// 	//anropa på rätt ställe!!!
+	//   	return dishes.filter(function(dish) {
+	// 	var found = true;
+	// 	if(filter){
+	// 		found = false;
+	// 		dish.ingredients.forEach(function(ingredient) {
+	// 			if(ingredient.name.indexOf(filter)!=-1) {
+	// 				found = true;
+	// 			}
+	// 		});
+
+	// 		if(dish.name.indexOf(filter) != -1)
+	// 		{
+	// 			found = true;
+	// 		}
+	// 	}
+	//   	return dish.type == type && found;
+	//   });	
+	// }
 
 	//function that returns a dish of specific ID
 	this.getDish = function (id) {

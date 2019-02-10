@@ -11,7 +11,9 @@ var SidebarController = function(view, model, app) {
 
 	view.confirmButton.click(function() {
 	 	app.showOverviewScreen(); 
+	 	// lägg till något med model. som sparar meny, eller behövs kanske inte? 
 
  	}); 
 
 }
+
