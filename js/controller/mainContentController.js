@@ -4,6 +4,9 @@ var MainContentController = function(view, model, app) {
 	view.nextPage.click(function(e) {
 		// e.target; 
 		console.log(e.target); 
+	    // model.setId(e.target.parentNode.parentNode.id);
+	    // console.log(setId); 
+		// model.addDishToMenu(allDishes[i]); 
 		app.showDishDetailsScreen(); // VÄLJ VART DEN SKA GÅ
 		// identifiera vilken klickat på
 		// e.target.parentElement.id
@@ -12,16 +15,21 @@ var MainContentController = function(view, model, app) {
 
 	}); 
 
-	view.search.click(function() {
-		event.preventDefault();
-	}); 
+	// view.search.click(function() {
+	// 	event.preventDefault();
+	// }); 
 
 	view.searchbutton.click(function() {
 		model.getAllDishes();
-	console.log("hejhej");
+	// console.log("hejhej");
 
 	});
 
+	// view.clickDish.click(function(e) {
+	//    //console.log(event.currentTarget.childNodes);
+	//    model.setId(e.target.parentNode.parentNode.id);
+	//    app.dishDetails();
+	//    });
 
 
 } // FÅ SÖKRUTAN ATT FUNKA

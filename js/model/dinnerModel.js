@@ -7,6 +7,8 @@ var DinnerModel = function() {
 	var observers = []; 
 	// var dish = [100]; 
 	var selectedId = 1; 
+	this.menuPlace = new Array();
+
 
 
 // currentDish???
@@ -60,6 +62,11 @@ var DinnerModel = function() {
 			}
 		}
 	}
+
+		// ELLER: 
+
+	//this.getSelectedDish = function(type) {}
+
 
 	//Returns all the dishes on the menu.
 	// ANROPA 
@@ -168,11 +175,10 @@ var DinnerModel = function() {
 	//function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
 	//you can use the filter argument to filter out the dish by name or ingredient (use for search)
 	//if you don't pass any filter all the dishes will be returned
-<<<<<<< HEAD
-	this.getAllDishes = function(type, filter) {
-	    if (!type && !filter) {
-		    return dishes;
-=======
+
+	// this.getAllDishes = function(type, filter) {
+	//     if (!type && !filter) {
+	// 	    return dishes;
 	this.getAllDishes = function (type,filter) {
 	  return dishes.filter(function(index, dish) {
 		var found = true;
@@ -188,7 +194,6 @@ var DinnerModel = function() {
 			{
 				found = true;
 			}
->>>>>>> 9a875efe995deacdf23d4e93bcea8a1b3e862bcb
 		}
 	    if (type === "starter" || type === "main" || type === "dessert") {
 	      return dishes.filter(function(dish) {
@@ -218,7 +223,8 @@ var DinnerModel = function() {
 	        }
 	      });
 	    }
-	  }
+	  })
+	}
 
 	// this.getAllDishes = function (type,filter) {
 	// 	//anropa på rätt ställe!!!
@@ -242,7 +248,7 @@ var DinnerModel = function() {
 	// }
 
 	//function that returns a dish of specific ID
-	this.getDish = function (id) {
+	this.getDish = function (id, name, type) {
 	  for(key in dishes){
 			if(dishes[key].id == id) {
 				return dishes[key];

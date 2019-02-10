@@ -195,7 +195,7 @@ hr {
 	border-bottom: 2px solid black;
 }*/
 
-#foodCol, #foodCol2 {
+#foodCol, #foodCol2, #d0, #d1, #d2, #d3, #d4, #d5, #d6, #d7, #d8, #d9 {
 	border: 3px solid black;
 	margin: auto;
 	padding: 0px;
@@ -203,7 +203,7 @@ hr {
 
 }
 
-#foodCol > p, #foodCol2 > p {
+#foodCol > p, #foodCol2 > p, #d0 > p, #d1 > p, #d2 > p, #d3 > p, #d4 > p, #d5 > p, #d6 > p, #d7 > p, #d8 > p, #d9 > p  {
 	text-align: center;
 	background-color: lightgrey;
 	margin-bottom: 0px;
@@ -211,14 +211,14 @@ hr {
 	padding: 0.5em;
 }
 
-#foodCol > img, #foodCol2 > img {
+#foodCol > img, #foodCol2 > img, #d0 > img, #d1 > img, #d2 > img, #d3 > img, #d4 > img, #d5 > img, #d6 > img, #d7 > img, #d8 > img, #d9 > img {
 	width: 100%;
 	max-width: 100%;
 }
 
 
 @media only screen and (max-width: 768px) {
-	#foodCol, #foodCol2 {
+	#foodCol, #foodCol2, #d0, #d1, #d2, #d3, #d4, #d5, #d6, #d7, #d8, #d9 {
 		margin-bottom: 1em;
 	}
 }

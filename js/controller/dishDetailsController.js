@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 //DishSelectScreen 
-=======
-//DishDetailsScreen 
->>>>>>> 9a875efe995deacdf23d4e93bcea8a1b3e862bcb
 var DishDetailsController = function(view, model, app, id) {
 	// console.log(view); 
 
@@ -20,7 +16,7 @@ var DishDetailsController = function(view, model, app, id) {
 
 	view.addToMenuButton.click(function() {
 		app.showSelectAgainScreen(); // Ska gå tillbaka till screen 2
-    	model.setId(event.currentTarget.parentNode.parentNode.parentNode.childNodes[1].childNodes[0].id);
+    	model.setId(event.currentTarget.parentNode.parentNode.parentNode.childNodes[1].childNodes[0]);
    		model.addDishToMenu(model.getId());
 	    var dishPrice = model.getDishPrice(model.getId());
 

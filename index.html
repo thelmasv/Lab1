@@ -39,6 +39,8 @@
         <div class="col-12 col-md-10" id="main-content">
           <span id="getFullMenu">
           </span>
+          <div id="searchDishes">
+          </div> 
         </div>
         <!-- DISH DETAIL VIEW (3) -->
         <div class="col-12 col-md-10" id="main-content3">
@@ -66,16 +68,42 @@
 
     <br><br><br><br>
 
+<!-- kod Christian -->
+    <div id="root">
+    </div>
+
+// <script language="javascript">
+//    var model=[{id:10, name:"bla"}, {id:20, name:"blabla"}, {id:30, name:"blablabla"}];
+//    var root=document.querySelector("#root");
+
+//    new listView(root, model);
+
+//    function listView(container, model){
+//       for(var i=0; i< model.length; i++){
+//           var itemView= document.createElement("div");
+//           itemView.innerHTML="<button>"+model[i].name+"</button>";
+//           container.appendChild(itemView);
+//           new itemController(model, itemView, model[i].id);
+//      }
+//    }
+//    function itemController(model, itemView, id){
+//        itemView.addEventListener("click", function(){
+//           console.log(id);
+//         });
+//    }
+
+// </script>
+
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-    </script>
+    <script type="text/javascript"></script>
 
 	<!-- The application JavaScript code -->
 	<script src="js/app.js"></script>
 	<script src="js/model/dinnerModel.js"></script>
+
 	<script src="js/view/exampleView.js"></script>
 	<script src="js/view/view1.js"></script>
 	<script src="js/view/sidebarview2.js"></script>

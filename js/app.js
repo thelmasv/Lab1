@@ -13,6 +13,8 @@ $(function() {
 	var dinnerprintout = new DinnerPrintout($("#main-content5"), model);
 	var confirmHeader = new ConfirmHeader($("#confirmHead"), model); 
 
+	// var dishImagesView = new dishImagesView($("#searchDishes"), model); 
+
 	var welcomeController = new WelcomeController(exampleView, model, this); 
 	var sidebarController = new SidebarController(sidebarView, model, this); 
 	var dishDetailsController = new DishDetailsController(dishDetailsView, model, this);

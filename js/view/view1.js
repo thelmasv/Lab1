@@ -46,6 +46,10 @@ var SidebarView = function (container, model) {
 		return model.getTotalMenuPrice(); 
 	}
 
+	var dishDetails = model.getDish(100);
+	let dishIngredients = dishDetails.ingredients;
+	var sumDish = 0; 
+
 	var numberOfGuestsTextField = container.find("#numGuests");
 	var price = model.getTotalMenuPrice();
 
@@ -100,9 +104,6 @@ var SidebarView = function (container, model) {
 	addText.innerHTML = "Dish";
 	addMenu.append(addText); 
 
-	var dishDetails = model.getDish(100);
-	let dishIngredients = dishDetails.ingredients;
-	var sumDish = 0; 
 	sumDish = model.getDishPrice(dishIngredients) * model.getNumberOfGuests();
 
 	// kriver ut SEK: price i <p>-taggen
@@ -113,43 +114,6 @@ var SidebarView = function (container, model) {
 
 	// lägger in hela div-taggen i elementet som har id "menuPrice"
 	menuPrice.append(divCol12);
-
-
-	// this.update = function() {
-	// 	$(numberOfGuestsTextField).empty(); 
-	// 	$(totMenuPrice).empty(); 
-	// 	this.totMenuPrice(); 
-	// 	this.totNumberOfGuests(); 
-	// }
-
-	// var numberPeople = model.getNumberOfGuests(); 
-	// var totalMenuPrice = model.getTotalMenuPrice(); 
-
-	// var sidebar = function() {
-	// 	var menu = model.getFullMenu(); 
-	// 	menu.forEach(function(dish) {
-	// 		var dishName = dish.name; 
-	// 		this.showDishName = sidebar.find('#dish-name'); 
-	// 		this.showDishName.append (`
-	// 			<div> ${dishName} </div>
-	// 			`); 
-	// 		this.dishPrice = sidebar.find('#cost'); 
-	// 		var ingredientCost = 0; 
-	// 		for (var i = 0; i < dish.ingredients.length; i++) {
-	// 			ingredientCost += dish.ingredients[i].price; 
-	// 		}
-	// 		ingredientCost = (ingredientCost * numberPeople).toFixed(0); 
-	// 		this.dishPrice = sidebar.find('#menuPrice'); 
-	// 		this.dishPrice.append(`
-	// 			<div> ${menuPrice} </div>
-	// 			`)
-	// 	}); 
-	// }
-	// sidebar(); 
-
-
-
-
 
 	this.update = function(model, changeDetails) {
 		// console.log(addDishToMenu); 
@@ -181,22 +145,18 @@ var SidebarView = function (container, model) {
      	}
 	}
 
-<<<<<<< HEAD
 	// this.update = function() {
 	// 	var numberPeople = model.getNumberOfGuests(); 
 	// 	document.getElementById("numberOfGuests").innerHTML = numberPeople; 
 	// 	sidebar(); 
 	// }
 
-	model.addObserver(this.update);
-=======
 	model.addObserver(this.update); //ska denna implementeras i varje view där antal/pris/bild/recept ändras?? Eller nedanstående kod i kommentar
 	/*this.update=function(model, changeDetails){
      // redraw just the portion affected by the changeDetails
      // or remove all graphics in the view, read the whole model and redraw 
 	} 
 	model.addObserver(this.update); */
->>>>>>> 9a875efe995deacdf23d4e93bcea8a1b3e862bcb
 
 
 

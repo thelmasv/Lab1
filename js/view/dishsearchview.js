@@ -1,35 +1,3 @@
-/*var DishSearchView = function (container, model) {
-
-	var getFullMenu = container.find("#getFullMenu");
-
-	// HÄR VÄLJER STATISKT VILKEN TYP
-	var allDishes = model.getAllDishes("main dish");
-
-	//var filter = model.getAllDishes("");
-
-	var searchDishByName = model.getAllDishes("getAllDishes");
-
-	this.getAllDishes = container.find(".getAllDishes");
-
-	//var getDishes //= model.getAllDishes(); //kan söka på name
-	//input = document.getDishes(filter.name);
-
-	this.model = function(filter){
-		var menu = model.getAllDishes(filter)
-	}
-
-	var output = ""
-
-	for (name in searchDishByName) {
-		 	
-		output +=  `<div class="col-8 col-md-2" id="foodCol2"> 
-					<img src="` + allDishes[name].image + `"/>
-					<p> ` + allDishes[name].name + `</p>
-				</div>`;
-	}
-	
-*/
-
 var DishSearchView = function (container, model) {
 	
 	// Get all the relevant elements of the view (ones that show data
@@ -37,48 +5,18 @@ var DishSearchView = function (container, model) {
 	this.getFullMenu = container.find("#id");
 
 	var allDishes = model.getAllDishes(output); //får ut alla rätter på förstasidan("all")
+	allDishes.id = "searchDishes"; 
 
 	//var allDishesHtml = "";
 	var output = ""
 
 	for (i = 0; i < allDishes.length; i++) { 
 
-		output +=  `<div class="col-8 col-md-2" id="foodCol2"> 
+		output +=  `<div class="col-8 col-md-2" id="d`+i+`"> 
 						<img src="` + allDishes[i].image + `"/>
 						<p> ` + allDishes[i].name + `</p>
 					</div>`;
     }
-
-    this.searchFilter = container.find("#filter");
-
-
-
-  /*  var searchDishByName = this.
-
-
-    if (searchDishByName === model.filter){
-    	return dishes.id;
-    }
-*/
-
-
-    //if (searchDishByName == model.filter);
-    //	return true;
-	
-	//this.allDishes.html(output);
-
-
-
-/*	var output = ""
-
-	for (i in allDishes) { //GÖR EN METOD SOM HAR ATTRIBUT FÖR FILTER/TYPE
-		// console.log(allDishes[i].name);
-
-		output +=  `<div class="col-8 col-md-2" id="foodCol2"> 
-						<img src="` + allDishes[i].image + `"/>
-						<p> ` + allDishes[i].name + `</p>
-					</div>`;
-	}*/
 
 		container.html ( `
 		<div class="row">
@@ -108,36 +46,32 @@ var DishSearchView = function (container, model) {
 			</div>
 		</div>
 
-			
-
 		<div class="row">
 		</div>
 		<hr align="center">
 
-		<div class="row">
+		<div class="row" id="searchDishes">
 
 			` + output + `
 			
 		</div>`);
 
 
+
+
+
 	// this.container = container; 
-	this.nextPage = container.find("#foodCol2");
-<<<<<<< HEAD
+	this.nextPage = container.find("#d"+i+"");
 	this.search = container.find("#button1"); 
+	this.clickDish = container.find("#searchDishes"); 
 
 	this.update = function(model, changeDetails){
 		return changeDetails;
 	}
 
-
     model.addObserver(this.update);
 
-=======
 	this.searchbutton = container.find("#button1");
-	//this.getMain = container.find("#exampleFormControlSelect1");
-	//this.getStarter = container.find("#exampleFormControlSelect1");
->>>>>>> 9a875efe995deacdf23d4e93bcea8a1b3e862bcb
 
 }
 
