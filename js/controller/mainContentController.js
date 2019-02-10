@@ -15,4 +15,14 @@ var MainContentController = function(view, model, app) {
 	view.search.click(function() {
 		event.preventDefault();
 	}); 
-}
+
+	view.searchbutton.click(function() {
+		model.getAllDishes();
+	console.log("hejhej");
+
+	});
+
+
+
+} // FÅ SÖKRUTAN ATT FUNKA
+

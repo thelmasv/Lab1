@@ -181,6 +181,7 @@ var SidebarView = function (container, model) {
      	}
 	}
 
+<<<<<<< HEAD
 	// this.update = function() {
 	// 	var numberPeople = model.getNumberOfGuests(); 
 	// 	document.getElementById("numberOfGuests").innerHTML = numberPeople; 
@@ -188,6 +189,14 @@ var SidebarView = function (container, model) {
 	// }
 
 	model.addObserver(this.update);
+=======
+	model.addObserver(this.update); //ska denna implementeras i varje view där antal/pris/bild/recept ändras?? Eller nedanstående kod i kommentar
+	/*this.update=function(model, changeDetails){
+     // redraw just the portion affected by the changeDetails
+     // or remove all graphics in the view, read the whole model and redraw 
+	} 
+	model.addObserver(this.update); */
+>>>>>>> 9a875efe995deacdf23d4e93bcea8a1b3e862bcb
 
 
 

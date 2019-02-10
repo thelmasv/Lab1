@@ -20,6 +20,7 @@ $(function() {
 	var confirmHeaderController = new ConfirmHeaderController(confirmHeader, model, this); 
 	var selectDishAgainController = new SelectDishAgainController(dishSearchView2, model, this); 
 	var overviewController = new OverviewController(dishConfirmedView, model, this); 
+	//var printoutController = new PrintoutController(dinnerprintout, model,this);
  
 	// General state controller 
 	var hideAllViews = function() {
@@ -38,6 +39,8 @@ $(function() {
 
 	hideAllViews(); //här kallar vi på hideAllViews
 
+	this.filter = "";
+
 	this.showWelcomeScreen = function(){
 		hideAllViews(); 
 		$("#welcomeView").show();
@@ -48,7 +51,9 @@ $(function() {
 		hideAllViews(); 
 		$("#sidebar").show();
 		$("#main-content").show();
+
 	}
+
 
 	this.showDishDetailsScreen = function() {
 		hideAllViews(); 

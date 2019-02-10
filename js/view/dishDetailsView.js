@@ -1,6 +1,6 @@
 var DishDetailsView = function (container, model, id) {
   
-  var dishDetails = model.getDish(100);
+  var dishDetails = model.getDish(100); //100 måste ändras --> ger meat balls varje gång då, måste vara dynamisk
  
   let dishIngredients = dishDetails.ingredients;
 
@@ -135,10 +135,26 @@ sumDish = model.getDishPrice(dishIngredients) * model.getNumberOfGuests();
     this.goBackSearchButton = container.find("#GoBackButton");
     this.addToMenuButton = container.find("#buttonAdd");
 
+<<<<<<< HEAD
     model.addObserver(this.update);
 
     // göra så att när trycker på "add" så ska "confirm dinner" i sidebar inte längre vara disabled 
     // och så ska en ruta komma upp
 
+=======
+   // this.currentDishId=1;
+>>>>>>> 9a875efe995deacdf23d4e93bcea8a1b3e862bcb
 
+  this.update = function(change) {
+  /*  if(change == "numberOfGuests"){
+      this.loadDishDetailView(this.currentDishId);
+    }
+  }
+
+  model.addObserver(this);
+
+  this.loadDishDetailView(this.currentDishId);
+
+*/
+}
 }

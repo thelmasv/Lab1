@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 //DishSelectScreen 
+=======
+//DishDetailsScreen 
+>>>>>>> 9a875efe995deacdf23d4e93bcea8a1b3e862bcb
 var DishDetailsController = function(view, model, app, id) {
 	// console.log(view); 
 
@@ -31,6 +35,14 @@ var DishDetailsController = function(view, model, app, id) {
 	// 	app.showSelectAgainScreen(); // Ska gå tillbaka till screen 2
 	// 	model.addDishToMenu(100); 
 	// });
+
+/*
+    view.container.on('click', '.buttonAdd', function(){
+    var id = $(this).attr('id');
+    view.currentDishId = id;
+    model.addDishToMenu(id);
+});
+*/
 
 }
 
