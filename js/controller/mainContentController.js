@@ -6,14 +6,11 @@ var MainContentController = function(view, model, app) {
 		// console.log("hohoho"); 
 	}); 
 
-	view.search.click(function() {
-		 // HINDRAR FRÅN ATT KOMMA TILL FÖRSTASIDAN
-	// console.log("hohoho");
+	view.searchbutton.click(function() {
 		model.getAllDishes();
 	console.log("hejhej");
 
 	});
-
 
 
 

@@ -47,6 +47,22 @@ var DishSearchView = function (container, model) {
 						<p> ` + allDishes[i].name + `</p>
 					</div>`;
     }
+
+    this.searchFilter = container.find("#filter");
+
+
+
+  /*  var searchDishByName = this.
+
+
+    if (searchDishByName === model.filter){
+    	return dishes.id;
+    }
+*/
+
+
+    //if (searchDishByName == model.filter);
+    //	return true;
 	
 	//this.allDishes.html(output);
 
@@ -105,7 +121,7 @@ var DishSearchView = function (container, model) {
 
 
 	this.nextPage = container.find("#foodCol2");
-	this.search = container.find("#button1");
+	this.searchbutton = container.find("#button1");
 	//this.getMain = container.find("#exampleFormControlSelect1");
 	//this.getStarter = container.find("#exampleFormControlSelect1");
 

@@ -39,6 +39,8 @@ $(function() {
 
 	hideAllViews(); //här kallar vi på hideAllViews
 
+	this.filter = "";
+
 	this.showWelcomeScreen = function(){
 		hideAllViews(); 
 		$("#welcomeView").show();
@@ -49,6 +51,7 @@ $(function() {
 		hideAllViews(); 
 		$("#sidebar").show();
 		$("#main-content").show();
+
 	}
 
 
