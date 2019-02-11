@@ -1,11 +1,14 @@
 var DishDetailsView = function (container, model, id) {
+
+  dishID = model.getId();
+  // den här tar in getId INNAN den uppdateras 
+
+  var dishDetails = model.getDish(dishID); //100 måste ändras --> ger meat balls varje gång då, måste vara dynamisk
   
-  var dishDetails = model.getDish(100); //100 måste ändras --> ger meat balls varje gång då, måste vara dynamisk
- 
   let dishIngredients = dishDetails.ingredients;
 
-  var outputIng = ""; 
-  var sumDish = 0; 
+  var outputIng = "";
+  var sumDish = 0;
 
   // var numberPeople = model.getNumberOfGuests(); 
   // var id; 
@@ -135,7 +138,6 @@ sumDish = model.getDishPrice(dishIngredients) * model.getNumberOfGuests();
     this.goBackSearchButton = container.find("#GoBackButton");
     this.addToMenuButton = container.find("#buttonAdd");
 
-    model.addObserver(this.update);
 
     // göra så att när trycker på "add" så ska "confirm dinner" i sidebar inte längre vara disabled 
     // och så ska en ruta komma upp
@@ -154,4 +156,7 @@ sumDish = model.getDishPrice(dishIngredients) * model.getNumberOfGuests();
 
 */
 }
+
+    model.addObserver(this.update);
+
 }

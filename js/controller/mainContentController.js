@@ -1,36 +1,32 @@
 //DishSelectScreen 
-var MainContentController = function(view, model, app) {
-	// console.log(view); 
-	view.nextPage.click(function(e) {
-		// e.target; 
-		console.log(e.target); 
-	    // model.setId(e.target.parentNode.parentNode.id);
-	    // console.log(setId); 
-		// model.addDishToMenu(allDishes[i]); 
-		app.showDishDetailsScreen(); // VÄLJ VART DEN SKA GÅ
-		// identifiera vilken klickat på
-		// e.target.parentElement.id
-		// ta bort d0 genom substring[1] och konvertera till integer 
-		// skapa något så vet att går in i dish, genom model?
+var MainContentController = function( view, model, app ) {
 
-	}); 
-
-	// view.search.click(function() {
-	// 	event.preventDefault();
-	// }); 
-
-	view.searchbutton.click(function() {
-		model.getAllDishes();
-	// console.log("hejhej");
+	$("#exampleFormControlSelect1").change( function() {
+	    
+	    view.update("selectType");
 
 	});
 
-	// view.clickDish.click(function(e) {
-	//    //console.log(event.currentTarget.childNodes);
-	//    model.setId(e.target.parentNode.parentNode.id);
-	//    app.dishDetails();
-	//    });
+	view.searchButton.click( function() {
+
+	    view.update("searchDish");
+
+	});
+
+
+	view.displayedDish.click( function() {
+
+		var id = $(this).attr('id');
+		model.setId(id);
+		model.getId();
+		console.log(model.getId());
+		app.showDishDetailsScreen();
+
+	});
+
 
 
 } // FÅ SÖKRUTAN ATT FUNKA
+
+	
 

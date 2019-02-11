@@ -31,12 +31,13 @@ var DinnerModel = function() {
     //.... other model data and code calling notifyObservers() when the model changes
 
     this.setId = function (id) {
-    	this.selectedId = id;
+    	selectedId = id;
      	this.notifyObservers();
     }
 
+
   	this.getId = function() {
-     	return this.selectedId;
+     	return selectedId;
     }
 
 	//* local variables to store the number of guests and dishes added to the dinner menu
@@ -179,60 +180,12 @@ var DinnerModel = function() {
 	// this.getAllDishes = function(type, filter) {
 	//     if (!type && !filter) {
 	// 	    return dishes;
-	this.getAllDishes = function (type,filter) {
-	  return dishes.filter(function(index, dish) {
-		var found = true;
-		if(filter){
-			found = false;
-			dish.ingredients.forEach(function(index, ingredient) {
-				if(ingredient.name.indexOf(filter)!=-1) {
-					found = true;
-				}
-			});
-
-			if(dish.name.indexOf(filter) != -1)
-			{
-				found = true;
-			}
-		}
-	    if (type === "starter" || type === "main" || type === "dessert") {
-	      return dishes.filter(function(dish) {
-	        var found = true;
-	        if (filter) {
-	          found = false;
-	          if (dish.name.toLowerCase().indexOf(filter) != -1) // all dish names in lower case
-	          {
-	            found = true;
-	          }
-	          return dish.type == type && found;
-	        } else {
-	          return dish.type;
-	        }
-	        if (!filter) {
-	          return dish.type;
-	        }
-	      });
-	    } 
-	    else {
-	      return dishes.filter(function(dish) {
-	        var found = true;
-	        if (filter) {
-	          if (dish.name.toLowerCase().indexOf(filter) != -1) {
-	            return dish;
-	          }
-	        }
-	      });
-	    }
-	  })
-	}
-
 	// this.getAllDishes = function (type,filter) {
-	// 	//anropa på rätt ställe!!!
-	//   	return dishes.filter(function(dish) {
+	//   return dishes.filter(function(index, dish) {
 	// 	var found = true;
 	// 	if(filter){
 	// 		found = false;
-	// 		dish.ingredients.forEach(function(ingredient) {
+	// 		dish.ingredients.forEach(function(index, ingredient) {
 	// 			if(ingredient.name.indexOf(filter)!=-1) {
 	// 				found = true;
 	// 			}
@@ -243,9 +196,85 @@ var DinnerModel = function() {
 	// 			found = true;
 	// 		}
 	// 	}
-	//   	return dish.type == type && found;
-	//   });	
+	//     if (type === "starter" || type === "main" || type === "dessert") {
+	//       return dishes.filter(function(dish) {
+	//         var found = true;
+	//         if (filter) {
+	//           found = false;
+	//           if (dish.name.toLowerCase().indexOf(filter) != -1) // all dish names in lower case
+	//           {
+	//             found = true;
+	//           }
+	//           return dish.type == type && found;
+	//         } else {
+	//           return dish.type;
+	//         }
+	//         if (!filter) {
+	//           return dish.type;
+	//         }
+	//       });
+	//     } 
+	//     else {
+	//       return dishes.filter(function(dish) {
+	//         var found = true;
+	//         if (filter) {
+	//           if (dish.name.toLowerCase().indexOf(filter) != -1) {
+	//             return dish;
+	//           }
+	//         }
+	//       });
+	//     }
+	//   })
 	// }
+
+
+
+	this.getAllDishes = function (type, filter) {
+
+		// Make all types lowercase
+		type = type.toLowerCase();
+
+	  	return dishes.filter(function(dish) {
+
+			var found = true;
+
+			if ( filter ) {
+
+				found = false;
+
+				dish.ingredients.forEach( function( ingredient ) {
+
+					if ( ingredient.name.indexOf( filter ) != -1 ) {
+						
+						found = true;
+
+					}
+
+				});
+
+				if ( dish.name.indexOf( filter ) != -1 ) {
+
+					found = true;
+
+				}
+
+			}
+
+			if ( type == "all" ) {
+
+				return dishes;
+
+			}
+			
+			else {
+		  	
+		  		return dish.type == type && found;
+		  	
+		  	}
+
+		});
+
+	}
 
 	//function that returns a dish of specific ID
 	this.getDish = function (id, name, type) {
