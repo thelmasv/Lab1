@@ -17,7 +17,11 @@ var DishSearchView = function (container, model) {
 				   </div>
 				  <div class="form-group">
 				  	<select class="form-control" id="exampleFormControlSelect1">
+<<<<<<< HEAD
 						<option All>All</option>
+=======
+						<option selected>All</option>
+>>>>>>> ac99b557d373a1be0505287571a9d2e64ba41db0
 						<option>Starter</option>
 						<option>Main Dish</option>
 						<option>Dessert</option>
@@ -38,7 +42,11 @@ var DishSearchView = function (container, model) {
 		</div>`);
 
 	var allDishes = model.getAllDishes("All"); //får ut alla rätter på förstasidan("all")
+<<<<<<< HEAD
 	var output = ""
+=======
+	var output = ""; 
+>>>>>>> ac99b557d373a1be0505287571a9d2e64ba41db0
 
 	for (i = 0; i < allDishes.length; i++) { 
 
@@ -78,6 +86,7 @@ var DishSearchView = function (container, model) {
 		var allDishes = model.getAllDishes(type, filter);
 
 		var output = "";
+		// var setTheId = model.setId(); 
 
 
 		for ( i = 0; i < allDishes.length; i++ ) { 

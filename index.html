@@ -72,28 +72,28 @@
     <div id="root">
     </div>
 
-// <script language="javascript">
-//    var model=[{id:10, name:"bla"}, {id:20, name:"blabla"}, {id:30, name:"blablabla"}];
-//    var root=document.querySelector("#root");
+<!--  <script language="javascript">
+    var model=[{id:10, name:"bla"}, {id:20, name:"blabla"}, {id:30, name:"blablabla"}];
+    var root=document.querySelector("#root");
 
-//    new listView(root, model);
+    new listView(root, model);
 
-//    function listView(container, model){
-//       for(var i=0; i< model.length; i++){
-//           var itemView= document.createElement("div");
-//           itemView.innerHTML="<button>"+model[i].name+"</button>";
-//           container.appendChild(itemView);
-//           new itemController(model, itemView, model[i].id);
-//      }
-//    }
-//    function itemController(model, itemView, id){
-//        itemView.addEventListener("click", function(){
-//           console.log(id);
-//         });
-//    }
+    function listView(container, model){
+       for(var i=0; i< model.length; i++){
+           var itemView= document.createElement("div");
+           itemView.innerHTML="<button>"+model[i].name+"</button>";
+           container.appendChild(itemView);
+           new itemController(model, itemView, model[i].id);
+      }
+    }
+    function itemController(model, itemView, id){
+        itemView.addEventListener("click", function(){
+           console.log(id);
+         });
+    }
 
-// </script>
-
+ </script>
+ -->
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->

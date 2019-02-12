@@ -50,6 +50,7 @@ $(function() {
 	this.showWelcomeScreen(); 
 
 	this.showDishSelectScreen = function() { 
+		console.log("bajs");
 		hideAllViews(); 
 		$("#sidebar").show();
 		$("#main-content").show();
@@ -58,6 +59,7 @@ $(function() {
 
 
 	this.showDishDetailsScreen = function() {
+		dishDetailsView.changeInfo();
 		hideAllViews(); 
 		$("#sidebar").show();
 		$("#main-content3").show(); 

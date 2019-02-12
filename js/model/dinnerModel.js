@@ -6,12 +6,12 @@ var DinnerModel = function() {
 	var menu = [];
 	var observers = []; 
 	// var dish = [100]; 
+<<<<<<< HEAD
 	var selectedId = 2; 
+=======
+	var selectedId = 0; 
+>>>>>>> ac99b557d373a1be0505287571a9d2e64ba41db0
 	// this.menuPlace = new Array();
-
-
-
-// currentDish???
 
 	this.addObserver = function(observer) {
 		observers.push(observer);  
@@ -31,13 +31,21 @@ var DinnerModel = function() {
     //.... other model data and code calling notifyObservers() when the model changes
 
     this.setId = function (id) {
+    	// console.log("SETTY"); 
+    	// console.log(selectedId); 
     	selectedId = id;
-     	this.notifyObservers();
+     	this.notifyObservers('selectedId');
     }
+    // skrivs ut direkt. får selectedId
 
 
   	this.getId = function() {
+  		// console.log("GETTY"); 
+  		// får inte ut detta 
+
      	return selectedId;
+     	// GÅR INTE IN I DENNA
+     	// console.log("NUDA"); 
     }
 
 	//* local variables to store the number of guests and dishes added to the dinner menu
@@ -67,6 +75,17 @@ var DinnerModel = function() {
 		// ELLER: 
 
 	//this.getSelectedDish = function(type) {}
+
+
+	//function that returns a dish of specific ID
+	this.getDish = function (id, name, type) {
+	  for(key in dishes){
+			if(dishes[key].id == id) {
+				return dishes[key];
+			}
+		}
+	}
+
 
 
 	//Returns all the dishes on the menu.
@@ -275,14 +294,6 @@ var DinnerModel = function() {
 
 	}
 
-	//function that returns a dish of specific ID
-	this.getDish = function (id, name, type) {
-	  for(key in dishes){
-			if(dishes[key].id == id) {
-				return dishes[key];
-			}
-		}
-	}
 
 	// Get dish price for one dish and all people
 	this.getDishPrice = function (dishIngredients) {

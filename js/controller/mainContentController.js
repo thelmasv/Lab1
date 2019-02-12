@@ -14,7 +14,6 @@ var MainContentController = function( view, model, app ) {
 	});
 
 	view.searchButton.click( function() {
-
 	    view.update("searchDish");
 
 	});
@@ -23,9 +22,16 @@ var MainContentController = function( view, model, app ) {
 	view.displayedDish.click( function() { //här väljs dish så den går till details
 
 		var id = $(this).attr('id');
+		console.log(id)
 		model.setId(id);
-		model.getId(id);
 		console.log(model.getId());
+		// model.setId(model.getId()); 
+		console.log("SKRIVS DET"); 
+		
+		// model.getId();
+		// model.getId(model.setId(id));
+		// console.log(model.getId());
+		// console.log(model.setId());
 		app.showDishDetailsScreen();
 
 	});
