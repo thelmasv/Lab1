@@ -17,13 +17,7 @@ var MainContentController = function( view, model, app ) {
 
 	});
 
-
-<<<<<<< HEAD
-	view.displayedDish.click( function() {
-=======
 	view.displayedDish.click( function() { //här väljs dish så den går till details
-
->>>>>>> 7d0346e12c6009eaa9668f86f3013f4720515689
 		var id = $(this).attr('id');
 		model.setId(id);
 		app.showDishDetailsScreen();
