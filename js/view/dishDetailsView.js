@@ -2,26 +2,19 @@ var DishDetailsView = function (container, model, id) {
   this.goBackSearchButton = container.find("#GoBackButton");
   this.addToMenuButton = container.find("#buttonAdd");
 
-  // den här tar in getId INNAN den uppdateras i mainContentController
-
-          // just nu skapar en till box för varje adderat antal personer
-    var numberOfGuestsTextField = container.find("#TotIngredients");
-
-    var guestText = document.createElement("DIV");
-    guestText.id = "ingTotPeople"; 
-    // guestText.innerHTML = "INGREDIENTS FOR " + model.getNumberOfGuests() + " PEOPLE";
-
-    //Lägger till hela elementet i numberOfGuests-taggen
-    numberOfGuestsTextField.append(guestText);
+  var numberOfGuestsTextField = container.find("#TotIngredients");
+  var guestText = document.createElement("DIV");
+  guestText.id = "ingTotPeople"; 
+  guestText.innerHTML = "INGREDIENTS FOR " + model.getNumberOfGuests() + " PEOPLE";
+  //Lägger till hela elementet i numberOfGuests-taggen
+  numberOfGuestsTextField.append(guestText);
 
   // FUNKTION!!!
+  // PGA DETTA SLUTAT FUNKA "go back button"
   this.changeInfo = function() {
     dishID = model.getId();
   
-    var dishDetails = model.getDish(dishID); //100 måste ändras --> ger meat balls varje gång då, måste vara dynamisk
-  // var dishDetails = model.getDish(dishID);
-
-
+    var dishDetails = model.getDish(dishID); 
     let dishIngredients = dishDetails.ingredients;
 
     var outputIng = "";
@@ -102,10 +95,8 @@ var DishDetailsView = function (container, model, id) {
             </div>`);
 
       this.goBackSearchButton = container.find("#GoBackButton");
-      console.log(this.goBackSearchButton)
+      // console.log(this.goBackSearchButton)
       this.addToMenuButton = container.find("#buttonAdd");
-
-
 
   } 
 
@@ -115,12 +106,11 @@ var DishDetailsView = function (container, model, id) {
       if (changeDetails === 'numberOfGuests') {
         // ta in en bit html och ändra den
 
-            dishID = model.getId();
+          dishID = model.getId();
   
-          var dishDetails = model.getDish(dishID); //100 måste ändras --> ger meat balls varje gång då, måste vara dynamisk
-        // var dishDetails = model.getDish(dishID);
+          var dishDetails = model.getDish(dishID);
 
-
+          // TAR INTE IN INGREDIENTS
           let dishIngredients = dishDetails.ingredients;
 
           var outputIng = "";
@@ -185,31 +175,10 @@ var DishDetailsView = function (container, model, id) {
 
       }
 
+      this.goBackSearchButton = container.find("#GoBackButton");
+      this.addToMenuButton = container.find("#buttonAdd");
+
     }
-
-    // knappen funkar inte!!!
-    // this.addToMenuButton1 = container.find("#buttonAdd1"); 
-
-    
-
-
-    // göra så att när trycker på "add" så ska "confirm dinner" i sidebar inte längre vara disabled 
-    // och så ska en ruta komma upp
-
-   // this.currentDishId=1;
-
-//   this.update = function(change) {
-//     if(change == "numberOfGuests"){
-//       this.loadDishDetailView(this.currentDishId);
-//     }
-//   }
-
-//   model.addObserver(this);
-
-//   this.loadDishDetailView(this.currentDishId);
-
-
-// }
 
     model.addObserver(this.update);
 
