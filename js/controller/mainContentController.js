@@ -18,7 +18,7 @@ var MainContentController = function( view, model, app ) {
 
 		var id = $(this).attr('id');
 		model.setId(id);
-		model.getId();
+		model.getId(id);
 		console.log(model.getId());
 		app.showDishDetailsScreen();
 

@@ -1,7 +1,7 @@
 var DishDetailsView = function (container, model, id) {
 
   dishID = model.getId();
-  // den här tar in getId INNAN den uppdateras 
+  // den här tar in getId INNAN den uppdateras i mainContentController
 
   var dishDetails = model.getDish(dishID); //100 måste ändras --> ger meat balls varje gång då, måste vara dynamisk
   

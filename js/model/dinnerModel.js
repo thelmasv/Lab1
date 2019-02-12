@@ -7,7 +7,7 @@ var DinnerModel = function() {
 	var observers = []; 
 	// var dish = [100]; 
 	var selectedId = 1; 
-	this.menuPlace = new Array();
+	// this.menuPlace = new Array();
 
 
 
@@ -116,7 +116,6 @@ var DinnerModel = function() {
 
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
 	this.getTotalMenuPrice = function(id) {
-		//TODO Lab 1
 		var totalCost = 0; 
 		numberPeople = this.getNumberOfGuests(); 
 		for (var i = 0; i < menu.length; ++i) {
