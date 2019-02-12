@@ -7,6 +7,12 @@ var MainContentController = function( view, model, app ) {
 
 	});
 
+	$("#searchInput").change( function() {
+	    
+		view.update("selectFilter");
+
+	});
+
 	view.searchButton.click( function() {
 
 	    view.update("searchDish");
@@ -14,7 +20,7 @@ var MainContentController = function( view, model, app ) {
 	});
 
 
-	view.displayedDish.click( function() {
+	view.displayedDish.click( function() { //här väljs dish så den går till details
 
 		var id = $(this).attr('id');
 		model.setId(id);
@@ -23,7 +29,6 @@ var MainContentController = function( view, model, app ) {
 		app.showDishDetailsScreen();
 
 	});
-
 
 
 } // FÅ SÖKRUTAN ATT FUNKA

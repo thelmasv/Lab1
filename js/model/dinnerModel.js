@@ -6,7 +6,7 @@ var DinnerModel = function() {
 	var menu = [];
 	var observers = []; 
 	// var dish = [100]; 
-	var selectedId = 1; 
+	var selectedId = 2; 
 	// this.menuPlace = new Array();
 
 
@@ -268,7 +268,7 @@ var DinnerModel = function() {
 			else {
 		  	
 		  		return dish.type == type && found;
-		  	
+
 		  	}
 
 		});

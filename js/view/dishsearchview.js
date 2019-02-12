@@ -17,8 +17,8 @@ var DishSearchView = function (container, model) {
 				   </div>
 				  <div class="form-group">
 				  	<select class="form-control" id="exampleFormControlSelect1">
-						<option>All</option>
-						<option selected>Starter</option>
+						<option All>All</option>
+						<option>Starter</option>
 						<option>Main Dish</option>
 						<option>Dessert</option>
 					</select>
@@ -37,7 +37,7 @@ var DishSearchView = function (container, model) {
 			
 		</div>`);
 
-	var allDishes = model.getAllDishes("starter"); //får ut alla rätter på förstasidan("all")
+	var allDishes = model.getAllDishes("All"); //får ut alla rätter på förstasidan("all")
 	var output = ""
 
 	for (i = 0; i < allDishes.length; i++) { 
@@ -66,8 +66,9 @@ var DishSearchView = function (container, model) {
 
     this.update = function( args ) {
 
-		var type =  $('#exampleFormControlSelect1 :selected').val();
-		var filter = "";
+		var type =  $('#exampleFormControlSelect1').val();
+		var filter = $('#searchInput').id; //här kan den påverkas "";
+		//console.log("hej");
 
 		if (args == "searchDish") {
 
@@ -86,17 +87,16 @@ var DishSearchView = function (container, model) {
 						<img src="` + allDishes[i].image + `"/>
 						<p> ` + allDishes[i].name + `</p>
 					</div>`;
-
 	    }
 
-	    $("#searchDishes").html(output);
-
+	    $('#searchDishes').html(output);
 
 	}
 
 	this.searchButton = container.find("#button1");
 	this.clickDish = container.find("#searchDishes"); 
 	this.displayedDish = container.find(".displayedDish");
+	this.searchByName = container.find("#searchInput");
 
     model.addObserver(this.update);
 
