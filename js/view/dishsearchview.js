@@ -17,7 +17,11 @@ var DishSearchView = function (container, model) {
 				   </div>
 				  <div class="form-group">
 				  	<select class="form-control" id="exampleFormControlSelect1">
+<<<<<<< HEAD
+						<option All>All</option>
+=======
 						<option selected>All</option>
+>>>>>>> ac99b557d373a1be0505287571a9d2e64ba41db0
 						<option>Starter</option>
 						<option>Main Dish</option>
 						<option>Dessert</option>
@@ -38,7 +42,11 @@ var DishSearchView = function (container, model) {
 		</div>`);
 
 	var allDishes = model.getAllDishes("All"); //får ut alla rätter på förstasidan("all")
+<<<<<<< HEAD
+	var output = ""
+=======
 	var output = ""; 
+>>>>>>> ac99b557d373a1be0505287571a9d2e64ba41db0
 
 	for (i = 0; i < allDishes.length; i++) { 
 
@@ -52,10 +60,16 @@ var DishSearchView = function (container, model) {
 
     this.update = function( args ) {
 
+<<<<<<< HEAD
 
 
 		var type =  $('#exampleFormControlSelect1 :selected').val();
 		var filter = "";
+=======
+		var type =  $('#exampleFormControlSelect1').val();
+		var filter = $('#searchInput').id; //här kan den påverkas "";
+		//console.log("hej");
+>>>>>>> 7d0346e12c6009eaa9668f86f3013f4720515689
 
 		if (args == "searchDish") {
 
@@ -74,14 +88,14 @@ var DishSearchView = function (container, model) {
 					</div>`;
 	    }
 
-	    $("#searchDishes").html(output);
-
+	    $('#searchDishes').html(output);
 
 	}
 
 	this.searchButton = container.find("#button1");
 	this.clickDish = container.find("#searchDishes"); 
 	this.displayedDish = container.find(".displayedDish");
+	this.searchByName = container.find("#searchInput");
 
     model.addObserver(this.update);
 

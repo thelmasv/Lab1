@@ -6,7 +6,11 @@ var DinnerModel = function() {
 	var menu = [];
 	var observers = []; 
 	// var dish = [100]; 
+<<<<<<< HEAD
+	var selectedId = 2; 
+=======
 	var selectedId = 0; 
+>>>>>>> ac99b557d373a1be0505287571a9d2e64ba41db0
 	// this.menuPlace = new Array();
 
 	this.addObserver = function(observer) {
@@ -283,7 +287,7 @@ var DinnerModel = function() {
 			else {
 		  	
 		  		return dish.type == type && found;
-		  	
+
 		  	}
 
 		});
