@@ -22,7 +22,7 @@ var MainContentController = function( view, model, app ) {
 	view.displayedDish.click( function() { //här väljs dish så den går till details
 
 		var id = $(this).attr('id');
-		console.log(id)
+		//console.log(id)
 		model.setId(id);
 		console.log(model.getId());
 		// model.setId(model.getId()); 

@@ -1,6 +1,10 @@
-var DishDetailsView = function (container, model, id) {
+var DishDetailsView = function (container, model, id) {  //DENNA HAR INGEN } PÅ SLUTET, CONNECTAS INTE TILL DEN SISTA
   this.goBackSearchButton = container.find("#GoBackButton");
-  this.addToMenuButton = container.find("#buttonAdd");
+  //this.addToMenuButton = container.find("#buttonAdd");
+
+  this.getContainer = function (){ //här fixar vi så att bo back knappen funkar; vi tar in containern
+    return container;
+  }
 
   // den här tar in getId INNAN den uppdateras i mainContentController
 
@@ -21,7 +25,6 @@ var DishDetailsView = function (container, model, id) {
     var dishDetails = model.getDish(dishID); //100 måste ändras --> ger meat balls varje gång då, måste vara dynamisk
   // var dishDetails = model.getDish(dishID);
 
-
     let dishIngredients = dishDetails.ingredients;
 
     var outputIng = "";
@@ -29,7 +32,6 @@ var DishDetailsView = function (container, model, id) {
 
     // var numberPeople = model.getNumberOfGuests(); 
     // var id; 
-
 
   // Loopa igenom alla ingredienser och dess värden för vald dish
     for (i = 0; i < dishIngredients.length; i++) { 
@@ -50,11 +52,9 @@ var DishDetailsView = function (container, model, id) {
                     </div>`
 
     }
+  
 
     sumDish = model.getDishPrice(dishIngredients) * model.getNumberOfGuests();
-
-
-
 
     container.html(`
 
@@ -65,7 +65,7 @@ var DishDetailsView = function (container, model, id) {
                   <p id="img-text">` + dishDetails.description + ` </p> 
                   <button type="button" class="btn previous" id="GoBackButton">&laquo; Go back to search</button>
 
-            </div>  
+            </div>    
 
             <div class="col-12 col-md-6" id="TotIngredients"> 
               <div class="box" id="ingTotPeople">INGREDIENTS FOR ` + model.getNumberOfGuests() + ` PEOPLE
@@ -101,15 +101,14 @@ var DishDetailsView = function (container, model, id) {
             </div> 
             </div>`);
 
-      this.goBackSearchButton = container.find("#GoBackButton");
-      console.log(this.goBackSearchButton)
-      this.addToMenuButton = container.find("#buttonAdd");
+    
+
+ // } 
+    
 
 
-
-  } 
-
-  
+    } 
+   // this.changeInfo();
 
     this.update = function(model, changeDetails){
       if (changeDetails === 'numberOfGuests') {
@@ -150,6 +149,7 @@ var DishDetailsView = function (container, model, id) {
 
           }
 
+
           sumDish = model.getDishPrice(dishIngredients) * model.getNumberOfGuests();
 
         numberOfGuestsTextField.empty().append(`<div class="box" id="ingTotPeople">
@@ -186,6 +186,7 @@ var DishDetailsView = function (container, model, id) {
       }
 
     }
+    
 
     // knappen funkar inte!!!
     // this.addToMenuButton1 = container.find("#buttonAdd1"); 
@@ -213,4 +214,8 @@ var DishDetailsView = function (container, model, id) {
 
     model.addObserver(this.update);
 
-}
+
+     this.goBackSearchButton = container.find("#GoBackButton");
+      //console.log(this.goBackSearchButton)
+      this.addToMenuButton = container.find("#buttonAdd");
+    }

@@ -1,3 +1,4 @@
+
 //Sidebar controller (page 2 and 3)
 var SidebarController = function(view, model, app) {
 	// console.log(view.plusButtonElement)
