@@ -68,17 +68,27 @@ var DinnerModel = function() {
 
 	//Returns all the dishes on the menu.
 	// ANROPA 
-	this.getFullMenu = function() {
-		var menuList = [];
-		for (var dish in menu) {
-			menuList.push(menu[dish]);
-		}
-		return menuList;
+	// this.getFullMenu = function() {
+	// 	// var menuList = [];
+	// 	// for (var dish in menu) {
+	// 	// 	menuList.push(menu[dish]);
+	// 	// }
+	// 	// return menuList;
 
-		// ELLER TA BORT ALLT OCH BARA SKRIVA 
-		// 	this.getFullMenu = function() {
-				// return menu; 
-				// } 
+	// 	// ELLER TA BORT ALLT OCH BARA SKRIVA 
+	// 	// 	this.getFullMenu = function() {
+	// 			//return menu; 
+	// 			// } 
+	// }
+
+
+	this.getFullMenu = function() {
+		var allDishes = [];
+
+		for (key in menu) {
+			allDishes.push(this.getDish(menu[key]));
+		}
+		return allDishes;
 	}
 
 	//Returns all ingredients for all the dishes on the menu.
@@ -119,70 +129,17 @@ var DinnerModel = function() {
 	//it is removed from the menu and the new one added.
 	this.addDishToMenu = function(id) {
 
-		var oneType = this.menu.filter(dishId => {
+		var oneType = menu.filter(dishId => {
 			return this.getDish(dishId).type == this.getDish(id).type; 
 		}); 
 		oneType.forEach(dishId => {
 			this.removeDishFromMenu(dishId); 
 		});
 
-		this.menu.push(dish); 
+		menu.push(id); 
 		this.notifyObservers('menu'); 
 
-		// this.notifyObservers({changeTyoe: "menu"}); 
-
-		// this.menu.push(dish)
-
-		// var amount = 0; 
-		// var doubled = false; 
-		// var dishType = (this.getDish(getId())).type; 
-		// console.log(dishType); 
-
-		// if (menu === undefined || menu.length === 0) {
-		// 	menu[0] = this.getDish(id); 
-		// }
-
-		// else {
-		// 	menu.forEach(function(dishesInMenu) {
-		// 		if (dishesInMenu.id == id) {
-		// 			doubled = true; 
-		// 			return; 
-		// 		}
-		// 		else if (dishesInMenu.type == dishType) {
-		// 			doubled = true; 
-		// 			return; 
-		// 		}
-		// 		amount++; 
-
-		// 	}); 
-
-		// 	if (doubled == true) {
-		// 		return; 
-		// 	}
-		// 	else {
-		// 		this.menu.push(this.getDish(id));
-		// 	}
-		// }
-
-		// // var dish = this.getDish(id);
-		// // menu.push(dish);
-		// this.notifyObservers('menu'); 
-
 	}
-
-
-//   this.addDishToMenu = function(id) {
-//     index = dishes.findIndex(x => x.id==id);
-//     for(i=0; i<=this.menu.length-1; i++) {
-//       if (dishes[index].type == this.menu[i].type){
-//       this.menu.splice (i, 1);
-//     }
-//   }
-//   this.menu.push(dishes[index]);
-//   this.notifyObservers('menu');
-//   return this.menu[this.menu.length-1];
-// }
-
 
 	//Removes dish from menu
 	this.removeDishFromMenu = function(id) {
@@ -192,69 +149,10 @@ var DinnerModel = function() {
 		// 	}
 		// }
 
-		this.menu.splice(this.menu.indexOf(id), 1);  
+		menu.splice(menu.indexOf(id), 1);  
 		this.notifyObservers(); 
 		
 	}
-
-// ANNAT SÄTT
-
-
-	//function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
-	//you can use the filter argument to filter out the dish by name or ingredient (use for search)
-	//if you don't pass any filter all the dishes will be returned
-
-	// this.getAllDishes = function(type, filter) {
-	//     if (!type && !filter) {
-	// 	    return dishes;
-	// this.getAllDishes = function (type,filter) {
-	//   return dishes.filter(function(index, dish) {
-	// 	var found = true;
-	// 	if(filter){
-	// 		found = false;
-	// 		dish.ingredients.forEach(function(index, ingredient) {
-	// 			if(ingredient.name.indexOf(filter)!=-1) {
-	// 				found = true;
-	// 			}
-	// 		});
-
-	// 		if(dish.name.indexOf(filter) != -1)
-	// 		{
-	// 			found = true;
-	// 		}
-	// 	}
-	//     if (type === "starter" || type === "main" || type === "dessert") {
-	//       return dishes.filter(function(dish) {
-	//         var found = true;
-	//         if (filter) {
-	//           found = false;
-	//           if (dish.name.toLowerCase().indexOf(filter) != -1) // all dish names in lower case
-	//           {
-	//             found = true;
-	//           }
-	//           return dish.type == type && found;
-	//         } else {
-	//           return dish.type;
-	//         }
-	//         if (!filter) {
-	//           return dish.type;
-	//         }
-	//       });
-	//     } 
-	//     else {
-	//       return dishes.filter(function(dish) {
-	//         var found = true;
-	//         if (filter) {
-	//           if (dish.name.toLowerCase().indexOf(filter) != -1) {
-	//             return dish;
-	//           }
-	//         }
-	//       });
-	//     }
-	//   })
-	// }
-
-
 
 	this.getAllDishes = function (type, filter) {
 		type = type.toLowerCase();

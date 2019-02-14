@@ -2,9 +2,9 @@ var DishDetailsView = function (container, model, id) {  //DENNA HAR INGEN } PÅ
   this.goBackSearchButton = container.find("#GoBackButton");
   this.addToMenuButton = container.find("#buttonAdd");
 
-    this.getContainer = function (){ //här fixar vi så att bo back knappen funkar; vi tar in containern
-      return container;
-    }
+  this.getContainer = function (){ //här fixar vi så att bo back knappen funkar; vi tar in containern
+    return container;
+  }
 
   this.update = function(model, changeDetails){
 
@@ -14,9 +14,6 @@ var DishDetailsView = function (container, model, id) {  //DENNA HAR INGEN } PÅ
     // guestText.innerHTML = "INGREDIENTS FOR " + model.getNumberOfGuests() + " PEOPLE";
     numberOfGuestsTextField.append(guestText);
 
-    // FUNKTION!!!PGA DETTA SLUTAT FUNKA "go back button"
-    // GÅR LIKSOM INTE IN OCH HÄMTAR KNAPPARNA
-    // this.changeInfo = function() {
     var dishID = model.getId();
     var dishDetails = model.getDish(dishID); 
     let dishIngredients = dishDetails.ingredients;
@@ -30,7 +27,6 @@ var DishDetailsView = function (container, model, id) {  //DENNA HAR INGEN } PÅ
     // var numberPeople = model.getNumberOfGuests(); 
     // var id; 
 
-    // Loopa igenom alla ingredienser och dess värden för vald dish
     for (i = 0; i < dishIngredients.length; i++) { 
 
       outputIng += `<div class="row" id="Overview">
@@ -98,9 +94,7 @@ var DishDetailsView = function (container, model, id) {  //DENNA HAR INGEN } PÅ
             </div>`);
 
       this.goBackSearchButton = container.find("#GoBackButton");
-      console.log(this.goBackSearchButton); 
       this.addToMenuButton = container.find("#buttonAdd");
-      console.log(this.addToMenuButton); 
 
       var goBackSearchButton = document.getElementById("GoBackButton");     
 

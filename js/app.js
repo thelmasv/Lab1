@@ -63,11 +63,11 @@ $(function() {
 		$("#main-content3").show(); 
 	}
 
-	this.showSelectAgainScreen = function() {
-		hideAllViews(); 
-		$("#sidebar").show(); 
-		$("#main-content2").show(); 
-	}
+	// this.showSelectAgainScreen = function() {
+	// 	hideAllViews(); 
+	// 	$("#sidebar").show(); 
+	// 	$("#main-content2").show(); 
+	// }
 
 	this.showOverviewScreen = function() {
 		hideAllViews(); 

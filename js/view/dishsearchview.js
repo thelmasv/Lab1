@@ -50,7 +50,7 @@ var DishSearchView = function (container, model) {
 						<p> ` + allDishes[i].name + ` </p>
 					</div>`;
 	}
-	
+
 	$("#searchDishes").html( output );
 
 
@@ -71,6 +71,7 @@ var DishSearchView = function (container, model) {
   //   $("#searchDishes").html( output );
 
     this.update = function( args ) {
+
 		var type =  $('#exampleFormControlSelect1 :selected').val();
 		var filter = "";
 
@@ -93,6 +94,11 @@ var DishSearchView = function (container, model) {
 	    }
 
 	    $('#searchDishes').html(output);
+
+	this.searchButton = container.find("#button1");
+	this.clickDish = container.find("#searchDishes"); 
+	this.displayedDish = container.find(".displayedDish");
+	this.searchByName = container.find("#searchInput");
 
 	}
 

@@ -131,7 +131,7 @@ var SidebarView = function (container, model) {
      		var x = ""; 
 
      		for (i = 0; i < getMenu.length; i++) {
-     			console.log("skriv"); 
+     			console.log(getMenu); //blir just nu en lista "undefined"
      			x += "<div> " + getMenu[i].name; + "</div>"
 				let dishIngredients = getMenu[i].ingredients;
 				var sumDish = model.getDishPrice(dishIngredients) * model.getNumberOfGuests();

@@ -6,41 +6,19 @@ var DishDetailsController = function(view, model, app, id) {
 //I app skickar vi ju in mian-content3, som finns i index under container-fluid. Vi säger alltså till föräldern att någon av dens barn har 
 //klickat på en knapp och vi måste säga vilket barn. 
   	view.getContainer().click(function(event) {  
-  				if (event.target.matches("#GoBackButton")) {
-  					app.showDishSelectScreen(); // Ska gå tillbaka till screen 2
-  				}
+		if (event.target.matches("#GoBackButton")) {
+			app.showDishSelectScreen(); // Ska gå tillbaka till screen 2
+		}
 	}); 
 
-  	view.getContainer().click(function(event) {  
-  				if (event.target.matches("#buttonAdd")) {
-  					return sumDish; // ska addera i sidebar
-  				}
+  	view.getContainer().click(function(event, id) {  
+		if (event.target.matches("#buttonAdd")) {
+			model.addDishToMenu(model.getId());
+			app.showDishSelectScreen(); 
+			console.log(model.menu); // skriver ut "undefined"
+
+		}
 	}); 
-
-	view.goBackSearchButton.click(function() {
-		app.showDishSelectScreen(); // Ska gå tillbaka till screen 2
-	}); 
-
-	view.addToMenuButton.click(function() {
-		// app.showSelectAgainScreen(); // Ska gå tillbaka till screen 2
-		// // model.addDishToMenu(getId()); 
-		// model.addDishToMenu(view.dishID());
-
-		app.showSelectAgainScreen(); // Ska gå tillbaka till screen 2
-    	model.setId(event.currentTarget.parentNode.parentNode.parentNode.childNodes[1].childNodes[0]);
-   		model.addDishToMenu(model.getId());
-	    var dishPrice = model.getDishPrice(model.getId());
-
-    	// model.setId(event.currentTarget.parentNode.parentNode.parentNode.childNodes[1].childNodes[0]);
-   		// model.addDishToMenu(model.getId());
-	    // var dishPrice = model.getDishPrice(model.getId());
-	}); 
-
-	// view.addToMenuButton.click(function(){
-	//     model.setId(event.currentTarget.parentNode.parentNode.parentNode.childNodes[1].childNodes[0].id);
-	//     model.addDishToMenu(model.getId());
-	//     var current_dish_price = model.getDishPrice(model.getId());
-	// });
 
 }
 
