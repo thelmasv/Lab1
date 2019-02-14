@@ -5,16 +5,8 @@ var DinnerModel = function() {
 	var numberOfGuest = 1;
 	var menu = [];
 	var observers = []; 
-<<<<<<< HEAD
 	var selectedId = 0; 
 	// this.menuPlace = [];
-=======
-	// var dish = [100]; 
-
-	var selectedId = 2; 
-
-	// this.menuPlace = new Array();
->>>>>>> 139a3eabc83b4a62dd9233fa9cc63ce0639265b4
 
 	this.addObserver = function(observer) {
 		observers.push(observer);  

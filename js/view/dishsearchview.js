@@ -45,24 +45,31 @@ var DishSearchView = function (container, model) {
 	var output = ""
 
 	for (i = 0; i < allDishes.length; i++) { 
-
-		// output +=  `<div class="col-8 col-md-2" id="d`+i+`"> 
-		// 				<a href="dish+d` + allDishes[i].id + `"><img src="` + allDishes[i].image + `"/>
-		// 				<p> ` + allDishes[i].name + `</p></a>
-		// 			</div>`;
-
-		// output +=  `<div class="col-8 col-md-2" id="`+allDishes[i].id+`"> 
-		// 				<img src="` + allDishes[i].image + `" onclick="` + allDishes[i].id + `"/>
-		// 				<p> ` + allDishes[i].name + `</p>
-		// 			</div>`;
-
 		output +=  `<div class="col-8 col-md-2 displayedDish" id="`+allDishes[i].id+`"> 
 						<img src="` + allDishes[i].image + `"/>
 						<p> ` + allDishes[i].name + ` </p>
 					</div>`;
+	}
+	
+	$("#searchDishes").html( output );
 
 
-<<<<<<< HEAD
+
+  //   this.update = function( args ) {
+		// var type =  $('#exampleFormControlSelect1 :selected').val();
+		// var filter = "";
+
+		// var type =  $('#exampleFormControlSelect1').val();
+		// var filter = $('#searchInput').id; 
+
+		// if (args == "searchDish") {
+		// 	filter = $('#searchInput').val();
+		// // this.yo = container.find("#" + allDishes[i].id + "");
+
+  //   }
+
+  //   $("#searchDishes").html( output );
+
     this.update = function( args ) {
 		var type =  $('#exampleFormControlSelect1 :selected').val();
 		var filter = "";
@@ -72,34 +79,13 @@ var DishSearchView = function (container, model) {
 
 		if (args == "searchDish") {
 			filter = $('#searchInput').val();
-=======
-		// this.yo = container.find("#" + allDishes[i].id + "");
-
-    }
-
-    $("#searchDishes").html( output );
-
-    this.update = function( args ) {
-
-		var type =  $('#exampleFormControlSelect1').val();
-		var filter = $('#searchInput').id; // "";
-		//console.log("hej");
-
-		if (args == "searchDish") {
-
-			filter = $('#searchInput').type;
-
->>>>>>> 139a3eabc83b4a62dd9233fa9cc63ce0639265b4
 		}
+
 		var allDishes = model.getAllDishes(type, filter);
-
 		var output = "";
-		// var setTheId = model.setId(); 
-
 
 		for ( i = 0; i < allDishes.length; i++ ) { 
 
-			// console.log("dish.name: "+allDishes[i].name);
 			output += `<div class="col-8 col-md-2 displayedDish" id="`+allDishes[i].id+`"> 
 						<img src="` + allDishes[i].image + `"/>
 						<p> ` + allDishes[i].name + `</p>
@@ -119,4 +105,3 @@ var DishSearchView = function (container, model) {
 
 
 }
-
