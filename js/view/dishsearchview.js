@@ -2,6 +2,10 @@ var DishSearchView = function (container, model) {
 	
 	// Get all the relevant elements of the view (ones that show data
   	// and/or ones that responed to interaction)
+
+// .hide() & .show() 
+// LÄGG TILL LYSSNARE
+
   	container.html ( `
 		<div class="row">
 			<div class="col-12" id="findDish">
@@ -44,27 +48,21 @@ var DishSearchView = function (container, model) {
 
 		output +=  `<div class="col-8 col-md-2 displayedDish" id="`+allDishes[i].id+`"> 
 						<img src="` + allDishes[i].image + `"/>
-						<p> ` + allDishes[i].name + `</p>
+						<p> ` + allDishes[i].name + ` </p>
 					</div>`;
     }
 
     $("#searchDishes").html( output );
 
     this.update = function( args ) {
-
-
-
 		var type =  $('#exampleFormControlSelect1 :selected').val();
 		var filter = "";
 
 		var type =  $('#exampleFormControlSelect1').val();
-		var filter = $('#searchInput').id; //här kan den påverkas "";
-		//console.log("hej");
+		var filter = $('#searchInput').id; 
 
 		if (args == "searchDish") {
-
 			filter = $('#searchInput').val();
-
 		}
 
 		var allDishes = model.getAllDishes(type, filter);

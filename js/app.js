@@ -57,7 +57,7 @@ $(function() {
 
 
 	this.showDishDetailsScreen = function() {
-		dishDetailsView.changeInfo();
+		// dishDetailsView.changeInfo();
 		hideAllViews(); 
 		$("#sidebar").show();
 		$("#main-content3").show(); 

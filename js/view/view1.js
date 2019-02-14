@@ -101,12 +101,11 @@ var SidebarView = function (container, model) {
 	var addMenu = container.find("#addBox"); 
 	var addText = document.createElement("P");
 	addText.id = "addBox"; 
-	addText.innerHTML = "Dish";
+	// addText.innerHTML = "Dish";
 	addMenu.append(addText); 
 
 	sumDish = model.getDishPrice(dishIngredients) * model.getNumberOfGuests();
 
-	// kriver ut SEK: price i <p>-taggen
 	paragraph.innerHTML = "SEK: 0.00";		//PRISET SKA VARA DYNAMISKT
 
 	// lägger in p-taggen i div-taggen
@@ -145,20 +144,6 @@ var SidebarView = function (container, model) {
      	}
 	}
 
-	// this.update = function() {
-	// 	var numberPeople = model.getNumberOfGuests(); 
-	// 	document.getElementById("numberOfGuests").innerHTML = numberPeople; 
-	// 	sidebar(); 
-	// }
-
-	model.addObserver(this.update); //ska denna implementeras i varje view där antal/pris/bild/recept ändras?? Eller nedanstående kod i kommentar
-	/*this.update=function(model, changeDetails){
-     // redraw just the portion affected by the changeDetails
-     // or remove all graphics in the view, read the whole model and redraw 
-	} 
-	model.addObserver(this.update); */
-
-
-
+	model.addObserver(this.update); 
 	
 }
