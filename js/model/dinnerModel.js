@@ -5,11 +5,10 @@ var DinnerModel = function() {
 	var numberOfGuest = 1;
 	var menu = [];
 	var observers = []; 
-	// var dish = [100]; 
 
-	var selectedId = 2; 
+	var selectedId = 0; 
 
-	// this.menuPlace = new Array();
+	this.menuPlace = [];
 
 	this.addObserver = function(observer) {
 		observers.push(observer);  
