@@ -71,14 +71,14 @@ var DishSearchView = function (container, model) {
   //   $("#searchDishes").html( output );
 
     this.update = function( args ) {
-
-		var type =  $('#exampleFormControlSelect1 :selected').val();
 		var filter = "";
-
 		var type =  $('#exampleFormControlSelect1').val();
-		var filter = $('#searchInput').id; 
+		
+		var filter = $('#searchInput').id;
+		var type =  $('#exampleFormControlSelect1').val();
+		 
 
-		if (args == "searchDish") {
+		if (args = "searchDish") {
 			filter = $('#searchInput').val();
 		}
 
@@ -94,11 +94,6 @@ var DishSearchView = function (container, model) {
 	    }
 
 	    $('#searchDishes').html(output);
-
-	this.searchButton = container.find("#button1");
-	this.clickDish = container.find("#searchDishes"); 
-	this.displayedDish = container.find(".displayedDish");
-	this.searchByName = container.find("#searchInput");
 
 	}
 
