@@ -5,10 +5,8 @@ var DinnerModel = function() {
 	var numberOfGuest = 1;
 	var menu = [];
 	var observers = []; 
-
 	var selectedId = 0; 
-
-	this.menuPlace = [];
+	// this.menuPlace = [];
 
 	this.addObserver = function(observer) {
 		observers.push(observer);  
@@ -20,29 +18,18 @@ var DinnerModel = function() {
 		// we assume that observers[i] is a function, so we call it like observers[i](parameters)
 	}
 
-
-	// Remove observer from array
-	// when view has done its job, hide view and/by remove itself as a model observer
+	// Remove observer from array. When view has done its job, hide view and/by remove itself as a model observer
     this.removeObserver = function(observer) {
     }
     //.... other model data and code calling notifyObservers() when the model changes
 
     this.setId = function (id) {
-    	// console.log("SETTY"); 
-    	// console.log(selectedId); 
     	selectedId = id;
      	this.notifyObservers('selectedId');
     }
-    // skrivs ut direkt. får selectedId
-
 
   	this.getId = function() {
-  		// console.log("GETTY"); 
-  		// får inte ut detta 
-
      	return selectedId;
-     	// GÅR INTE IN I DENNA
-     	// console.log("NUDA"); 
     }
 
 	//* local variables to store the number of guests and dishes added to the dinner menu
@@ -51,7 +38,6 @@ var DinnerModel = function() {
 			numberOfGuest = num;
 			this.notifyObservers('numberOfGuests'); 
 		}
-
 	}
 	
 	this.getNumberOfGuests = function() {
@@ -69,10 +55,6 @@ var DinnerModel = function() {
 		}
 	}
 
-		// ELLER: 
-
-	//this.getSelectedDish = function(type) {}
-
 
 	//function that returns a dish of specific ID
 	this.getDish = function (id, name, type) {
@@ -84,23 +66,29 @@ var DinnerModel = function() {
 	}
 
 
-
 	//Returns all the dishes on the menu.
 	// ANROPA 
+	// this.getFullMenu = function() {
+	// 	// var menuList = [];
+	// 	// for (var dish in menu) {
+	// 	// 	menuList.push(menu[dish]);
+	// 	// }
+	// 	// return menuList;
+
+	// 	// ELLER TA BORT ALLT OCH BARA SKRIVA 
+	// 	// 	this.getFullMenu = function() {
+	// 			//return menu; 
+	// 			// } 
+	// }
+
+
 	this.getFullMenu = function() {
-		//TODO Lab 1
-		var menuList = [];
-		for (var dish in menu) {
-			menuList.push(menu[dish]);
+		var allDishes = [];
+
+		for (key in menu) {
+			allDishes.push(this.getDish(menu[key]));
 		}
-		return menuList;
-
-		// ELLER TA BORT ALLT OCH BARA SKRIVA 
-		// 	this.getFullMenu = function() {
-				// return menu; 
-				// } 
-
-
+		return allDishes;
 	}
 
 	//Returns all ingredients for all the dishes on the menu.
@@ -127,9 +115,6 @@ var DinnerModel = function() {
 	  //   return ingredients;
 	  // }
 
-
-
-
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
 	this.getTotalMenuPrice = function(id) {
 		var totalCost = 0; 
@@ -143,152 +128,59 @@ var DinnerModel = function() {
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
 	this.addDishToMenu = function(id) {
-		var amount = 0; 
-		var doubled = false; 
-		var dishType = (this.getDish(id)).type; 
 
-		if (menu === undefined || menu.length === 0) {
-			menu[0] = this.getDish(id); 
-		}
+		var oneType = menu.filter(dishId => {
+			return this.getDish(dishId).type == this.getDish(id).type; 
+		}); 
+		oneType.forEach(dishId => {
+			this.removeDishFromMenu(dishId); 
+		});
 
-		else {
-			menu.forEach(function(dishesInMenu) {
-				if (dishesInMenu.id == id) {
-					doubled = true; 
-					return; 
-				}
-				else if (dishesInMenu.type == dishType) {
-					doubled = true; 
-					return; 
-				}
-				amount++; 
-
-			}); 
-
-			if (doubled == true) {
-				return; 
-			}
-			else {
-				menu.push(this.getDish(id));
-			}
-		}
-
-		// var dish = this.getDish(id);
-		// menu.push(dish);
+		menu.push(id); 
 		this.notifyObservers('menu'); 
 
 	}
 
 	//Removes dish from menu
 	this.removeDishFromMenu = function(id) {
-		for (dish in menu) {
-			if (menu[dish].id == id) {
-				delete menu[dish];
-			}
-		}
+		// for (dish in menu) {
+		// 	if (menu[dish].id == id) {
+		// 		delete menu[dish];
+		// 	}
+		// }
+
+		menu.splice(menu.indexOf(id), 1);  
+		this.notifyObservers(); 
+		
 	}
 
-	//function that returns all dishes of specific type (i.e. "starter", "main dish" or "dessert")
-	//you can use the filter argument to filter out the dish by name or ingredient (use for search)
-	//if you don't pass any filter all the dishes will be returned
-
-	// this.getAllDishes = function(type, filter) {
-	//     if (!type && !filter) {
-	// 	    return dishes;
-	// this.getAllDishes = function (type,filter) {
-	//   return dishes.filter(function(index, dish) {
-	// 	var found = true;
-	// 	if(filter){
-	// 		found = false;
-	// 		dish.ingredients.forEach(function(index, ingredient) {
-	// 			if(ingredient.name.indexOf(filter)!=-1) {
-	// 				found = true;
-	// 			}
-	// 		});
-
-	// 		if(dish.name.indexOf(filter) != -1)
-	// 		{
-	// 			found = true;
-	// 		}
-	// 	}
-	//     if (type === "starter" || type === "main" || type === "dessert") {
-	//       return dishes.filter(function(dish) {
-	//         var found = true;
-	//         if (filter) {
-	//           found = false;
-	//           if (dish.name.toLowerCase().indexOf(filter) != -1) // all dish names in lower case
-	//           {
-	//             found = true;
-	//           }
-	//           return dish.type == type && found;
-	//         } else {
-	//           return dish.type;
-	//         }
-	//         if (!filter) {
-	//           return dish.type;
-	//         }
-	//       });
-	//     } 
-	//     else {
-	//       return dishes.filter(function(dish) {
-	//         var found = true;
-	//         if (filter) {
-	//           if (dish.name.toLowerCase().indexOf(filter) != -1) {
-	//             return dish;
-	//           }
-	//         }
-	//       });
-	//     }
-	//   })
-	// }
-
-
-
 	this.getAllDishes = function (type, filter) {
-
-		// Make all types lowercase
 		type = type.toLowerCase();
-
 	  	return dishes.filter(function(dish) {
-
 			var found = true;
 
 			if ( filter ) {
-
 				found = false;
-
 				dish.ingredients.forEach( function( ingredient ) {
 
 					if ( ingredient.name.indexOf( filter ) != -1 ) {
-						
 						found = true;
-
 					}
-
 				});
 
 				if ( dish.name.indexOf( filter ) != -1 ) {
-
 					found = true;
-
 				}
-
 			}
 
 			if ( type == "all" ) {
-
 				return dishes;
-
 			}
 			
 			else {
-		  	
 		  		return dish.type == type && found;
-
 		  	}
-
 		});
-
 	}
 
 

@@ -3,10 +3,12 @@
 var SidebarController = function(view, model, app) {
 	// console.log(view.plusButtonElement)
   	view.plusButtonElement.addEventListener('click',function(){
+ 	// view.plusButtonElement.click(function() {
      	model.setNumberOfGuests(model.getNumberOfGuests() + 1);
   	});
 
  	view.minusButtonElement.addEventListener('click',function(){
+	// view.minusButtonElement.click(function() {
      	model.setNumberOfGuests(model.getNumberOfGuests() - 1);
  	});
 
