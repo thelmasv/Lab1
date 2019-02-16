@@ -139,6 +139,13 @@ a {
 	color: darkred;
 }
 
+#confirmPrice {
+	margin-top: 1em;
+	text-align: center;
+	color: darkred;
+	font-weight: bold
+}
+
 #dinnerNameChosen {
 	margin-top: 1em;
 	margin-left: 1em;
@@ -352,5 +359,13 @@ hr {
 
 #priceBox {
 	background-color: lightgrey; 
+}
+
+#imgMain {
+	text-align: center; 
+}
+
+#confirmedPic {
+	text-align: center; 
 }
 

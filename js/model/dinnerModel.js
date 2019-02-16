@@ -6,7 +6,10 @@ var DinnerModel = function() {
 	var menu = [];
 	var observers = []; 
 	var selectedId = 0; 
+	var totMenuPrice = 0.00; 
 	// this.menuPlace = [];
+
+	
 
 	this.addObserver = function(observer) {
 		observers.push(observer);  
@@ -118,11 +121,11 @@ var DinnerModel = function() {
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
 	this.getTotalMenuPrice = function(id) {
 		var totalCost = 0; 
-		numberPeople = this.getNumberOfGuests(); 
+		// numberPeople = this.getNumberOfGuests(); 
 		for (var i = 0; i < menu.length; ++i) {
 			totalCost += this.getDishPrice(this.getDish(menu[i]).ingredients); 
 		}
-		return totalCost * numberPeople; 
+		return totalCost; 
 	}
 
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
@@ -135,11 +138,13 @@ var DinnerModel = function() {
 		oneType.forEach(dishId => {
 			this.removeDishFromMenu(dishId); 
 		});
-
 		menu.push(id); 
 		this.notifyObservers('menu'); 
-
 	}
+
+    this.getCurrentMenu = function() {
+    	return menu; 
+    }
 
 	//Removes dish from menu
 	this.removeDishFromMenu = function(id) {

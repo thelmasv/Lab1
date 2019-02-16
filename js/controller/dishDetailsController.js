@@ -10,12 +10,14 @@ var DishDetailsController = function(view, model, app, id) {
 			app.showDishSelectScreen(); // Ska gå tillbaka till screen 2
 		}
 	}); 
+// IMPLEMENTERA NÅGOT SÅ ATT DISHSEARCH UPPDATERAS SÅ ATT KNAPPAR FUNKAR?
 
   	view.getContainer().click(function(event, id) {  
 		if (event.target.matches("#buttonAdd")) {
 			model.addDishToMenu(model.getId());
 			app.showDishSelectScreen(); 
-			console.log(model.menu); // skriver ut "undefined"
+			console.log(model.getCurrentMenu()); 
+			// det är som att den inte riktigt lägger till i menu
 
 		}
 	}); 
