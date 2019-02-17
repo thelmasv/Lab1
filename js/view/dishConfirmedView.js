@@ -9,7 +9,6 @@ var DishConfirmedView = function (container, model) {
 
   this.update = function(model, changeDetails) {
     var menuList = []; 
-    // var chosenMenu = []; 
     var chosenMenu = model.getCurrentMenu(); 
     console.log(chosenMenu); // printar ut tom lista []
 
