@@ -160,7 +160,8 @@ var DinnerModel = function() {
 	}
 
 	this.getAllDishes = function (type, filter) {
-		type = type.toLowerCase();
+		type = type.toLowerCase(filter);
+		//filter = filter.toLowerCase();
 	  	return dishes.filter(function(dish) {
 			var found = true;
 
@@ -183,7 +184,7 @@ var DinnerModel = function() {
 			}
 			
 			else {
-		  		return dish.type == type && found;
+		  		return dish.type = type && found;
 		  	}
 		});
 	}

@@ -62,6 +62,8 @@ var DishSearchView = function (container, model) {
 	$("#searchDishes").html( output );
 
     this.update = function( args ) {
+<<<<<<< HEAD
+=======
 		this.getContainer = function (){ //här fixar vi så att bo back knappen funkar; vi tar in containern
 		  return container;
 		}
@@ -71,12 +73,15 @@ var DishSearchView = function (container, model) {
 		//empty output 
 
 		var type =  $('#exampleFormControlSelect1 :selected').val();
+>>>>>>> 191eb5bb29ff6486d19949ce71b50bd73afeef42
 		var filter = "";
-
 		var type =  $('#exampleFormControlSelect1').val();
-		var filter = $('#searchInput').id; 
+		
+		var filter = $('#searchInput').id;
+		var type =  $('#exampleFormControlSelect1').val();
+		 
 
-		if (args == "searchDish") {
+		if (args = "searchDish") {
 			filter = $('#searchInput').val();
 		}
 
@@ -129,6 +134,8 @@ var DishSearchView = function (container, model) {
 
 	    $('#searchDishes').html(output);
 
+<<<<<<< HEAD
+=======
 	    // if ($('#searchDishes')) {
 	    // 	$('#searchDishes').html(output);
 	    // }
@@ -144,6 +151,14 @@ var DishSearchView = function (container, model) {
     // var displayedDish = document.getElementsByClassName("displayedDish"); 
 	// var displayedDish = $(".displayedDish"); 
 
+<<<<<<< HEAD
+=======
+ 
+
+
+
+>>>>>>> 191eb5bb29ff6486d19949ce71b50bd73afeef42
+>>>>>>> ecf53cb6b47999130eaf43175c127f1775ffd79a
 	}
 
 	this.searchButton = container.find("#button1");
