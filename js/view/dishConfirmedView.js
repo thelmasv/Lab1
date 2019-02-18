@@ -42,7 +42,7 @@ var DishConfirmedView = function (container, model) {
           ` + outputConfirmed + ` 
 
           <div class="col-md-12">
-            <br><br>
+            
             <p id="confirmPrice">TOTAL:</p>
             <p id="confirmPrice">SEK `+ totalMenuPrice * model.getNumberOfGuests() +`</p>
           </div>

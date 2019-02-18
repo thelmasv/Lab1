@@ -140,8 +140,8 @@ a {
 }
 
 #confirmPrice {
-	margin-top: 1em;
-	text-align: center;
+/*	margin-top: 1em;
+*/	text-align: center;
 	color: darkred;
 	font-weight: bold
 }
@@ -367,5 +367,9 @@ hr {
 
 #confirmedPic {
 	text-align: center; 
+}
+
+#addBox {
+	padding-left: 1em; 
 }
 

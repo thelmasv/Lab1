@@ -17,13 +17,12 @@ var MainContentController = function( view, model, app ) {
  //  	view.getContainer().click(function(event) {  
 	// 	if (event.target.matches(".displayedDish")) {
 	// 		view.update("#searchDishes"); 
+	// 		app.showDishDetailsScreen();
 	// 	}
 	// }); 
 
 	view.displayedDish.click( function() { //här väljs dish så den går till details
 		var id = $(this).attr('id');
-		//console.log(id)
-		// view.update()
 		model.setId(id);
 		app.showDishDetailsScreen();
 
