@@ -7,7 +7,6 @@ var MainContentController = function( view, model, app ) {
 
 	$("#searchInput").change( function() {
 		view.update("selectFilter");
-		// view.this; 
 	});
 
 	view.searchButton.click( function() {

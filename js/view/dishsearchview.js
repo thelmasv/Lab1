@@ -8,11 +8,6 @@ var DishSearchView = function (container, model) {
 	this.clickDish = container.find("#searchDishes"); 
 	this.displayedDish = container.find(".displayedDish");
 	this.searchByName = container.find("#searchInput");
-	// Get all the relevant elements of the view (ones that show data
-  	// and/or ones that responed to interaction)
-
-// .hide() & .show() 
-// LÄGG TILL LYSSNARE
 
   	container.html ( `
 		<div class="row">
@@ -62,26 +57,17 @@ var DishSearchView = function (container, model) {
 	$("#searchDishes").html( output );
 
     this.update = function( args ) {
-<<<<<<< HEAD
-=======
 		this.getContainer = function (){ //här fixar vi så att bo back knappen funkar; vi tar in containern
 		  return container;
 		}
 
-		// output.empty(); 
-		// this.
-		//empty output 
-
 		var type =  $('#exampleFormControlSelect1 :selected').val();
->>>>>>> 191eb5bb29ff6486d19949ce71b50bd73afeef42
 		var filter = "";
-		var type =  $('#exampleFormControlSelect1').val();
 		
-		var filter = $('#searchInput').id;
 		var type =  $('#exampleFormControlSelect1').val();
-		 
+		var filter = $('#searchInput').id;
 
-		if (args = "searchDish") {
+		if (args == "searchDish") {
 			filter = $('#searchInput').val();
 		}
 
@@ -134,12 +120,6 @@ var DishSearchView = function (container, model) {
 
 	    $('#searchDishes').html(output);
 
-<<<<<<< HEAD
-=======
-	    // if ($('#searchDishes')) {
-	    // 	$('#searchDishes').html(output);
-	    // }
-
 	this.searchButton = container.find("#button1");
 	this.clickDish = container.find("#searchDishes"); 
 	this.displayedDish = container.find(".displayedDish");
@@ -151,14 +131,6 @@ var DishSearchView = function (container, model) {
     // var displayedDish = document.getElementsByClassName("displayedDish"); 
 	// var displayedDish = $(".displayedDish"); 
 
-<<<<<<< HEAD
-=======
- 
-
-
-
->>>>>>> 191eb5bb29ff6486d19949ce71b50bd73afeef42
->>>>>>> ecf53cb6b47999130eaf43175c127f1775ffd79a
 	}
 
 	this.searchButton = container.find("#button1");
