@@ -14,22 +14,14 @@ var MainContentController = function( view, model, app ) {
 	    view.update("searchDish");
 	});
 
- //  	view.getContainer().click(function(event) {  
-	// 	if (event.target.matches(".displayedDish")) {
-	// 		view.update("#searchDishes"); 
-	// 		app.showDishDetailsScreen();
-	// 	}
-	// }); 
-
-	view.displayedDish.click( function() { //här väljs dish så den går till details
+	view.container.on("click",'.displayedDish', function() {
+		console.log("hej")
 		var id = $(this).attr('id');
 		model.setId(id);
 		app.showDishDetailsScreen();
+	}); 
 
-	});
-
-
-} // FÅ SÖKRUTAN ATT FUNKA
+}
 
 	
 

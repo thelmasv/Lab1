@@ -131,16 +131,13 @@ var SidebarView = function (container, model) {
      		var x = ""; 
 
      		for (i = 0; i < getMenu.length; i++) {
-     			// console.log(getMenu); //blir just nu en lista "undefined"
      			x += "<br><div> " + getMenu[i].name; + "</div>"
 				let dishIngredients = getMenu[i].ingredients;
 				var sumDish = model.getDishPrice(dishIngredients) * model.getNumberOfGuests();
      			x += "<div> SEK: " + sumDish + "</div> "
-     			// lägg till pris; antingen genom gå in in getDishPrice eller genom att loopa 
-     			// for-loop? 
      		}
+     		
      		addMenu.html(x); 
-
      		paragraph.innerHTML = "SEK: " + model.getTotalMenuPrice() * model.getNumberOfGuests();		//PRISET SKA VARA DYNAMISKT
 
    			return changeDetails; 

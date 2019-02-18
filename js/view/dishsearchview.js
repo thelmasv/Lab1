@@ -3,7 +3,7 @@ var DishSearchView = function (container, model) {
 	this.getContainer = function (){ //här fixar vi så att bo back knappen funkar; vi tar in containern
 	  return container;
 	}
-
+	this.container = container; 
 	this.searchButton = container.find("#button1");
 	this.clickDish = container.find("#searchDishes"); 
 	this.displayedDish = container.find(".displayedDish");
@@ -65,6 +65,11 @@ var DishSearchView = function (container, model) {
 		this.getContainer = function (){ //här fixar vi så att bo back knappen funkar; vi tar in containern
 		  return container;
 		}
+
+		// output.empty(); 
+		// this.
+		//empty output 
+
 		var type =  $('#exampleFormControlSelect1 :selected').val();
 		var filter = "";
 
@@ -122,7 +127,6 @@ var DishSearchView = function (container, model) {
 
 	    console.log(allDishes); 
 
-
 	    $('#searchDishes').html(output);
 
 	    // if ($('#searchDishes')) {
@@ -130,19 +134,15 @@ var DishSearchView = function (container, model) {
 	    // }
 
 	this.searchButton = container.find("#button1");
-	// this.clickDish = container.find("#searchDishes"); 
+	this.clickDish = container.find("#searchDishes"); 
 	this.displayedDish = container.find(".displayedDish");
 	this.searchByName = container.find("#searchInput");
 
     // var searchButton = document.getElementById("button1");     
-    var clickDish = document.getElementById("searchDishes"); 
+    // var clickDish = document.getElementById("searchDishes"); 
     // var searchByName = document.getElementById("searchInput"); 
     // var displayedDish = document.getElementsByClassName("displayedDish"); 
 	// var displayedDish = $(".displayedDish"); 
-
- 
-
-
 
 	}
 
