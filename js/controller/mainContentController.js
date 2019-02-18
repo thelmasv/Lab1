@@ -7,15 +7,22 @@ var MainContentController = function( view, model, app ) {
 
 	$("#searchInput").change( function() {
 		view.update("selectFilter");
+		// view.this; 
 	});
 
 	view.searchButton.click( function() {
 	    view.update("searchDish");
 	});
 
+ //  	view.getContainer().click(function(event) {  
+	// 	if (event.target.matches(".displayedDish")) {
+	// 		view.update("#searchDishes"); 
+	// 		app.showDishDetailsScreen();
+	// 	}
+	// }); 
+
 	view.displayedDish.click( function() { //här väljs dish så den går till details
 		var id = $(this).attr('id');
-		//console.log(id)
 		model.setId(id);
 		app.showDishDetailsScreen();
 

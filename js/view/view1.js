@@ -106,7 +106,7 @@ var SidebarView = function (container, model) {
 
 	sumDish = model.getDishPrice(dishIngredients) * model.getNumberOfGuests();
 
-	paragraph.innerHTML = "SEK: 0.00";		//PRISET SKA VARA DYNAMISKT
+	paragraph.innerHTML = "SEK: " + model.getTotalMenuPrice();		//PRISET SKA VARA DYNAMISKT
 
 	// lägger in p-taggen i div-taggen
 	divCol12.appendChild(paragraph);
@@ -131,15 +131,18 @@ var SidebarView = function (container, model) {
      		var x = ""; 
 
      		for (i = 0; i < getMenu.length; i++) {
-     			console.log(getMenu); //blir just nu en lista "undefined"
-     			x += "<div> " + getMenu[i].name; + "</div>"
+     			// console.log(getMenu); //blir just nu en lista "undefined"
+     			x += "<br><div> " + getMenu[i].name; + "</div>"
 				let dishIngredients = getMenu[i].ingredients;
 				var sumDish = model.getDishPrice(dishIngredients) * model.getNumberOfGuests();
-     			x += "<div> " + sumDish + "</div>"
+     			x += "<div> SEK: " + sumDish + "</div> "
      			// lägg till pris; antingen genom gå in in getDishPrice eller genom att loopa 
      			// for-loop? 
      		}
      		addMenu.html(x); 
+
+     		paragraph.innerHTML = "SEK: " + model.getTotalMenuPrice() * model.getNumberOfGuests();		//PRISET SKA VARA DYNAMISKT
+
    			return changeDetails; 
      	}
 	}
