@@ -57,7 +57,7 @@ var DishSearchView = function (container, model) {
 	$("#searchDishes").html( output );
 
     this.update = function( args ) {
-		this.getContainer = function (){ //här fixar vi så att bo back knappen funkar; vi tar in containern
+		this.getContainer = function (){ //här fixar vi så att go back knappen funkar; vi tar in containern
 		  return container;
 		}
 

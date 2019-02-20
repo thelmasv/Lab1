@@ -155,15 +155,27 @@ var DinnerModel = function() {
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
 	this.addDishToMenu = function(id) {
-		var oneType = menu.filter(dishId => {
-			return this.getDish(dishId).type == this.getDish(id).type; 
-		}); 
-		oneType.forEach(dishId => {
-			this.removeDishFromMenu(dishId); 
-		});
+		// var oneType = menu.filter(dishId => {
+		// 	return this.getDish(dishId).type == this.getDish(id).type; 
+		// }); 
+		// oneType.forEach(dishId => {
+		// 	this.removeDishFromMenu(dishId); 
+		// });
+		// menu.push(id); 
+		// this.notifyObservers('menu'); 
+		// console.log(menu); 
+
+
+		//Thelma
+		for (var dishId of menu) {
+			if (dishId == id) {
+				return; 
+			}
+		}
 		menu.push(id); 
-		this.notifyObservers('menu'); 
-		console.log(menu); 
+		this.notifyObservers('menu');
+
+
 	}
 
     this.getCurrentMenu = function() {
@@ -172,21 +184,22 @@ var DinnerModel = function() {
 
 	//Removes dish from menu
 	this.removeDishFromMenu = function(id) {
-		// for (dish in menu) {
-		// 	if (menu[dish].id === id) {
-		// 		menu.splice(dish);
-		// 	}
-		// }
+		for (dish in menu) {
+			if (menu[dish].id === id) {
+				delete menu[dish];
+			}
+		}
+		this.notifyObservers('menu');
 
 		// menu.splice(menu.indexOf(id), 1);  
 		// this.notifyObservers(); 
 
-		for (i=0; i<=menu.length-1; i++) {
-			if (menu[i].id == id) {
-				menu.splice(i, 1);
-				this.notifyObservers(); 
-			}
-		}
+		// for (i=0; i<=menu.length-1; i++) {
+		// 	if (menu[i].id == id) {
+		// 		menu.splice(i, 1);
+		// 		this.notifyObservers(); 
+		// 	}
+		// }
 
 		// for (dish in menu){
 		// 	var dishId = menu[dish];

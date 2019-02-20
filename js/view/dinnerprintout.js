@@ -9,7 +9,6 @@ var DinnerPrintout = function (container, model) {
     var outputPrintout = ""
 
     var sumDish = 0; 
-    // var outputConfirmed = ""; 
     var totalMenuPrice = model.getTotalMenuPrice(chosenMenu[i]); 
 
   // Loopa igenom alla ingredienser och dess värden för vald dish

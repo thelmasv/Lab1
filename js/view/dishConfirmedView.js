@@ -10,46 +10,35 @@ var DishConfirmedView = function (container, model) {
   this.update = function(model, changeDetails) {
     var menuList = []; 
     var chosenMenu = model.getCurrentMenu(); 
-    // console.log(chosenMenu); // printar ut tom lista []
-
+    console.log("Chosen menu: ", chosenMenu)
     var confirmedDishes = "";
 
-    var sumDish = 0; 
     var outputConfirmed = ""; 
+
+    var sumDish = 0; 
     var totalMenuPrice = model.getTotalMenuPrice(chosenMenu[i]); 
 
-    for (i = 0; i < chosenMenu.length; i++) {
+    for (var i = 0; i < chosenMenu.length; i++) {
       var confirmedDishes = model.getDish(chosenMenu[i]); 
+      console.log(confirmedDishes)
       outputConfirmed += `<div class="col-md-4" id="confirmedPic">
-                          <div>
-                            <img src="` + confirmedDishes.image + `" id="imgMain"/> 
-                            <p>` + confirmedDishes.name + `</p>
-                            <p id="price">SEK ` +  model.getDishPrice(confirmedDishes.ingredients) * model.getNumberOfGuests() + `</p>
-                          </div>
-                          </div>` 
-
-                        // `<div class="col-12 col-md-4" id="confirmedPic">
-                        //   <img src="` + confirmedDishes.image + `" id="imgMain" />
-                        //   <br>
-                        // </div>
-                        // <div class="col-12 col-md-3">
-                        //   <p> ` + confirmedDishes.name + ` <p>
-                        //   <p id="price">SEK ` +  model.getDishPrice(confirmedDishes.ingredients) * model.getNumberOfGuests() + `</p>
-                        // </div>
-                        // <div class="col-12 col-md-5" >
-                        //     <p id="price">SEK ` +  model.getDishPrice(confirmedDishes.ingredients) * model.getNumberOfGuests() + `</p>
-                        //  </div><br><br>` 
+                            <div class="row">
+                              <img src="` + confirmedDishes.image + `" id="imgMain"/> 
+                            </div>
+                            <div class="row">
+                              <p>` + confirmedDishes.name + `</p>
+                            </div>
+                            <div class="row">
+                              <p id="price">SEK ` +  model.getDishPrice(confirmedDishes.ingredients) * model.getNumberOfGuests() + `</p>
+                            </div>
+                        </div>`; 
 
     }
-    // säger undefined om confirmedDishes.image eller .name
 
     container.html( `
         <div class="row">
-
           <div class="col-md-12">
-          
-
-          ` + outputConfirmed + ` 
+            ` + outputConfirmed + ` 
           </div>
 
           <div class="col-md-12">
@@ -70,10 +59,6 @@ var DishConfirmedView = function (container, model) {
   		)
 
     this.printButton = container.find("#button1");
-
-    // if (changeDetails == 'menu') {
-    //   return changeDetails; 
-    // }
 
   }
 
