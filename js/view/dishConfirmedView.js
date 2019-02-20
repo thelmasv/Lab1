@@ -10,9 +10,9 @@ var DishConfirmedView = function (container, model) {
   this.update = function(model, changeDetails) {
     var menuList = []; 
     var chosenMenu = model.getCurrentMenu(); 
-    console.log(chosenMenu); // printar ut tom lista []
+    // console.log(chosenMenu); // printar ut tom lista []
 
-    var confirmedDishes = ""
+    var confirmedDishes = "";
 
     var sumDish = 0; 
     var outputConfirmed = ""; 
@@ -20,15 +20,25 @@ var DishConfirmedView = function (container, model) {
 
     for (i = 0; i < chosenMenu.length; i++) {
       var confirmedDishes = model.getDish(chosenMenu[i]); 
-      outputConfirmed += `<div class="col-md-12" id="confirmedPic">
+      outputConfirmed += `<div class="col-md-4" id="confirmedPic">
                           <div>
                             <img src="` + confirmedDishes.image + `" id="imgMain"/> 
                             <p>` + confirmedDishes.name + `</p>
                             <p id="price">SEK ` +  model.getDishPrice(confirmedDishes.ingredients) * model.getNumberOfGuests() + `</p>
                           </div>
-
-
                         </div>` 
+
+                        // `<div class="col-12 col-md-4" id="firstPicLastPage">
+                        //   <img src="` + confirmedDishes.image + `" id="firstPicLastPage" />
+                        //   <br>
+                        // </div>
+                        // <div class="col-12 col-md-3" id="dishtext">
+                        //   <h3> ` + confirmedDishes.name + ` </h3>
+                        // </div>
+                        // <div class="col-12 col-md-5" >
+                        //   <p id="preperation-title">PREPERATION</p>
+                        //   <p id="img-text">` + confirmedDishes.description + ` </p> 
+                        // </div><br><br>` 
 
     }
     // säger undefined om confirmedDishes.image eller .name
@@ -37,9 +47,10 @@ var DishConfirmedView = function (container, model) {
         <div class="row">
 
           <div class="col-md-12">
-          </div>
+          
 
           ` + outputConfirmed + ` 
+          </div>
 
           <div class="col-md-12">
             

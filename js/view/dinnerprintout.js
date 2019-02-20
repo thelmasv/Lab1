@@ -9,7 +9,7 @@ var DinnerPrintout = function (container, model) {
     var outputPrintout = ""
 
     var sumDish = 0; 
-    var outputConfirmed = ""; 
+    // var outputConfirmed = ""; 
     var totalMenuPrice = model.getTotalMenuPrice(chosenMenu[i]); 
 
   // Loopa igenom alla ingredienser och dess värden för vald dish
@@ -17,6 +17,7 @@ var DinnerPrintout = function (container, model) {
       var confirmedDishes = model.getDish(chosenMenu[i]); 
       outputPrintout += `<div class="col-12 col-md-4" id="firstPicLastPage">
               						<img src="` + confirmedDishes.image + `" id="firstPicLastPage" />
+                          <br>
               					</div>
               					<div class="col-12 col-md-3" id="dishtext">
               						<h3> ` + confirmedDishes.name + ` </h3>
@@ -24,7 +25,7 @@ var DinnerPrintout = function (container, model) {
               					<div class="col-12 col-md-5" >
               						<p id="preperation-title">PREPERATION</p>
               						<p id="img-text">` + confirmedDishes.description + ` </p> 
-              					</div>` 
+              					</div><br><br>` 
 
 
     }

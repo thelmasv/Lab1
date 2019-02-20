@@ -9,8 +9,6 @@ var DinnerModel = function() {
 	var totMenuPrice = 0.00; 
 	// this.menuPlace = [];
 
-	
-
 	this.addObserver = function(observer) {
 		observers.push(observer);  
 	}
@@ -58,7 +56,6 @@ var DinnerModel = function() {
 		}
 	}
 
-
 	//function that returns a dish of specific ID
 	this.getDish = function (id, name, type) {
 	  for(key in dishes){
@@ -67,7 +64,6 @@ var DinnerModel = function() {
 			}
 		}
 	}
-
 
 	//Returns all the dishes on the menu.
 	// ANROPA 
@@ -118,6 +114,34 @@ var DinnerModel = function() {
 	  //   return ingredients;
 	  // }
 
+
+	// ELLER
+
+	// this.getAllIngredients = function() {
+	 //    menuArray = [dishes[0], dishes[2], dishes[3], dishes[8]];
+
+	 //    for (i=0; i<=menuArray.length-1; i++){
+	 //      for(j=0; j<=menuArray[i].ingredients.length-1; j++) {
+	 //      allIngredients += menuArray[i].ingredients[j].name+", ";
+	 //    } allIngredients += "<br/>";
+	 //  	}
+	 //  	return allIngredients;
+ // 	}
+
+
+ 	// ELLER
+
+ //   this.getAllIngredientsAnnan = function() {
+	// 	menuArray = [dishes[0], dishes[1], dishes[2], dishes[3]]
+	// 	AllIngredients = [];
+	// 	for (i=0; i<=menuArray.length-1; i++) {
+	// 		for (j=0; j<=menuArray[i].ingredients.length-1; j++) {
+	// 		AllIngredients.push(menuArray[i].ingredients[j]);
+	// 	}
+	// }
+	// return AllIngredients
+	// }
+
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
 	this.getTotalMenuPrice = function(id) {
 		var totalCost = 0; 
@@ -131,7 +155,6 @@ var DinnerModel = function() {
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
 	this.addDishToMenu = function(id) {
-
 		var oneType = menu.filter(dishId => {
 			return this.getDish(dishId).type == this.getDish(id).type; 
 		}); 
@@ -140,6 +163,7 @@ var DinnerModel = function() {
 		});
 		menu.push(id); 
 		this.notifyObservers('menu'); 
+		console.log(menu); 
 	}
 
     this.getCurrentMenu = function() {
@@ -149,15 +173,39 @@ var DinnerModel = function() {
 	//Removes dish from menu
 	this.removeDishFromMenu = function(id) {
 		// for (dish in menu) {
-		// 	if (menu[dish].id == id) {
+		// 	if (menu[dish].id === id) {
 		// 		delete menu[dish];
 		// 	}
 		// }
 
-		menu.splice(menu.indexOf(id), 1);  
-		this.notifyObservers(); 
+		// menu.splice(menu.indexOf(id), 1);  
+		// this.notifyObservers(); 
+
+		// for (i=0; i<=menu.length-1; i++) {
+		// 	if (menu[i].id == id) {
+		// 		menu.splice(i, 1);
+		// 		this.notifyObservers(); 
+		// 	}
+		// }
+
+
+		//TODO Lab 2
+		for (dish in menu){
+			var dishId = menu[dish];
+
+			if(dishId == id){
+				menu.splice(dish, 1);
+				break;
+			}
+			else{
+			}
+		}
+		this.notifyObservers("menu");
 		
 	}
+
+
+
 
 	this.getAllDishes = function (type, filter) {
 		type = type.toLowerCase(filter);
@@ -168,21 +216,17 @@ var DinnerModel = function() {
 			if ( filter ) {
 				found = false;
 				dish.ingredients.forEach( function( ingredient ) {
-
 					if ( ingredient.name.indexOf( filter ) != -1 ) {
 						found = true;
 					}
 				});
-
 				if ( dish.name.indexOf( filter ) != -1 ) {
 					found = true;
 				}
 			}
-
 			if ( type == "all" ) {
 				return dishes;
 			}
-			
 			else {
 		  		return dish.type = type && found;
 		  	}

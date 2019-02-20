@@ -71,40 +71,6 @@ var DishSearchView = function (container, model) {
 			filter = $('#searchInput').val();
 		}
 
-	  	container.html ( `
-			<div class="row">
-				<div class="col-12" id="findDish">
-					<h3>FIND A DISH</h3>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-12">
-					
-						<div class="search"> 
-						  <input id="searchInput" type="text" placeholder="Enter keywords">
-					   </div>
-					  <div class="form-group">
-					  	<select class="form-control" id="exampleFormControlSelect1">
-							<option selected>All</option>
-							<option>Starter</option>
-							<option>Main Dish</option>
-							<option>Dessert</option>
-						</select>
-					  </div>
-					  
-					 <button type="submit" id="button1">Search</button>
-						
-				</div>
-			</div>
-
-			<div class="row">
-			</div>
-			<hr align="center">
-
-			<div class="row" id="searchDishes">
-			</div><br>`);
-
 		var allDishes = model.getAllDishes(type, filter);
 		var output = "";
 
@@ -116,8 +82,7 @@ var DishSearchView = function (container, model) {
 					</div>`;
 	    }
 
-	    console.log(allDishes); 
-
+	    // console.log(allDishes); 
 	    $('#searchDishes').html(output);
 
 	this.searchButton = container.find("#button1");
