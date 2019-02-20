@@ -12,7 +12,7 @@ var DinnerPrintout = function (container, model) {
     var totalMenuPrice = model.getTotalMenuPrice(chosenMenu[i]); 
 
   // Loopa igenom alla ingredienser och dess värden för vald dish
-    for (i = 0; i < chosenMenu.length; i++) {
+    for (var i = 0; i < chosenMenu.length; i++) {
       var confirmedDishes = model.getDish(chosenMenu[i]); 
       outputPrintout += `<div class="col-12 col-md-4" id="firstPicLastPage">
               						<img src="` + confirmedDishes.image + `" id="firstPicLastPage" />

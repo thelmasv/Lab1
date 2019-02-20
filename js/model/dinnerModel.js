@@ -216,7 +216,7 @@ var DinnerModel = function() {
 
 
 	this.getAllDishes = function (type, filter) {
-		type = type.toLowerCase(filter);
+		type = type.toLowerCase();
 		//filter = filter.toLowerCase();
 	  	return dishes.filter(function(dish) {
 			var found = true;
@@ -233,10 +233,12 @@ var DinnerModel = function() {
 				}
 			}
 			if ( type == "all" ) {
-				return dishes;
+
+				return dishes && found;
 			}
 			else {
-		  		return dish.type = type && found;
+		  		return dish.type == type && found;
+
 		  	}
 		});
 	}

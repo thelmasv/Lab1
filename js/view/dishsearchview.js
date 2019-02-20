@@ -62,16 +62,19 @@ var DishSearchView = function (container, model) {
 		}
 
 		var type =  $('#exampleFormControlSelect1 :selected').val();
-		var filter = "";
+		var filter = null;
 		
 		var type =  $('#exampleFormControlSelect1').val();
-		var filter = $('#searchInput').id;
+		console.log(type); 
+		// var filter = $('#searchInput').id;
 
 		if (args == "searchDish") {
 			filter = $('#searchInput').val();
+			console.log("filter", filter); 
 		}
 
 		var allDishes = model.getAllDishes(type, filter);
+		console.log(allDishes); 
 		var output = "";
 
 		for ( i = 0; i < allDishes.length; i++ ) { 
@@ -82,20 +85,12 @@ var DishSearchView = function (container, model) {
 					</div>`;
 	    }
 
-	    // console.log(allDishes); 
 	    $('#searchDishes').html(output);
 
-	this.searchButton = container.find("#button1");
-	this.clickDish = container.find("#searchDishes"); 
-	this.displayedDish = container.find(".displayedDish");
-	this.searchByName = container.find("#searchInput");
-
-    // var searchButton = document.getElementById("button1");     
-    // var clickDish = document.getElementById("searchDishes"); 
-    // var searchByName = document.getElementById("searchInput"); 
-    // var displayedDish = document.getElementsByClassName("displayedDish"); 
-	// var displayedDish = $(".displayedDish"); 
-
+	// this.searchButton = container.find("#button1");
+	// this.clickDish = container.find("#searchDishes"); 
+	// this.displayedDish = container.find(".displayedDish");
+	// this.searchByName = container.find("#searchInput");
 	}
 
 	this.searchButton = container.find("#button1");

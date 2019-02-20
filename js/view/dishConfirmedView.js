@@ -1,7 +1,5 @@
 var DishConfirmedView = function (container, model) {
 
-  // knappen har slutat funka
-
   this.getContainer = function (){ //här fixar vi så att bo back knappen funkar; vi tar in containern
     return container;
   }
@@ -10,7 +8,6 @@ var DishConfirmedView = function (container, model) {
   this.update = function(model, changeDetails) {
     var menuList = []; 
     var chosenMenu = model.getCurrentMenu(); 
-    console.log("Chosen menu: ", chosenMenu)
     var confirmedDishes = "";
 
     var outputConfirmed = ""; 
@@ -20,8 +17,7 @@ var DishConfirmedView = function (container, model) {
 
     for (var i = 0; i < chosenMenu.length; i++) {
       var confirmedDishes = model.getDish(chosenMenu[i]); 
-      console.log(confirmedDishes)
-      outputConfirmed += `<div class="col-md-4" id="confirmedPic">
+      outputConfirmed += `<div class="col-md-3" id="confirmedPic">
                             <div class="row">
                               <img src="` + confirmedDishes.image + `" id="imgMain"/> 
                             </div>
@@ -31,7 +27,7 @@ var DishConfirmedView = function (container, model) {
                             <div class="row">
                               <p id="price">SEK ` +  model.getDishPrice(confirmedDishes.ingredients) * model.getNumberOfGuests() + `</p>
                             </div>
-                        </div>`; 
+                          </div>`; 
 
     }
 
@@ -40,9 +36,10 @@ var DishConfirmedView = function (container, model) {
           <div class="col-md-12">
             ` + outputConfirmed + ` 
           </div>
+        </div>
 
+        <div class="row">
           <div class="col-md-12">
-            
             <p id="confirmPrice">TOTAL:</p>
             <p id="confirmPrice">SEK `+ totalMenuPrice * model.getNumberOfGuests() +`</p>
           </div>
