@@ -174,33 +174,28 @@ var DinnerModel = function() {
 	this.removeDishFromMenu = function(id) {
 		// for (dish in menu) {
 		// 	if (menu[dish].id === id) {
-		// 		delete menu[dish];
+		// 		menu.splice(dish);
 		// 	}
 		// }
 
 		// menu.splice(menu.indexOf(id), 1);  
 		// this.notifyObservers(); 
 
-		// for (i=0; i<=menu.length-1; i++) {
-		// 	if (menu[i].id == id) {
-		// 		menu.splice(i, 1);
-		// 		this.notifyObservers(); 
-		// 	}
-		// }
-
-
-		//TODO Lab 2
-		for (dish in menu){
-			var dishId = menu[dish];
-
-			if(dishId == id){
-				menu.splice(dish, 1);
-				break;
-			}
-			else{
+		for (i=0; i<=menu.length-1; i++) {
+			if (menu[i].id == id) {
+				menu.splice(i, 1);
+				this.notifyObservers(); 
 			}
 		}
-		this.notifyObservers("menu");
+
+		// for (dish in menu){
+		// 	var dishId = menu[dish];
+		// 	if(dishId == id){
+		// 		menu.splice(dish, 1);
+		// 		break;
+		// 	}
+		// }
+		// this.notifyObservers("menu");
 		
 	}
 

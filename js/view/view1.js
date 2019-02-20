@@ -116,17 +116,10 @@ var SidebarView = function (container, model) {
 	menuPrice.append(divCol12);
 
 	this.update = function(model, changeDetails) {
-     	if (changeDetails == 'numberOfGuests') {
-     		numberOfGuestsTextField.text("People: " + model.getNumberOfGuests()); 
-     		return changeDetails; 
+     	if (changeDetails == 'numberOfGuests' || changeDetails == 'menu') {
+     		numberOfGuestsTextField.text("People: " + model.getNumberOfGuests());
 
-     		return model.getTotalMenuPrice();  
-     		// skriva någon funktion som uppdaterar även i if nedan
-     	}
-
-     	if (changeDetails == 'menu') {
      		var getMenu = model.getFullMenu();
-     		// var getPrice = model.getDishPrice(); 
      		var i; 
      		var x = ""; 
 
@@ -134,15 +127,12 @@ var SidebarView = function (container, model) {
      			x += "<br><div> " + getMenu[i].name; + "</div>"
 				let dishIngredients = getMenu[i].ingredients;
 				var sumDish = model.getDishPrice(dishIngredients) * model.getNumberOfGuests();
-     			x += "<div> SEK: " + sumDish + "</div> "
+     			x += "<div class='dish-price'> SEK: " + sumDish + "</div> "
      		}
      		
      		addMenu.html(x); 
      		paragraph.innerHTML = "SEK: " + model.getTotalMenuPrice() * model.getNumberOfGuests();
    			return changeDetails; 
-
-   			// lägga till någon if för changeDetails == 'numberOfGuests' för att uppdater personer och pris dynamiskt
-
      	}
 	}
 

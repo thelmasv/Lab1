@@ -16,7 +16,10 @@ var DishDetailsView = function (container, model, id) {  //DENNA HAR INGEN } PÅ
 
     var dishID = model.getId();
     var dishDetails = model.getDish(dishID); 
+
+    if (!dishDetails) return; 
     let dishIngredients = dishDetails.ingredients;
+
 
     var guestText = document.createElement("DIV");
     guestText.id = "ingTotPeople"; 

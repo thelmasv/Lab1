@@ -26,19 +26,19 @@ var DishConfirmedView = function (container, model) {
                             <p>` + confirmedDishes.name + `</p>
                             <p id="price">SEK ` +  model.getDishPrice(confirmedDishes.ingredients) * model.getNumberOfGuests() + `</p>
                           </div>
-                        </div>` 
+                          </div>` 
 
-                        // `<div class="col-12 col-md-4" id="firstPicLastPage">
-                        //   <img src="` + confirmedDishes.image + `" id="firstPicLastPage" />
+                        // `<div class="col-12 col-md-4" id="confirmedPic">
+                        //   <img src="` + confirmedDishes.image + `" id="imgMain" />
                         //   <br>
                         // </div>
-                        // <div class="col-12 col-md-3" id="dishtext">
-                        //   <h3> ` + confirmedDishes.name + ` </h3>
+                        // <div class="col-12 col-md-3">
+                        //   <p> ` + confirmedDishes.name + ` <p>
+                        //   <p id="price">SEK ` +  model.getDishPrice(confirmedDishes.ingredients) * model.getNumberOfGuests() + `</p>
                         // </div>
                         // <div class="col-12 col-md-5" >
-                        //   <p id="preperation-title">PREPERATION</p>
-                        //   <p id="img-text">` + confirmedDishes.description + ` </p> 
-                        // </div><br><br>` 
+                        //     <p id="price">SEK ` +  model.getDishPrice(confirmedDishes.ingredients) * model.getNumberOfGuests() + `</p>
+                        //  </div><br><br>` 
 
     }
     // säger undefined om confirmedDishes.image eller .name
