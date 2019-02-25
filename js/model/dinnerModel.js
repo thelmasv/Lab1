@@ -187,26 +187,21 @@ var DinnerModel = function() {
 	    // })
 	    // .then(handleHTTPError)
 	    // .then(console.log)
-	    .catch(console.error)
+	    .catch(()=>console.error)
 	} 
 
 	// HÄR SKA API IMPLEMENTERAS !!!
 	//function that returns a dish of specific ID
 	this.getDish = function (id, title, type) {
-		return fetch("http://sunset.nada.kth.se:8080/iprog/group/3/recipes/search",{ 
+		return fetch("http://sunset.nada.kth.se:8080/iprog/group/3/recipes/" + id + "/information",{ 
 			// addera sträng med id på något sätt 
 	  		method: "GET", 
             headers:{   
                 'X-Mashape-Key': API_KEY
             }
 	    })
-	    // use API-Dish in some way
-
-	 //  for(key in dishes){
-		// 	if(dishes[key].id == id) {
-		// 		return dishes[key];
-		// 	}
-		// }
+	    .then(response => response.json())
+	    .catch(console.error)
 	}
 
 	// Get dish price for one dish and all people

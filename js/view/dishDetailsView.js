@@ -1,7 +1,7 @@
 var DishDetailsView = function (container, model, id) {  //DENNA HAR INGEN } PÅ SLUTET, CONNECTAS INTE TILL DEN SISTA
   this.goBackSearchButton = container.find("#GoBackButton");
   this.addToMenuButton = container.find("#buttonAdd");
-  this.dish
+  this.dish; 
 
   this.getContainer = function (){ //här fixar vi så att bo back knappen funkar; vi tar in containern
     return container;
@@ -17,13 +17,13 @@ var DishDetailsView = function (container, model, id) {  //DENNA HAR INGEN } PÅ
 
     var dishID = model.getId();
     var self = this
+    let dishIngredients;
     var dishDetails = model.getDish(dishID).then( dishDetails => {
       self.dish = dishDetails
-    });
+      dishIngredients = dishDetails.extendedIngredients;
 
     if (!dishDetails) return; 
-    let dishIngredients = dishDetails.ingredients;
-
+    console.log(dishIngredients); 
 
     var guestText = document.createElement("DIV");
     guestText.id = "ingTotPeople"; 
@@ -38,7 +38,7 @@ var DishDetailsView = function (container, model, id) {  //DENNA HAR INGEN } PÅ
 
       outputIng += `<div class="row" id="Overview">
                     <div class="col-2">
-                      <p>`+ Math.round(dishIngredients[i].quantity * model.getNumberOfGuests()) + dishIngredients[i].unit +`</p>
+                      <p>`+ Math.round(dishIngredients[i].amount * model.getNumberOfGuests()) + dishIngredients[i].unit +`</p>
                     </div>
                     <div class="col-6">
                       <p>`+ dishIngredients[i].name +`</p>
@@ -100,10 +100,13 @@ var DishDetailsView = function (container, model, id) {  //DENNA HAR INGEN } PÅ
             </div> 
             </div>`);
 
+
       this.goBackSearchButton = container.find("#GoBackButton");
       this.addToMenuButton = container.find("#buttonAdd");
 
-      var goBackSearchButton = document.getElementById("GoBackButton");     
+      var goBackSearchButton = document.getElementById("GoBackButton");  
+
+    });
 
     } 
     model.addObserver(this.update);
