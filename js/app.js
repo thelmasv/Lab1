@@ -7,7 +7,7 @@ $(function() {
 	var dishSearchView = new DishSearchView($("#main-content"), model);
 	var sidebarView2 = new SidebarView2($("#sidebar2"), model);
 	var dishItemView = new DishItemView($("#foodCol"), model);
-	var dishSearchView2 = new DishSearch2($("#main-content2"), model);
+	// var dishSearchView2 = new DishSearch2($("#main-content2"), model);
 	var dishDetailsView = new DishDetailsView($("#main-content3"), model);
 	var dishConfirmedView = new DishConfirmedView($("#main-content4"), model); 
 	var dinnerprintout = new DinnerPrintout($("#main-content5"), model);
@@ -20,7 +20,7 @@ $(function() {
 	var dishDetailsController = new DishDetailsController(dishDetailsView, model, this);
 	var mainContentController = new MainContentController(dishSearchView, model, this);  
 	var confirmHeaderController = new ConfirmHeaderController(confirmHeader, model, this); 
-	var selectDishAgainController = new SelectDishAgainController(dishSearchView2, model, this); 
+	// var selectDishAgainController = new SelectDishAgainController(dishSearchView2, model, this); 
 	var overviewController = new OverviewController(dishConfirmedView, model, this); 
 	//var printoutController = new PrintoutController(dinnerprintout, model,this);
  

@@ -15,9 +15,7 @@ var DishConfirmedView = function (container, model) {
     var totalMenuPrice = model.getTotalMenuPrice(chosenMenu[i]); 
 
     for (var i = 0; i < chosenMenu.length; i++) {
-      console.log(chosenMenu)
       var confirmedDishes = chosenMenu[i]; 
-      console.log("confirm!!!: " + confirmedDishes)
       outputConfirmed += `<div class="col-md-3" id="confirmedPic">
                             <div class="row">
                               <img src="` + confirmedDishes.image + `" id="imgMain"/> 

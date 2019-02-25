@@ -21,11 +21,11 @@ var DishDetailsView = function (container, model, id) {  //DENNA HAR INGEN } PÅ
 
     var dishDetails = model.getDish(dishID).then( dishDetails => {
       self.dish = dishDetails
-      console.log(self.dish); 
+      // console.log(self.dish); 
       dishIngredients = dishDetails.extendedIngredients;
 
       if (!dishDetails) return; 
-      console.log(dishIngredients); 
+      // console.log(dishIngredients); 
 
       var guestText = document.createElement("DIV");
       guestText.id = "ingTotPeople"; 

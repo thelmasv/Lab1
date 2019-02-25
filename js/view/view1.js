@@ -129,7 +129,7 @@ var SidebarView = function (container, model) {
      		var x = ""; 
 
      		for (i = 0; i < getMenu.length; i++) {
-     			console.log(getMenu); 
+     			// console.log(getMenu); 
      			x += "<br><div>" + getMenu[i].title; + "</div>"
 				var sumDish = Math.round(getMenu[i].pricePerServing * model.getNumberOfGuests());
      			x += "<div class='dish-price'> SEK: " + sumDish + "</div> "
