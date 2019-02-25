@@ -44,17 +44,18 @@ var DishSearchView = function (container, model) {
 			
 		</div>`);
 
-	var allDishes = model.getAllDishes("All"); //får ut alla rätter på förstasidan("all")
-	var output = ""
+ //  	console.log("Kallar getAllDishes")
+	// var allDishes = model.getAllDishes("All"); //får ut alla rätter på förstasidan("all")
+	// var output = ""
 
-	for (i = 0; i < allDishes.length; i++) { 
-		output +=  `<div class="col-8 col-md-2 displayedDish" id="`+allDishes[i].id+`"> 
-						<img src="` + allDishes[i].image + `"/>
-						<p> ` + allDishes[i].name + ` </p>
-					</div>`;
-	}
+	// for (i = 0; i < allDishes.length; i++) { 
+	// 	output +=  `<div class="col-8 col-md-2 displayedDish" id="`+allDishes[i].id+`"> 
+	// 					<img src="` + allDishes[i].image + `"/>
+	// 					<p> ` + allDishes[i].title + ` </p>
+	// 				</div>`;
+	// }
 
-	$("#searchDishes").html( output );
+	// $("#searchDishes").html( output );
 
     this.update = function( args ) {
 		this.getContainer = function (){ //här fixar vi så att go back knappen funkar; vi tar in containern
@@ -65,27 +66,28 @@ var DishSearchView = function (container, model) {
 		var filter = null;
 		
 		var type =  $('#exampleFormControlSelect1').val();
-		console.log(type); 
+		console.log(type);
 		// var filter = $('#searchInput').id;
 
 		if (args == "searchDish") {
 			filter = $('#searchInput').val();
 			console.log("filter", filter); 
 		}
+		console.log("Kallar i update")
+		var allDishes = model.getAllDishes(type, filter).then(allDishes => {
+			console.log(allDishes); 
+			var output = "";
 
-		var allDishes = model.getAllDishes(type, filter);
-		console.log(allDishes); 
-		var output = "";
+			for ( i = 0; i < allDishes.length; i++ ) { 
 
-		for ( i = 0; i < allDishes.length; i++ ) { 
+				output += `<div class="col-8 col-md-2 displayedDish" id="`+allDishes[i].id+`"> 
+							<img src="` + "https://spoonacular.com/recipeImages/" + allDishes[i].image + `"/>
+							<p> ` + allDishes[i].title + `</p>
+						</div>`;
+		    }
 
-			output += `<div class="col-8 col-md-2 displayedDish" id="`+allDishes[i].id+`"> 
-						<img src="` + allDishes[i].image + `"/>
-						<p> ` + allDishes[i].name + `</p>
-					</div>`;
-	    }
-
-	    $('#searchDishes').html(output);
+		    $('#searchDishes').html(output);
+		});
 
 	// this.searchButton = container.find("#button1");
 	// this.clickDish = container.find("#searchDishes"); 
@@ -93,11 +95,11 @@ var DishSearchView = function (container, model) {
 	// this.searchByName = container.find("#searchInput");
 	}
 
+	this.update()
 	this.searchButton = container.find("#button1");
 	this.clickDish = container.find("#searchDishes"); 
 	this.displayedDish = container.find(".displayedDish");
 	this.searchByName = container.find("#searchInput");
-
     model.addObserver(this.update);
 
 

@@ -47,9 +47,13 @@ var SidebarView = function (container, model) {
 	}
 
 	// ta bort 100, men implementera ingredients på annat sätt 
-	var dishDetails = model.getDish(100);
-	let dishIngredients = dishDetails.ingredients;
-	var sumDish = 0; 
+	var dishDetails = model.getDish(100).then(dish => {
+		let dishIngredients = dishDetails.ingredients;
+		var sumDish = 0; 
+		sumDish = model.getDishPrice(dishIngredients) * model.getNumberOfGuests();
+	})
+	// let dishIngredients = dishDetails.ingredients;
+	// var sumDish = 0; 
 
 	var numberOfGuestsTextField = container.find("#numGuests");
 	var price = model.getTotalMenuPrice();
@@ -105,7 +109,7 @@ var SidebarView = function (container, model) {
 	// addText.innerHTML = "Dish";
 	addMenu.append(addText); 
 
-	sumDish = model.getDishPrice(dishIngredients) * model.getNumberOfGuests();
+	// sumDish = model.getDishPrice(dishIngredients) * model.getNumberOfGuests();
 
 	paragraph.innerHTML = "SEK: " + model.getTotalMenuPrice();		//PRISET SKA VARA DYNAMISKT
 

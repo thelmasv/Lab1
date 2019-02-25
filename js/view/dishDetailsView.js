@@ -1,6 +1,7 @@
 var DishDetailsView = function (container, model, id) {  //DENNA HAR INGEN } PÅ SLUTET, CONNECTAS INTE TILL DEN SISTA
   this.goBackSearchButton = container.find("#GoBackButton");
   this.addToMenuButton = container.find("#buttonAdd");
+  this.dish
 
   this.getContainer = function (){ //här fixar vi så att bo back knappen funkar; vi tar in containern
     return container;
@@ -15,7 +16,10 @@ var DishDetailsView = function (container, model, id) {  //DENNA HAR INGEN } PÅ
     numberOfGuestsTextField.append(guestText);
 
     var dishID = model.getId();
-    var dishDetails = model.getDish(dishID); 
+    var self = this
+    var dishDetails = model.getDish(dishID).then( dishDetails => {
+      self.dish = dishDetails
+    });
 
     if (!dishDetails) return; 
     let dishIngredients = dishDetails.ingredients;
