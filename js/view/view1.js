@@ -47,11 +47,12 @@ var SidebarView = function (container, model) {
 	}
 
 	// ta bort 100, men implementera ingredients på annat sätt 
-	var dishDetails = model.getDish(100).then(dish => {
-		let dishIngredients = dishDetails.ingredients;
-		var sumDish = 0; 
-		sumDish = model.getDishPrice(dishIngredients) * model.getNumberOfGuests();
-	})
+	var dishDetails = model.getCurrentMenu(); 
+	console.log(dishDetails); 
+	let dishIngredients = dishDetails.ingredients;
+	var sumDish = 0; 
+	sumDish = model.getDishPrice(dishIngredients) * model.getNumberOfGuests();
+	
 	// let dishIngredients = dishDetails.ingredients;
 	// var sumDish = 0; 
 
@@ -123,12 +124,13 @@ var SidebarView = function (container, model) {
      	if (changeDetails == 'numberOfGuests' || changeDetails == 'menu') {
      		numberOfGuestsTextField.text("People: " + model.getNumberOfGuests());
 
-     		var getMenu = model.getFullMenu();
+     		var getMenu = model.getCurrentMenu();
      		var i; 
      		var x = ""; 
 
      		for (i = 0; i < getMenu.length; i++) {
-     			x += "<br><div> " + getMenu[i].name; + "</div>"
+     			console.log(getMenu)
+     			x += "<br><div> " + getMenu[i].title; + "</div>"
 				let dishIngredients = getMenu[i].ingredients;
 				var sumDish = model.getDishPrice(dishIngredients) * model.getNumberOfGuests();
      			x += "<div class='dish-price'> SEK: " + sumDish + "</div> "

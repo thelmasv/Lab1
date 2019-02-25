@@ -8,6 +8,7 @@ var DishDetailsController = function(view, model, app, id) {
 
   	view.getContainer().click(function(event, id) {  
 		if (event.target.matches("#buttonAdd")) {
+			console.log(view.dish); 
 			model.addDishToMenu(view.dish);
 			app.showDishSelectScreen(); 
 		}

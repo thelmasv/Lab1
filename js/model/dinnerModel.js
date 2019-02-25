@@ -122,6 +122,7 @@ var DinnerModel = function() {
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
 	this.addDishToMenu = function(id) {
+		console.log("id nu:", id)
 		for (var dishId of menu) {
 			if (dishId == id) {
 				return; 
@@ -132,6 +133,7 @@ var DinnerModel = function() {
 	}
 
     this.getCurrentMenu = function() {
+    	console.log("menu: ", menu)
     	return menu; 
     }
 
@@ -201,7 +203,7 @@ var DinnerModel = function() {
             }
 	    })
 	    .then(response => response.json())
-	    .catch(console.error)
+	    .catch(()=>console.error)
 	}
 
 	// Get dish price for one dish and all people

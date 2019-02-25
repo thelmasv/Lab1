@@ -2,6 +2,7 @@ var DishDetailsView = function (container, model, id) {  //DENNA HAR INGEN } PÅ
   this.goBackSearchButton = container.find("#GoBackButton");
   this.addToMenuButton = container.find("#buttonAdd");
   this.dish; 
+  var self = this
 
   this.getContainer = function (){ //här fixar vi så att bo back knappen funkar; vi tar in containern
     return container;
@@ -16,96 +17,97 @@ var DishDetailsView = function (container, model, id) {  //DENNA HAR INGEN } PÅ
     numberOfGuestsTextField.append(guestText);
 
     var dishID = model.getId();
-    var self = this
     let dishIngredients;
+
     var dishDetails = model.getDish(dishID).then( dishDetails => {
       self.dish = dishDetails
+      console.log(self.dish); 
       dishIngredients = dishDetails.extendedIngredients;
 
-    if (!dishDetails) return; 
-    console.log(dishIngredients); 
+      if (!dishDetails) return; 
+      console.log(dishIngredients); 
 
-    var guestText = document.createElement("DIV");
-    guestText.id = "ingTotPeople"; 
+      var guestText = document.createElement("DIV");
+      guestText.id = "ingTotPeople"; 
 
-    var outputIng = "";
-    var sumDish = 0;
+      var outputIng = "";
+      var sumDish = 0;
 
-    // var numberPeople = model.getNumberOfGuests(); 
-    // var id; 
+      // var numberPeople = model.getNumberOfGuests(); 
+      // var id; 
 
-    for (i = 0; i < dishIngredients.length; i++) { 
+      for (i = 0; i < dishIngredients.length; i++) { 
 
-      outputIng += `<div class="row" id="Overview">
-                    <div class="col-2">
-                      <p>`+ Math.round(dishIngredients[i].amount * model.getNumberOfGuests()) + dishIngredients[i].unit +`</p>
-                    </div>
+        outputIng += `<div class="row" id="Overview">
+                      <div class="col-2">
+                        <p>`+ Math.round(dishIngredients[i].amount * model.getNumberOfGuests()) + " " + dishIngredients[i].unit +`</p>
+                      </div>
+                      <div class="col-6">
+                        <p>`+ dishIngredients[i].name +`</p>
+                      </div>
+                      <div class="col-1">
+                        <p>SEK</p>
+                      </div>
+                      <div class="col-2">
+                        <p>`+ Math.round(model.getNumberOfGuests()) +`</p> 
+                      </div>
+                      </div>`
+
+      }
+    
+      sumDish = dishDetails.pricePerServing * model.getNumberOfGuests();
+
+
+      container.html(`
+
+        <div class="row">
+              <div class="col-12 col-md-6" id="dishDetailPic">
+                <h3> ` + dishDetails.title + ` </h3>
+                  <img src="` + dishDetails.image + `" style="width:248px;height:248px class="center"/>
+                    <p id="img-text">` + dishDetails.instructions + ` </p> 
+                    <button type="button" class="btn previous" id="GoBackButton">&laquo; Go back to search</button>
+
+              </div>    
+
+              <div class="col-12 col-md-6" id="TotIngredients"> 
+                <div class="box" id="ingTotPeople">INGREDIENTS FOR ` + model.getNumberOfGuests() + ` PEOPLE
+
+                <hr>
+
+                ` + outputIng + `   
+
+                  <div class="row">
+                    <div class="col-12">
+                      <hr>     
+                    </div> 
+                  </div>
+
+                  <div class="row">
+
                     <div class="col-6">
-                      <p>`+ dishIngredients[i].name +`</p>
+                      <button type="button" class="btn" id="buttonAdd">Add to menu</button>
                     </div>
-                    <div class="col-1">
+
+                    <div class="col-3" id="boxSum">
                       <p>SEK</p>
                     </div>
-                    <div class="col-2">
-                      <p>`+ Math.round(dishIngredients[i].price * model.getNumberOfGuests()) +`</p> 
+
+                    <div class="col-3" id="boxSum">
+                      <p> ` + sumDish + ` </p>  
                     </div>
-                    </div>`
 
-    }
-  
-    sumDish = model.getDishPrice(dishIngredients) * model.getNumberOfGuests();
+                  </div>  
+                </div> 
+                <br> 
 
-    container.html(`
-
-      <div class="row">
-            <div class="col-12 col-md-6" id="dishDetailPic">
-              <h3> ` + dishDetails.name + ` </h3>
-                <img src="` + dishDetails.image + `" style="width:248px;height:248px class="center"/>
-                  <p id="img-text">` + dishDetails.description + ` </p> 
-                  <button type="button" class="btn previous" id="GoBackButton">&laquo; Go back to search</button>
-
-            </div>    
-
-            <div class="col-12 col-md-6" id="TotIngredients"> 
-              <div class="box" id="ingTotPeople">INGREDIENTS FOR ` + model.getNumberOfGuests() + ` PEOPLE
-
-              <hr>
-
-              ` + outputIng + `   
-
-                <div class="row">
-                  <div class="col-12">
-                    <hr>     
-                  </div> 
-                </div>
-
-                <div class="row">
-
-                  <div class="col-6">
-                    <button type="button" class="btn" id="buttonAdd">Add to menu</button>
-                  </div>
-
-                  <div class="col-3" id="boxSum">
-                    <p>SEK</p>
-                  </div>
-
-                  <div class="col-3" id="boxSum">
-                    <p> ` + sumDish + ` </p>  
-                  </div>
-
-                </div>  
               </div> 
-              <br> 
-
-            </div> 
-            </div>`);
+              </div>`);
 
 
-      this.goBackSearchButton = container.find("#GoBackButton");
-      this.addToMenuButton = container.find("#buttonAdd");
+        this.goBackSearchButton = container.find("#GoBackButton");
+        this.addToMenuButton = container.find("#buttonAdd");
 
-      var goBackSearchButton = document.getElementById("GoBackButton");  
-
+        var goBackSearchButton = document.getElementById("GoBackButton");  
     });
 
     } 
