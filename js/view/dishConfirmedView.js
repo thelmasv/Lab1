@@ -24,7 +24,7 @@ var DishConfirmedView = function (container, model) {
                               <p>` + confirmedDishes.title + `</p>
                             </div>
                             <div class="row">
-                              <p id="price">SEK ` +  confirmedDishes.pricePerServing * model.getNumberOfGuests() + `</p>
+                              <p id="price">SEK ` +  Math.round(confirmedDishes.pricePerServing * model.getNumberOfGuests()) + `</p>
                             </div>
                           </div>`; 
 

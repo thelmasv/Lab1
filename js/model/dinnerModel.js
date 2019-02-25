@@ -149,7 +149,7 @@ var DinnerModel = function() {
 
 	this.getAllDishes = function (type, filter) {
 		console.log("getAllDishes")
-	    return fetch("http://sunset.nada.kth.se:8080/iprog/group/3/recipes/search",{ 
+	    return fetch("http://sunset.nada.kth.se:8080/iprog/group/3/recipes/search?query=" + filter + ',' + type,{ 
 	  		method: "GET", 
             headers:{   
                 'X-Mashape-Key': API_KEY

@@ -25,9 +25,17 @@ var DishSearchView = function (container, model) {
 				  <div class="form-group">
 				  	<select class="form-control" id="exampleFormControlSelect1">
 						<option selected>All</option>
-						<option>Starter</option>
 						<option>Main Dish</option>
+						<option>Side Dish</option>
 						<option>Dessert</option>
+						<option>Appetizer</option>
+						<option>Salad</option>
+						<option>Bread</option>
+						<option>Breakfast</option>
+						<option>Soup</option>
+						<option>Beverage</option>
+						<option>Sauce</option>
+						<option>Drink</option>
 					</select>
 				  </div>
 				  
