@@ -15,7 +15,6 @@ var MainContentController = function( view, model, app ) {
 
 	view.container.on("click",'.displayedDish', function() {
 		var id = $(this).attr('id');
-		console.log("halli")
 		model.setId(id);
 		app.showDishDetailsScreen();
 	}); 

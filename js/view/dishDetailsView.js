@@ -55,7 +55,7 @@ var DishDetailsView = function (container, model, id) {  //DENNA HAR INGEN } PÅ
 
       }
     
-      sumDish = dishDetails.pricePerServing * model.getNumberOfGuests();
+      sumDish = Math.round(dishDetails.pricePerServing * model.getNumberOfGuests());
 
 
       container.html(`

@@ -9,25 +9,27 @@ var DishConfirmedView = function (container, model) {
     var menuList = []; 
     var chosenMenu = model.getCurrentMenu(); 
     var confirmedDishes = "";
-
     var outputConfirmed = ""; 
 
     var sumDish = 0; 
     var totalMenuPrice = model.getTotalMenuPrice(chosenMenu[i]); 
 
     for (var i = 0; i < chosenMenu.length; i++) {
-      var confirmedDishes = model.getDish(chosenMenu[i]); 
+      console.log(chosenMenu)
+      var confirmedDishes = chosenMenu[i]; 
+      console.log("confirm!!!: " + confirmedDishes)
       outputConfirmed += `<div class="col-md-3" id="confirmedPic">
                             <div class="row">
                               <img src="` + confirmedDishes.image + `" id="imgMain"/> 
                             </div>
                             <div class="row">
-                              <p>` + confirmedDishes.name + `</p>
+                              <p>` + confirmedDishes.title + `</p>
                             </div>
                             <div class="row">
-                              <p id="price">SEK ` +  model.getDishPrice(confirmedDishes.ingredients) * model.getNumberOfGuests() + `</p>
+                              <p id="price">SEK ` +  confirmedDishes.pricePerServing * model.getNumberOfGuests() + `</p>
                             </div>
                           </div>`; 
+
 
     }
 
@@ -41,7 +43,7 @@ var DishConfirmedView = function (container, model) {
         <div class="row">
           <div class="col-md-12">
             <p id="confirmPrice">TOTAL:</p>
-            <p id="confirmPrice">SEK `+ totalMenuPrice * model.getNumberOfGuests() +`</p>
+            <p id="confirmPrice">SEK `+ Math.round(totalMenuPrice * model.getNumberOfGuests()) +`</p>
           </div>
         </div>
 

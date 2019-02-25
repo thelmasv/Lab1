@@ -13,13 +13,13 @@ var DinnerPrintout = function (container, model) {
 
   // Loopa igenom alla ingredienser och dess värden för vald dish
     for (var i = 0; i < chosenMenu.length; i++) {
-      var confirmedDishes = model.getDish(chosenMenu[i]); 
+      var confirmedDishes = model.getCurrentMenu(chosenMenu[i]); 
       outputPrintout += `<div class="col-12 col-md-4" id="firstPicLastPage">
               						<img src="` + confirmedDishes.image + `" id="firstPicLastPage" />
                           <br>
               					</div>
               					<div class="col-12 col-md-3" id="dishtext">
-              						<h3> ` + confirmedDishes.name + ` </h3>
+              						<h3> ` + confirmedDishes.title + ` </h3>
               					</div>
               					<div class="col-12 col-md-5" >
               						<p id="preperation-title">PREPERATION</p>

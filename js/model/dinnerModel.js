@@ -58,7 +58,8 @@ var DinnerModel = function() {
 	this.getFullMenu = function() {
 		var allDishes = [];
 		for (key in menu) {
-			allDishes.push(this.getDish(menu[key]));
+			allDishes.push(menu[key]);
+			// tog bort getDish från här!!!
 		}
 		return allDishes;
 	}
@@ -114,7 +115,7 @@ var DinnerModel = function() {
 	this.getTotalMenuPrice = function(id) {
 		var totalCost = 0; 
 		for (var i = 0; i < menu.length; ++i) {
-			totalCost += this.getDishPrice(this.getDish(menu[i]).ingredients); 
+			totalCost += menu[i].pricePerServing; 
 		}
 		return totalCost; 
 	}
@@ -146,36 +147,7 @@ var DinnerModel = function() {
 		this.notifyObservers('menu');
 	}
 
-	// this.getAllDishes = function (type, filter) {
-	// 	type = type.toLowerCase();
-	// 	//filter = filter.toLowerCase();
-	//   	return dishes.filter(function(dish) {
-	// 		var found = true;
-
-	// 		if ( filter ) {
-	// 			found = false;
-	// 			dish.ingredients.forEach( function( ingredient ) {
-	// 				if ( ingredient.name.indexOf( filter ) != -1 ) {
-	// 					found = true;
-	// 				}
-	// 			});
-	// 			if ( dish.name.indexOf( filter ) != -1 ) {
-	// 				found = true;
-	// 			}
-	// 		}
-	// 		if ( type == "all" ) {
-
-	// 			return dishes && found;
-	// 		}
-	// 		else {
-	// 	  		return dish.type == type && found;
-
-	// 	  	}
-	// 	});
-	// }
-
 	this.getAllDishes = function (type, filter) {
-		console.log("Hej nu söker vi alla dishes!")
 	    return fetch("http://sunset.nada.kth.se:8080/iprog/group/3/recipes/search",{ 
 	  		method: "GET", 
             headers:{   
@@ -192,7 +164,6 @@ var DinnerModel = function() {
 	    .catch(()=>console.error)
 	} 
 
-	// HÄR SKA API IMPLEMENTERAS !!!
 	//function that returns a dish of specific ID
 	this.getDish = function (id, title, type) {
 		return fetch("http://sunset.nada.kth.se:8080/iprog/group/3/recipes/" + id + "/information",{ 
