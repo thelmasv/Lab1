@@ -19,6 +19,7 @@ var DishDetailsView = function (container, model, id) {  //DENNA HAR INGEN } PÅ
     var dishID = model.getId();
     let dishIngredients;
 
+
     var dishDetails = model.getDish(dishID).then( dishDetails => {
       self.dish = dishDetails
       // console.log(self.dish); 

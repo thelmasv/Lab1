@@ -56,7 +56,7 @@ var DishSearchView = function (container, model) {
 		this.getContainer = function (){ //här fixar vi så att go back knappen funkar; vi tar in containern
 		  return container;
 		}
-
+		if (args==="numberOfGuests") return; 
 		var type =  $('#exampleFormControlSelect1 :selected').val();
 		var filter = null;
 		

@@ -85,7 +85,6 @@ var SidebarView = function (container, model) {
 	//Lägger till hela elementet i numberOfGuests-taggen
 	numberOfGuestsTextField.append(guestText);
 
-
 	// Skapar nya div-element med classname col-12
 	var divCol12 = document.createElement("DIV");
 	divCol12.className = "col-12";
@@ -128,7 +127,9 @@ var SidebarView = function (container, model) {
      		var i; 
      		var x = ""; 
 
+     		// if (getMenu.lenght > 0) 
      		for (i = 0; i < getMenu.length; i++) {
+     			// if (!getMenu) return; 
      			// console.log(getMenu); 
      			x += "<br><div>" + getMenu[i].title; + "</div>"
 				var sumDish = Math.round(getMenu[i].pricePerServing * model.getNumberOfGuests());
