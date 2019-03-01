@@ -23,6 +23,7 @@ var DishDetailsView = function (container, model, id) {  //DENNA HAR INGEN } PÅ
       self.dish = dishDetails
       // console.log(self.dish); 
       dishIngredients = dishDetails.extendedIngredients;
+        if (!dishIngredients) return; 
 
       if (!dishDetails) return; 
       // console.log(dishIngredients); 

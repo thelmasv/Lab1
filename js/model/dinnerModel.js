@@ -5,7 +5,7 @@ var DinnerModel = function() {
 	var numberOfGuest = 1;
 	var menu = [];
 	var observers = []; 
-	var selectedId = 0; 
+	var selectedId = 0;  
 	var totMenuPrice = 0.00; 
 	var API_KEY = '3d2a031b4cmsh5cd4e7b939ada54p19f679jsn9a775627d767';
 	var API_Dish = []; 
@@ -148,8 +148,11 @@ var DinnerModel = function() {
 	}
 
 	this.getAllDishes = function (type, filter) {
-		console.log("getAllDishes")
-	    return fetch("http://sunset.nada.kth.se:8080/iprog/group/3/recipes/search?query=" + filter + ',' + type,{ 
+		// console.log("getAllDishes")
+		if (filter===null) {
+			filter = "";
+		}
+	    return fetch("http://sunset.nada.kth.se:8080/iprog/group/3/recipes/search?query=" + filter + "&type=" + type,{ 
 	  		method: "GET", 
             headers:{   
                 'X-Mashape-Key': API_KEY
@@ -163,7 +166,7 @@ var DinnerModel = function() {
 	    // .then(handleHTTPError)
 	    // .then(console.log)
 	    .catch(()=>console.error)
-	} 
+	}
 
 	//function that returns a dish of specific ID
 	this.getDish = function (id, title, type) {

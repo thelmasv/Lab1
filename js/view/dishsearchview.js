@@ -66,8 +66,9 @@ var DishSearchView = function (container, model) {
 			filter = $('#searchInput').val();
 		}
 		var allDishes = model.getAllDishes(type, filter).then(allDishes => {
+			if (!allDishes) return; 
 			var output = "";
-			console.log("I fetch!")
+			console.log("I fetch!", allDishes)
 			for ( i = 0; i < allDishes.length; i++ ) { 
 
 				output += `<div class="col-8 col-md-2 displayedDish" id="`+allDishes[i].id+`"> 
