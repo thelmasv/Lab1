@@ -8,8 +8,8 @@ var DinnerModel = function() {
 	var selectedId = 0;  
 	var totMenuPrice = 0.00; 
 	var API_KEY = '3d2a031b4cmsh5cd4e7b939ada54p19f679jsn9a775627d767';
-	var API_Dish = []; 
-	// this.menuPlace = [];
+	var API_Dish = []
+	var allDishes = []; 
 
 	this.addObserver = function(observer) {
 		observers.push(observer);  
@@ -75,42 +75,6 @@ var DinnerModel = function() {
 		return ingredientList;
 	}
 
-	// ANNAN KOD
-	  // this.getAllIngredients = function(obj) {
-	  //   var ingredients = false;
-	  //   if (typeof obj === 'object') {
-	  //     ingredients = [];
-	  //     for (var i = 0; i < obj.length; i++) {
-	  //       ingredients.push(obj[i]);
-	  //     }
-	  //   }
-	  //   return ingredients;
-	  // }
-
-	// ELLER
-	// this.getAllIngredients = function() {
-	 //    menuArray = [dishes[0], dishes[2], dishes[3], dishes[8]];
-
-	 //    for (i=0; i<=menuArray.length-1; i++){
-	 //      for(j=0; j<=menuArray[i].ingredients.length-1; j++) {
-	 //      allIngredients += menuArray[i].ingredients[j].name+", ";
-	 //    } allIngredients += "<br/>";
-	 //  	}
-	 //  	return allIngredients;
- // 	}
-
- 	// ELLER
- //   this.getAllIngredientsAnnan = function() {
-	// 	menuArray = [dishes[0], dishes[1], dishes[2], dishes[3]]
-	// 	AllIngredients = [];
-	// 	for (i=0; i<=menuArray.length-1; i++) {
-	// 		for (j=0; j<=menuArray[i].ingredients.length-1; j++) {
-	// 		AllIngredients.push(menuArray[i].ingredients[j]);
-	// 	}
-	// }
-	// return AllIngredients
-	// }
-
 	//Returns the total price of the menu (all the ingredients multiplied by number of guests).
 	this.getTotalMenuPrice = function(id) {
 		var totalCost = 0; 
@@ -122,33 +86,57 @@ var DinnerModel = function() {
 
 	//Adds the passed dish to the menu. If the dish of that type already exists on the menu
 	//it is removed from the menu and the new one added.
-	this.addDishToMenu = function(id) {
-		// console.log("id nu:", id)
-		for (var dishId of menu) {
-			if (dishId == id) {
-				return; 
-			}
+	// this.addDishToMenu = function(dish) {
+	// 	// console.log("id nu:", id)
+	// 	for (var selectedDish of menu) {
+	// 		if (selectedDish.id == dish.id) {
+	// 			this.removeDishFromMenu(dish.id);
+	// 		}
+	// 	}
+	// 	menu.push(dish); 
+	// 	this.notifyObservers('menu');
+	// }
+
+	this.addDishToMenu = function (dish) {
+		for (var i = 0; i < menu.length; i++) {
+			if (menu[i].id == dish.id) {
+                this.removeDishFromMenu(menu[i].id, true);
+            }
 		}
-		menu.push(id); 
-		this.notifyObservers('menu');
+		menu.push(dish);
+		this.notifyObservers('menu')
 	}
+
+	// skicka in hela dishen
 
     this.getCurrentMenu = function() {
     	// console.log("menu: ", menu)
     	return menu; 
     }
 
-	this.removeDishFromMenu = function(id) {
-		for (dish in menu) {
-			if (menu[dish].id === id) {
-				delete menu[dish];
-			}
+	// this.removeDishFromMenu = function(id) {
+	// 	for (var dish = 0; dish < menu.length; dish++) {
+	// 		if (menu[dish].id === id) {
+	// 			menu.splice(dish);
+	// 		}
+	// 	}
+	// 	this.notifyObservers('menu');
+	// }
+
+
+	this.removeDishFromMenu = function (id, mute = false) {
+		var index = null;
+		for (var i = 0; i < menu.length; i++) {
+			if (menu[i].id == id) {
+                index = i;
+            }
 		}
-		this.notifyObservers('menu');
+        if (index > -1) { menu.splice(index, 1); }
+		if (!mute) { notifyObservers('menu') }
 	}
 
 	this.getAllDishes = function (type, filter) {
-		// console.log("getAllDishes")
+		console.log("getAllDishes")
 		if (filter===null) {
 			filter = "";
 		}
@@ -170,6 +158,7 @@ var DinnerModel = function() {
 
 	//function that returns a dish of specific ID
 	this.getDish = function (id, title, type) {
+		console.log('getDish')
 		return fetch("http://sunset.nada.kth.se:8080/iprog/group/3/recipes/" + id + "/information",{ 
 			// addera sträng med id på något sätt 
 	  		method: "GET", 

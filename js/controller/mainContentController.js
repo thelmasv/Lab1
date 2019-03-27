@@ -11,6 +11,7 @@ var MainContentController = function( view, model, app ) {
 
 	view.searchButton.click( function() {
 	    view.update("searchDish");
+
 	});
 
 	view.container.on("click",'.displayedDish', function() {

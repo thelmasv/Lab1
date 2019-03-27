@@ -119,7 +119,8 @@ var SidebarView = function (container, model) {
 	// lägger in hela div-taggen i elementet som har id "menuPrice"
 	menuPrice.append(divCol12);
 
-	this.update = function(model, changeDetails) {
+	// här kanske kallar API varje gång???
+	this.updates = function(model, changeDetails) {
      	if (changeDetails == 'numberOfGuests' || changeDetails == 'menu') {
      		numberOfGuestsTextField.text("People: " + model.getNumberOfGuests());
 
@@ -142,6 +143,6 @@ var SidebarView = function (container, model) {
      	}
 	}
 
-	model.addObserver(this.update); 
+	model.addObserver(this.updates); 
 	
 }

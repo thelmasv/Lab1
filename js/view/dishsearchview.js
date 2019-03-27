@@ -19,10 +19,10 @@ var DishSearchView = function (container, model) {
 		<div class="row">
 			<div class="col-12">
 				
-					<div class="search"> 
-					  <input id="searchInput" type="text" placeholder="Enter keywords">
-				   </div>
-				  <div class="form-group">
+				<div class="search"> 
+					<input id="searchInput" type="text" placeholder="Enter keywords">
+				</div>
+				<div class="form-group">
 				  	<select class="form-control" id="exampleFormControlSelect1">
 						<option selected>All</option>
 						<option>Main Dish</option>
@@ -37,9 +37,9 @@ var DishSearchView = function (container, model) {
 						<option>Sauce</option>
 						<option>Drink</option>
 					</select>
-				  </div>
+				</div>
 				  
-				 <button type="submit" id="button1">Search</button>
+				<button type="submit" id="button1">Search</button>
 					
 			</div>
 		</div>
@@ -52,7 +52,7 @@ var DishSearchView = function (container, model) {
 			
 		</div>`);
 
-    this.update = function( args ) {
+    this.update = function( self, args ) {
 		this.getContainer = function (){ //här fixar vi så att go back knappen funkar; vi tar in containern
 		  return container;
 		}
@@ -65,10 +65,11 @@ var DishSearchView = function (container, model) {
 		if (args == "searchDish") {
 			filter = $('#searchInput').val();
 		}
+
 		var allDishes = model.getAllDishes(type, filter).then(allDishes => {
 			if (!allDishes) return; 
 			var output = "";
-			console.log("I fetch!", allDishes)
+			//console.log("I fetch!", allDishes)
 			for ( i = 0; i < allDishes.length; i++ ) { 
 
 				output += `<div class="col-8 col-md-2 displayedDish" id="`+allDishes[i].id+`"> 
@@ -81,11 +82,11 @@ var DishSearchView = function (container, model) {
 		});
 	}
 
-	this.update()
-	this.searchButton = container.find("#button1");
-	this.clickDish = container.find("#searchDishes"); 
-	this.displayedDish = container.find(".displayedDish");
-	this.searchByName = container.find("#searchInput");
+	this.update(); 
+	// this.searchButton = container.find("#button1");
+	// this.clickDish = container.find("#searchDishes"); 
+	// this.displayedDish = container.find(".displayedDish");
+	// this.searchByName = container.find("#searchInput");
     model.addObserver(this.update);
 
 

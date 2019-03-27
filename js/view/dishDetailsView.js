@@ -2,11 +2,41 @@ var DishDetailsView = function (container, model, id) {  //DENNA HAR INGEN } PÅ
   this.goBackSearchButton = container.find("#GoBackButton");
   this.addToMenuButton = container.find("#buttonAdd");
   this.dish; 
+  var dishIngredients;
   var self = this
 
   this.getContainer = function (){ //här fixar vi så att bo back knappen funkar; vi tar in containern
     return container;
   }
+
+  function updateNumberOfGuests() {
+    var ingredientAmount = container.find('.ingredient-amount')
+    // console.log(ingredientAmount)
+    for (var i = 0; i < ingredientAmount.length; i++) {
+      // var amount = ingredientAmount[i].innerHTML.split(" ")[0]
+      var unit = ingredientAmount[i].innerHTML.split(" ")[1] 
+      // // console.log("amount: ", amount, "\nunit: ", unit)
+      var newAmount = dishIngredients[i].amount*model.getNumberOfGuests()
+      ingredientAmount[i].innerHTML = newAmount + " " + unit
+    }
+
+    var ingredientCost = container.find('.ingredient-cost')
+    for (var i = 0; i < ingredientCost.length; i++) {
+      // var cost = ingredientCost[i].innerHTML
+      var newCost = 1*model.getNumberOfGuests()
+      ingredientCost[i].innerHTML = newCost
+    }
+
+    var sumCost = container.find('.sum-cost')
+    for (var i = 0; i < sumCost.length; i++) {
+      // var sum = sumCost[i].innerHTML
+      var newSum = Math.round(self.dish.pricePerServing*model.getNumberOfGuests())
+      sumCost[i].innerHTML = newSum
+    }
+
+
+  }
+
 
   this.update = function(model, changeDetails){
 
@@ -17,8 +47,11 @@ var DishDetailsView = function (container, model, id) {  //DENNA HAR INGEN } PÅ
     numberOfGuestsTextField.append(guestText);
 
     var dishID = model.getId();
-    let dishIngredients;
 
+    if (changeDetails==="numberOfGuests") {
+      updateNumberOfGuests();
+      return
+    }; 
 
     var dishDetails = model.getDish(dishID).then( dishDetails => {
       self.dish = dishDetails
@@ -42,7 +75,7 @@ var DishDetailsView = function (container, model, id) {  //DENNA HAR INGEN } PÅ
 
         outputIng += `<div class="row" id="Overview">
                       <div class="col-2">
-                        <p>`+ Math.round(dishIngredients[i].amount * model.getNumberOfGuests()) + " " + dishIngredients[i].unit +`</p>
+                        <p class="ingredient-amount">`+ dishIngredients[i].amount + " " + dishIngredients[i].unit +`</p>
                       </div>
                       <div class="col-6">
                         <p>`+ dishIngredients[i].name +`</p>
@@ -51,14 +84,13 @@ var DishDetailsView = function (container, model, id) {  //DENNA HAR INGEN } PÅ
                         <p>SEK</p>
                       </div>
                       <div class="col-2">
-                        <p>`+ Math.round(model.getNumberOfGuests()) +`</p> 
+                        <p class="ingredient-cost">1</p> 
                       </div>
                       </div>`
 
       }
     
-      sumDish = Math.round(dishDetails.pricePerServing * model.getNumberOfGuests());
-
+      // sumDish = Math.round(dishDetails.pricePerServing);
 
       container.html(`
 
@@ -95,7 +127,7 @@ var DishDetailsView = function (container, model, id) {  //DENNA HAR INGEN } PÅ
                     </div>
 
                     <div class="col-3" id="boxSum">
-                      <p> ` + sumDish + ` </p>  
+                      <p class="sum-cost"></p>  
                     </div>
 
                   </div>  
@@ -108,6 +140,7 @@ var DishDetailsView = function (container, model, id) {  //DENNA HAR INGEN } PÅ
 
         this.goBackSearchButton = container.find("#GoBackButton");
         this.addToMenuButton = container.find("#buttonAdd");
+        updateNumberOfGuests()
 
         var goBackSearchButton = document.getElementById("GoBackButton");  
     });
